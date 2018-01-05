@@ -1,0 +1,38 @@
+
+
+<h1>Detalle turnos</h1>
+
+<table class="datatable table-striped table-bordered table-list">
+  <thead>
+    <tr>
+      <th>Turno</th>
+      <th>Agente</th>
+      <th>Lugar</th>
+      <th>Posicion</th>
+      <th>Observacion</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @turn_details.each do |turn_detail| %>
+      <tr>
+        <td><%= turn_detail.turn %></td>
+        <td><%= turn_detail.agent %></td>
+        <td><%= turn_detail.place %></td>
+        <td><%= turn_detail.position %></td>
+        <td><%= turn_detail.observation %></td>
+        <td>
+          <%= link_to (fa_icon "eye"), turn_detail, class: 'btn btn-sm btn-success' %>
+          <%= link_to (fa_icon "pencil-square-o"), edit_turn_detail_path(turn_detail), class: 'btn btn-sm btn-warning' %>
+          <%= link_to (fa_icon "trash-o"), turn_detail, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
+              
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Detalle Turno', new_turn_detail_path %>

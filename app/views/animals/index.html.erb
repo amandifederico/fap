@@ -1,0 +1,36 @@
+
+
+<h1>Animales</h1>
+
+<table class="datatable table-striped table-bordered table-list">
+  <thead>
+    <tr>
+      <th>Descripción</th>
+      <th>Sigla</th>
+      <th>Tipo</th>
+      <th>Peso Promedio</th>
+      <th>Opciones</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td><%= animal.description %></td>
+        <td><%= animal.initials %></td>
+        <td><%= animal.animal_type.to_s %></td>
+        <td><%= animal.average_value %></td>
+        <td>
+          <%= link_to (fa_icon "eye"), animal, class: 'btn btn-sm btn-success' %>
+          <%= link_to (fa_icon "pencil-square-o"), edit_animal_path(animal), class: 'btn btn-sm btn-warning' %>
+          <%= link_to (fa_icon "trash-o"), animal, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Animal', new_animal_path %>

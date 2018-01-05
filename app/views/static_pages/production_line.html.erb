@@ -1,0 +1,29 @@
+<h1>Producción</h1>
+
+<table class="datatable table-striped table-bordered table-list">
+  <thead>
+    <tr>
+      <th>Tropa</th>
+      <th>Abastecedor</th>
+      <th>Turno</th>
+      <th>Descripción</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @production.each do |production| %>
+      <tr>
+        <td><%= production.troop.dte %></td>
+        <td><%= production.troop.provider.name %></td>
+        <td><%= production.troop.turn %></td>
+        <td><%= production.description %></td>
+        <td>
+          <%= link_to (fa_icon "pencil-square-o"), new_production_detail_path(:prod => production), class: 'btn btn-sm btn-warning' %>
+        </td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

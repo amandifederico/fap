@@ -1,0 +1,35 @@
+
+
+<h1>Abastecedor</h1>
+
+<table class="datatable table-striped table-bordered table-list">
+  <thead>
+    <tr>
+      <th>Razon social</th>
+      <th>CUIT/CUIL</th>
+      <th>Fecha Alta</th>
+      <th>Ciudad</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @providers.each do |provider| %>
+      <tr>
+        <td><%= provider.name %></td>
+        <td><%= provider.cuit %></td>
+        <td><%= provider.up_date %></td>
+        <td><%= provider.city %></td>
+        <td>
+          <%= link_to (fa_icon "eye"), provider, class: 'btn btn-sm btn-success' %>
+          <%= link_to (fa_icon "pencil-square-o"), edit_provider_path(provider), class: 'btn btn-sm btn-warning' %>
+          <%= link_to (fa_icon "trash-o"), provider, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>        
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Abastecedor', new_provider_path %>

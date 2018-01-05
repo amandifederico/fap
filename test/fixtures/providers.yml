@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cuit: 1
+  renspa: MyString
+  telephone: 1
+  email: MyString
+  address: MyString
+  up_date: 2018-01-04
+  down_date: 2018-01-04
+  city: one
+  active: false
+  observation: MyString
+
+two:
+  name: MyString
+  cuit: 1
+  renspa: MyString
+  telephone: 1
+  email: MyString
+  address: MyString
+  up_date: 2018-01-04
+  down_date: 2018-01-04
+  city: two
+  active: false
+  observation: MyString

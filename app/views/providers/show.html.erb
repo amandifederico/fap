@@ -1,0 +1,63 @@
+
+
+<p>
+  <strong>Razon social:</strong>
+  <%= @provider.name %>
+</p>
+
+<p>
+  <strong>CUIT/CUIL:</strong>
+  <%= @provider.cuit %>
+</p>
+
+<p>
+  <strong>Renspa:</strong>
+  <%= @provider.renspa %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @provider.telephone %>
+</p>
+
+<p>
+  <strong>E-mail:</strong>
+  <%= @provider.email %>
+</p>
+
+<p>
+  <strong>Domicilio:</strong>
+  <%= @provider.address %>
+</p>
+
+<p>
+  <strong>Fecha de alta:</strong>
+  <%= @provider.up_date %>
+</p>
+
+<p>
+  <strong>Fecha de baja:</strong>
+  <%= @provider.down_date %>
+</p>
+
+<p>
+  <strong>Ciudad:</strong>
+  <%= @provider.city %>
+</p>
+
+<p>
+  <strong>Observacion:</strong>
+  <%= @provider.observation %>
+</p>
+
+<p>
+  <strong>Activo:</strong>
+  <% if @provider.active? %>
+      ACTIVO
+  <% else %>
+      INACTIVO
+  <% end %>
+</p>
+
+<%= link_to 'Editar', edit_provider_path(@provider) %> |
+<%= link_to 'Volver', providers_path %>

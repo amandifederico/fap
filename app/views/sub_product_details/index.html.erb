@@ -1,0 +1,36 @@
+
+
+<h1>Detalle sub producto</h1>
+
+<table class="datatable table-striped table-bordered table-list">
+  <thead>
+    <tr>
+      <th>Sub producto</th>
+      <th>Tipo sub producto</th>
+      <th>Peso</th>
+      <th>Peso de control</th>
+      <th>Observacion</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_product_details.each do |sub_product_detail| %>
+      <tr>
+        <td><%= sub_product_detail.sub_product %></td>
+        <td><%= sub_product_detail.sub_product_type %></td>
+        <td><%= sub_product_detail.weight %></td>
+        <td><%= sub_product_detail.weight_control %></td>
+        <td><%= sub_product_detail.observation %></td>
+        <td>
+          <%= link_to (fa_icon "eye"), sub_product_detail, class: 'btn btn-sm btn-success' %>
+          <%= link_to (fa_icon "pencil-square-o"), edit_sub_product_detail_path(sub_product_detail), class: 'btn btn-sm btn-warning' %>
+          <%= link_to (fa_icon "trash-o"), sub_product_detail, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo detalle sub producto', new_sub_product_detail_path %>

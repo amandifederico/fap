@@ -1,0 +1,211 @@
+<%= form_for(troop) do |f| %>
+  <% if troop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(troop.errors.count, "error") %> prohibited this troop from being saved:</h2>
+
+      <ul>
+      <% troop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    
+    <!-- DTE -->
+    <label class="col-sm-2 control-label">
+      D.T.E.:
+    </label>
+    <div class="col-sm-10 controls" style="margin-bottom: 10px;">
+      <%= f.text_field :dte, class: "form-control", placeholder: "012345678-1"%>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Fecha de llegada -->
+    <label class="col-sm-2 control-label">
+      Fecha de Llegada:
+    </label>
+    <div class="col-sm-10 controls">
+      <div class="input-group date datepicker">
+        <%= f.text_field :arrival_date, placeholder: "Fecha Llegada", class: "form-control" %>
+          <span class="input-group-addon ">
+            <%= fa_icon "list"%>
+          </span>
+      </div>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Hora de llegada -->
+    <label class="col-sm-2 control-label">
+      Hora de Llegada:
+    </label>
+    <div class="col-sm-10 controls">
+      <div class="input-group time timepicker">
+        <%= f.text_field :arrival_time, placeholder: "Hora Llegada", class: "form-control" %>
+          <span class="input-group-addon ">
+            <%= fa_icon "list"%>
+          </span>
+      </div>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Nº de Tropa -->
+    <label class="col-sm-2 control-label">
+      Nº de Tropa:
+    </label>
+    <div class="col-sm-10 controls">
+      <%= f.text_field :troop_number, class: "form-control input-lg", placeholder: "123456"%>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Fecha de Cargo -->
+    <label class="col-sm-2 control-label">
+      Fecha de Cargo:
+    </label>
+    <div class="col-sm-10 controls">
+      <div class="input-group date datepicker">
+        <%= f.text_field :cargo_date, placeholder: "Fecha cargo", class: "form-control" %>
+          <span class="input-group-addon ">
+            <%= fa_icon "list"%>
+          </span>
+      </div>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Fecha de Expiracion -->
+    <label class="col-sm-2 control-label">
+      Fecha de Vencimiento:
+    </label>
+    <div class="col-sm-10 controls">
+      <div class="input-group date datepicker">
+        <%= f.text_field :expiration_date, placeholder: "Fecha Vencimiento", class: "form-control" %>
+          <span class="input-group-addon ">
+            <%= fa_icon "list"%>
+          </span>
+      </div>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Turno -->
+    <label class="col-sm-2 control-label">
+      Turno:
+    </label>
+    <div class="col-sm-10 controls">
+      <%= f.collection_select :turn_id, Turn.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
+      
+      <%= link_to 'Create category', new_turn_path, data: { modal: true } %>
+      <a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Abastecedor -->
+    <label class="col-sm-2 control-label">
+      Abastecedor:
+    </label>
+    <div class="col-sm-10 controls">
+      <%= f.collection_select :provider_id, Provider.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
+      <a href="#" class="btn btn-info btn-form" id="create_turn" style="margin-left: 10px;">Agregar</a>
+      <a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Ciudad -->
+    <label class="col-sm-2 control-label">
+      Ciudad:
+    </label>
+    <div class="col-sm-10 controls">
+      <%= f.collection_select :city_id, City.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
+      <a href="#" class="btn btn-info btn-form" id="create_turn" style="margin-left: 10px;">Agregar</a>
+      <a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Transporte -->
+    <label class="col-sm-2 control-label">
+      Transporte:
+    </label>
+    <div class="col-sm-10 controls">
+      <%= f.collection_select :transport_id, Transport.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
+      <a href="#" class="btn btn-info btn-form" id="create_turn" style="margin-left: 10px;">Agregar</a>
+      <a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Nº de Precinto -->
+    <label class="col-sm-2 control-label">
+      Número de Precinto:
+    </label>
+    <div class="col-sm-10 controls">
+      <%= f.text_field :seal_number, class: "form-control input-lg", placeholder: "000"%>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Peso Vivo -->
+    <label class="col-sm-2 control-label">
+      Peso Vivo:
+    </label>
+    <div class="col-sm-10 controls">
+      <%= f.text_field :liveweight, class: "form-control input-lg", placeholder: "000"%>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Control de Cantidad -->
+    <label class="col-sm-2 control-label">
+      Control de Cantidad:
+    </label>
+    <div class="col-sm-10 controls">
+      <%= f.text_field :quantity_control, class: "form-control input-lg", placeholder: "000"%>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+
+    <!-- Código de Cierre -->
+    <label class="col-sm-2 control-label">
+      Código de Cierre:
+    </label>
+    <div class="col-sm-10 controls">
+      <%= f.text_field :close_code, class: "form-control input-lg", placeholder: "000"%>
+      <span class="help-block">Obligatorio. </span>
+    </div>
+    <label class="col-sm-2 control-label">
+      
+    </label>
+    
+    <table class="table table-striped table-bordered table-list">
+      <thead>
+        <tr>
+            <th>Especie</th>
+            <th>Cantidad</th>
+            <th>Caidos</th>
+            <th>Observacion</th>
+        </tr> 
+      </thead>
+      <tbody class="sub_product_details">
+          <%= f.fields_for :troop_details do |troop_details| %>
+            <%= render 'troop_detail_fields', :f => troop_details %>
+          <% end %>
+        </div>
+      </tbody>
+    </table>
+
+    <div class='links'>
+      <%= link_to_add_association 'Agregar Detalle', f, :troop_details, data: { association_insertion_node: '.troop_details', association_insertion_method: :append } %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= link_to 'Volver', troops_path, class: "btn btn-outline-danger"%>
+      <%= f.submit class: "btn btn-outline-success "%>
+    </div>
+  </div>
+  <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+  <br>
+  
+<% end %>
+  
+
+<script type="text/javascript">
+  $('#new_troop').bind('cocoon:after-insert',
+    function(e) {
+      console.log('Insertando Select 2');
+      
+    });
+</script>

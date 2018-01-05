@@ -1,0 +1,34 @@
+
+
+<p>
+  <strong>Acoplado:</strong>
+  <%= @transport.coupled %>
+</p>
+
+<p>
+  <strong>Capacidad:</strong>
+  <%= @transport.capacity %>
+</p>
+
+<p>
+  <strong>Patente:</strong>
+  <%= @transport.plate %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @transport.model %>
+</p>
+
+<p>
+  <strong>Peso:</strong>
+  <%= @transport.weight %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @transport.brand %>
+</p>
+
+<%= link_to 'Editar', edit_transport_path(@transport) %> |
+<%= link_to 'Volver', transports_path %>

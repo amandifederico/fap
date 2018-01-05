@@ -1,0 +1,19 @@
+
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @city.name %>
+</p>
+
+<p>
+  <strong>Provincia:</strong>
+  <%= @city.province %>
+</p>
+
+<p>
+  <strong>Cp:</strong>
+  <%= @city.cp %>
+</p>
+
+<%= link_to 'Editar', edit_city_path(@city) %> |
+<%= link_to 'Volver', cities_path %>

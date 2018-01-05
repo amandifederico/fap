@@ -1,0 +1,99 @@
+
+
+<p>
+  <strong>D.T.E:</strong>
+  <%= @troop.dte %>
+</p>
+
+<p>
+  <strong>Fecha de LLegada:</strong>
+  <%= @troop.arrival_date %>
+</p>
+
+<p>
+  <strong>Hora de LLegada:</strong>
+  <%= @troop.arrival_time %>
+</p>
+
+<p>
+  <strong>Turno:</strong>
+  <%= @troop.turn %>
+</p>
+
+<p>
+  <strong>Abastecedor:</strong>
+  <%= @troop.provider %>
+</p>
+
+<p>
+  <strong>Nro tropa:</strong>
+  <%= @troop.troop_number %>
+</p>
+
+<p>
+  <strong>Fecha cargo:</strong>
+  <%= @troop.cargo_date %>
+</p>
+
+<p>
+  <strong>Fecha vencimiento:</strong>
+  <%= @troop.expiration_date %>
+</p>
+
+<p>
+  <strong>Transporte:</strong>
+  <%= @troop.transport_id %>
+</p>
+
+<p>
+  <strong>Nro precinto:</strong>
+  <%= @troop.seal_number %>
+</p>
+
+<p>
+  <strong>Peso vivo:</strong>
+  <%= @troop.liveweight %>
+</p>
+
+<p>
+  <strong>Control cantidad:</strong>
+  <%= @troop.quantity_control %>
+</p>
+
+<p>
+  <strong>Codigo cierre:</strong>
+  <%= @troop.close_code %>
+</p>
+
+<table class="datatable table-striped table-bordered table-list">
+  <thead>
+      <tr>
+        <th class="hidden-xs">Animal</th>
+        <th>Cantidad</th>
+        <th>Observacion</th>
+      </tr> 
+  </thead>
+  <tbody>
+    <% for details in @troop.troop_details %>
+      <tr>
+        <td><%= details.animal %></td>
+        <td><%= details.quantity%></td>
+        <td><%= details.observartion %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+        <tr>
+            <th colspan="4" style="text-align:right">Total:</th>
+            <th><%= @troop.troop_details.sum('quantity') %></th>
+        </tr>
+    </tfoot>
+</table>
+
+
+
+
+
+
+<%= link_to 'Editar', edit_troop_path(@troop) %> |
+<%= link_to 'Volver', troops_path %>

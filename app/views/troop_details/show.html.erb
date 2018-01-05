@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Troop:</strong>
+  <%= @troop_detail.troop %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @troop_detail.animal %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @troop_detail.quantity %>
+</p>
+
+<p>
+  <strong>Fallen:</strong>
+  <%= @troop_detail.fallen %>
+</p>
+
+<p>
+  <strong>Observartion:</strong>
+  <%= @troop_detail.observartion %>
+</p>
+
+<%= link_to 'Edit', edit_troop_detail_path(@troop_detail) %> |
+<%= link_to 'Back', troop_details_path %>

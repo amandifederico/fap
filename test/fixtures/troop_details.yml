@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  troop: one
+  animal: one
+  quantity: 1
+  fallen: 1
+  observartion: MyString
+
+two:
+  troop: two
+  animal: two
+  quantity: 1
+  fallen: 1
+  observartion: MyString

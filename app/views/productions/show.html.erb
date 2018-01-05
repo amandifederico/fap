@@ -1,0 +1,55 @@
+<p>
+  <strong>Tropa:</strong>
+  <%= @production.troop %>
+</p>
+<p>
+  <strong>Descripcion:</strong>
+  <%= @production.description %>
+</p>
+<p>
+  <strong>Estado:</strong> <%=@production.production_details.size%> de <%=@production.troop.quantity_control*2%> media res
+</p>
+<table class="datatable table-striped table-bordered table-list">
+	<thead>
+	    <tr>
+	      <th>Producción</th>
+	      <th>Tipo</th>
+	      <th>Animal</th>
+	      <th>Peso</th>
+	      <% if current_user.A?  or current_user.admin?%>
+	      		<th>Peso control</th>
+	      <%end%>
+	      <th>Observacion</th>
+	    </tr> 
+	</thead>
+	<tbody>
+	  <% for details in @production.production_details %>
+	  	<tr>
+	  		<td><%= details.production %></td>
+	  		<td><%= details.type %></td>
+	  		<td><%= details.animal %></td>
+	  		<td><%= details.weight %></td>
+	  		<% if current_user.A?  or current_user.admin?%>
+	  			<td><%= details.weight_control %></td>
+	  		<%end%>
+	  		<td><%= details.observation %></td>
+	  	</tr>
+	  <% end %>
+	</tbody>
+	<tfoot>
+	    <tr>
+            <th colspan="5" style="text-align:right">Total :</th>
+            <th><%= @production.production_details.sum('weight') %></th>
+        </tr>
+        <% if current_user.A?  or current_user.admin? %>
+	        <tr>
+	            <th colspan="5" style="text-align:right">Total Control:</th>
+	            <th><%= @production.production_details.sum('weight_control') %></th>
+	        </tr>
+        <%end%>
+    </tfoot>
+</table>
+
+
+<%= link_to 'Editar', edit_production_path(@production) %> |
+<%= link_to 'Volver', productions_path %>

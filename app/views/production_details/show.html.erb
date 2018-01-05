@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Production:</strong>
+  <%= @production_detail.production %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @production_detail.type %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @production_detail.animal %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @production_detail.weight %>
+</p>
+
+<p>
+  <strong>Weight control:</strong>
+  <%= @production_detail.weight_control %>
+</p>
+
+<p>
+  <strong>Observation:</strong>
+  <%= @production_detail.observation %>
+</p>
+
+<%= link_to 'Edit', edit_production_detail_path(@production_detail) %> |
+<%= link_to 'Back', production_details_path %>

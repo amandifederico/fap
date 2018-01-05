@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Troop Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Troop</th>
+      <th>Animal</th>
+      <th>Quantity</th>
+      <th>Fallen</th>
+      <th>Observartion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @troop_details.each do |troop_detail| %>
+      <tr>
+        <td><%= troop_detail.troop %></td>
+        <td><%= troop_detail.animal %></td>
+        <td><%= troop_detail.quantity %></td>
+        <td><%= troop_detail.fallen %></td>
+        <td><%= troop_detail.observartion %></td>
+        <td><%= link_to 'Show', troop_detail %></td>
+        <td><%= link_to 'Edit', edit_troop_detail_path(troop_detail) %></td>
+        <td><%= link_to 'Destroy', troop_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Troop Detail', new_troop_detail_path %>

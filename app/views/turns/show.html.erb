@@ -1,0 +1,36 @@
+
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @turn.date %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @turn.description %>
+</p>
+
+<table class="datatable table-striped table-bordered table-list">
+	<thead>
+	    <tr>
+	      <th>Agente</th>
+	      <th>Lugar</th>
+	      <th>Posicion</th>
+	      <th>Observacion</th>
+	    </tr> 
+	</thead>
+	<tbody>
+	  <% for details in @turn.turn_details %>
+	  	<tr>
+	  		<td><%= details.agent %></td>
+	  		<td><%= details.place %></td>
+	  		<td><%= details.position %></td>
+	  		<td><%= details.observation %></td>
+	  	</tr>
+	  <% end %>
+	</tbody>
+</table>
+
+
+<%= link_to 'Editar', edit_turn_path(@turn) %> |
+<%= link_to 'Volver', turns_path %>

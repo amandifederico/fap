@@ -1,0 +1,42 @@
+<%= form_for(troop_detail) do |f| %>
+  <% if troop_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(troop_detail.errors.count, "error") %> prohibited this troop_detail from being saved:</h2>
+
+      <ul>
+      <% troop_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :troop_id %>
+    <%= f.text_field :troop_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :animal_id %>
+    <%= f.text_field :animal_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fallen %>
+    <%= f.number_field :fallen %>
+  </div>
+
+  <div class="field">
+    <%= f.label :observartion %>
+    <%= f.text_field :observartion %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

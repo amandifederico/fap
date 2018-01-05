@@ -1,0 +1,40 @@
+
+
+<h1>Transportes</h1>
+
+<table class="datatable table-striped table-bordered table-list">
+  <thead>
+    <tr>
+      <th>Acoplado</th>
+      <th>Capacidad</th>
+      <th>Patente</th>
+      <th>Modelo</th>
+      <th>Peso</th>
+      <th>Opciones</th>
+      <th>Marca</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transports.each do |transport| %>
+      <tr>
+        <td><%= transport.coupled %></td>
+        <td><%= transport.capacity %></td>
+        <td><%= transport.plate %></td>
+        <td><%= transport.model %></td>
+        <td><%= transport.weight %></td>
+        <td><%= transport.brand %></td>
+        <td>
+          <%= link_to (fa_icon "eye"), transport, class: 'btn btn-sm btn-success' %>
+          <%= link_to (fa_icon "pencil-square-o"), edit_transport_path(transport), class: 'btn btn-sm btn-warning' %>
+          <%= link_to (fa_icon "trash-o"), transport, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
+              
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Transporte', new_transport_path %>

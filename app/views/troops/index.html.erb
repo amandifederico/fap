@@ -1,0 +1,35 @@
+
+
+<h1>Tropas</h1>
+
+<table class="datatable table-striped table-bordered table-list">
+  <thead>
+    <tr>
+      <th>D.T.E</th>
+      <th>Turno</th>
+      <th>Abastecedor</th>
+      <th>Codigo cierre</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @troops.each do |troop| %>
+      <tr>
+        <td><%= troop.dte %></td>
+        <td><%= troop.turn %></td>
+        <td><%= troop.provider %></td>
+        <td><%= troop.close_code %></td>        
+        <td>
+          <%= link_to (fa_icon "eye"), troop, class: 'btn btn-sm btn-success' %>
+          <%= link_to (fa_icon "pencil-square-o"), edit_troop_path(troop), class: 'btn btn-sm btn-warning' %>
+          <%= link_to (fa_icon "trash-o"), troop, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva tropa', new_troop_path %>

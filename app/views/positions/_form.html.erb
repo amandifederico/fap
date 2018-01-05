@@ -1,0 +1,32 @@
+<div class="col-sm-6">  
+  <%= form_for(position) do |f| %>
+    <% if position.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(position.errors.count, "error") %> prohibited this position from being saved:</h2>
+
+        <ul>
+        <% position.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :description, class: "form-control input-lg", placeholder: "Descripcion"%>
+    </div>
+
+    <div class="actions row">
+        <div class="col-sm-4">
+          <%= link_to 'Volver', positions_path, class: "btn btn-outline-primary btn-block" %>
+        </div>      
+        <div class="col-sm-8">
+          <%= f.submit class: "btn btn-outline-success btn-block"%>
+        </div>  
+      </div>
+  <% end %>
+</div>

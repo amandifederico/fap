@@ -1,0 +1,31 @@
+<h1>Producción</h1>
+
+<table class="datatable table-striped table-bordered table-list">
+  <thead>
+    <tr>
+      <th>Tropa</th>
+      <th>Description</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productions.each do |production| %>
+      <tr>
+        <td><%= production.troop.dte %></td>
+        <td><%= production.description %></td>
+        <td>
+          <%= link_to (fa_icon "eye"), production, class: 'btn btn-sm btn-success' %>
+          <%= link_to (fa_icon "pencil-square-o"), edit_production_path(production), class: 'btn btn-sm btn-warning' %>
+          <%= link_to (fa_icon "trash-o"), production, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
+              
+        </td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Producción Nueva', new_production_path, {:class=>"btn btn-primary"} %>
+
