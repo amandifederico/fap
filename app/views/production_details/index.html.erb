@@ -1,16 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h1>Detalle Producción</h1>
 
-<h1>Production Details</h1>
-
-<table>
+<table class="datatable table-striped table-bordered table-list">
   <thead>
     <tr>
-      <th>Production</th>
-      <th>Type</th>
+      <th>Producción</th>
+      <th>Tipo</th>
       <th>Animal</th>
-      <th>Weight</th>
-      <th>Weight control</th>
-      <th>Observation</th>
+      <th>Peso</th>
+      <th>Peso control</th>
+      <th>Observación</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,9 +22,11 @@
         <td><%= production_detail.weight %></td>
         <td><%= production_detail.weight_control %></td>
         <td><%= production_detail.observation %></td>
-        <td><%= link_to 'Show', production_detail %></td>
-        <td><%= link_to 'Edit', edit_production_detail_path(production_detail) %></td>
-        <td><%= link_to 'Destroy', production_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to (fa_icon "eye"), production_detail, class: 'btn btn-sm btn-success' %>
+          <%= link_to (fa_icon "pencil-square-o"), edit_production_detail_path(production_detail), class: 'btn btn-sm btn-warning' %>
+          <%= link_to (fa_icon "trash-o"), production_detail, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>      
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,3 @@
 
 <br>
 
-<%= link_to 'New Production Detail', new_production_detail_path %>

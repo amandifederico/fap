@@ -1,7 +1,7 @@
 class CreateTroops < ActiveRecord::Migration[5.0]
   def change
     create_table :troops do |t|
-      t.integer :dte
+      t.string :dte
       t.date :arrival_date
       t.time :arrival_time
       t.references :turn, foreign_key: true
@@ -11,6 +11,7 @@ class CreateTroops < ActiveRecord::Migration[5.0]
       t.date :cargo_date
       t.date :expiration_date
       t.references :transport, foreign_key: true
+      t.references :driver, foreign_key: true
       t.integer :seal_number
       t.integer :liveweight
       t.integer :quantity_control

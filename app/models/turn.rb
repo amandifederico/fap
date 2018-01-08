@@ -5,6 +5,6 @@ class Turn < ApplicationRecord
 
 
   def to_s
-    date
+    date.to_s + " "+description.to_s
   end
 end

@@ -1,3 +1,4 @@
+<div class="col-sm-6">  
 <%= form_for(troop_detail) do |f| %>
   <% if troop_detail.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +12,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :troop_id %>
-    <%= f.text_field :troop_id %>
-  </div>
+    <div class="form-group">
+      <%= f.collection_select :troop_id, Troop.where(:close_code=>''), :id, :to_s, {prompt: "Tropa"}, {class: "select2"} %>
+    </div>
 
-  <div class="field">
-    <%= f.label :animal_id %>
-    <%= f.text_field :animal_id %>
-  </div>
+    <div class="form-group">
+      <%= f.collection_select :animal_id, Animal.all, :id, :to_s, {prompt: "Animal"}, {class: "select2"} %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.number_field :quantity, class: "form-control input-lg", placeholder: "Cantidad"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
-  </div>
+    <div class="form-group">
+      <%= f.number_field :fallen, class: "form-control input-lg", placeholder: "Caidos"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :fallen %>
-    <%= f.number_field :fallen %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :observation, class: "form-control input-lg", placeholder: "Observacion"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :observartion %>
-    <%= f.text_field :observartion %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="actions">
+        <%= f.submit class: "btn btn-outline-success btn-block"%>
+    </div>
+  <% end %>
+</div>

@@ -20,7 +20,7 @@ rails g scaffold City name:string province:string cp:integer
 rails g scaffold Driver name:string last_name:string dni:integer observation:string 
 
 ##---------------
-rails g scaffold Troop dte:integer arrival_date:date arrival_time:time turn:references provider:references city:references troop_number:integer cargo_date:date expiration_date:date transport:references seal_number:integer liveweight:integer quantity_control:integer close_code:string
+rails g scaffold Troop dte:string arrival_date:date arrival_time:time turn:references provider:references city:references troop_number:integer cargo_date:date expiration_date:date transport:references driver:references seal_number:integer liveweight:integer quantity_control:integer close_code:string
 rails g scaffold TroopDetail troop:references animal:references quantity:integer fallen:integer observartion:string
 
 ##---------------

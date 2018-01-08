@@ -78,7 +78,7 @@ class ProductionDetailsController < ApplicationController
   # GET /production_details
   # GET /production_details.json
   def index
-    @production_details = ProductDetail.all
+    @production_details = ProductionDetail.all
   end
 
   # GET /production_details/1
@@ -91,6 +91,7 @@ class ProductionDetailsController < ApplicationController
     production_id = params[:prod]
     @production = Production.where(id: production_id).first
     @production_detail = ProductionDetail.new
+    byebug
   end
 
   # GET /production_details/1/edit

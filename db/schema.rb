@@ -187,6 +187,7 @@ ActiveRecord::Schema.define(version: 20180105131348) do
     t.date     "cargo_date"
     t.date     "expiration_date"
     t.integer  "transport_id"
+    t.integer  "driver_id"
     t.integer  "seal_number"
     t.integer  "liveweight"
     t.integer  "quantity_control"
@@ -194,6 +195,7 @@ ActiveRecord::Schema.define(version: 20180105131348) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["city_id"], name: "index_troops_on_city_id"
+    t.index ["driver_id"], name: "index_troops_on_driver_id"
     t.index ["provider_id"], name: "index_troops_on_provider_id"
     t.index ["transport_id"], name: "index_troops_on_transport_id"
     t.index ["turn_id"], name: "index_troops_on_turn_id"

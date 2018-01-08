@@ -6,6 +6,7 @@
     <tr>
       <th>Nombre</th>
       <th>Descripcion</th>
+      <th>Tipo Animal</th>
     </tr>
   </thead>
 
@@ -14,6 +15,7 @@
       <tr>
         <td><%= type.name %></td>
         <td><%= type.description %></td>
+        <td><%= type.animal_type %></td>
         <td>
           <%= link_to (fa_icon "eye"), type, class: 'btn btn-sm btn-success' %>
           <%= link_to (fa_icon "pencil-square-o"), edit_type_path(type), class: 'btn btn-sm btn-warning' %>

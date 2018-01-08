@@ -35,6 +35,9 @@ user.add_role "C"
 turno = Turn.new(date:'27-03-2016')
 turno.save
 
+turno = Type.new(name:'A1', description:'a1',animal_type_id:1)
+turno.save
+
 ciudad = City.new(name:"Rawson", province:"Chubut", cp:"9103")
 ciudad.save
 
@@ -55,9 +58,9 @@ range_troop_numer.save
 
 
 animal_types_list = [
-				['Bovino'],
-				['Ovino'],
-				['Porcino']
+				'Bovino',
+				'Ovino',
+				'Porcino'
 ]
 animal_types_list.each do |description|
 	AnimalType.find_or_create_by(description:description)
@@ -89,22 +92,22 @@ animals_list.each do |description, animal_type_id, average_value, initials|
 end
 
 sub_product_types_list = [
-					['mondongo'],
-					['chinchulines'],
-					['corazón'],
-					['lengua'],
-					['sesos'],
-					['cuero']
+					'Mondongo',
+					'Chinchulines',
+					'Corazón',
+					'Lengua',
+					'Sesos',
+					'Cuero'
 ]
 sub_product_types_list.each do |description|
 	SubProductType.find_or_create_by(description:description)
 end
 
 places_list = [
-			['corral1A'],
-			['corral1B'],
-			['corral2A'],
-			['corral2B'],
+			'Corral 1A',
+			'Corral 1B',
+			'Corral 2A',
+			'Corral 2B',
 ]
 
 places_list.each do |description|

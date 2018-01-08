@@ -73,7 +73,7 @@
     #end
 #end
 
-class ProviderController < ApplicationController
+class ProvidersController < ApplicationController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
 
   # GET /providers

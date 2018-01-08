@@ -5,6 +5,7 @@ class Troop < ApplicationRecord
   belongs_to :provider
   belongs_to :city
   belongs_to :transport
+  belongs_to :driver
   
   validates :provider, presence: true
   
