@@ -32,11 +32,11 @@ user.save!
 user.add_role "C"
 
 
-turno = Turn.new(date:'27-03-2016')
+turno = Turn.new(date:'27-01-2018')
 turno.save
 
-turno = Type.new(name:'A1', description:'a1',animal_type_id:1)
-turno.save
+tipo = Type.new(name:'A1', description:'a1',animal_type_id:1)
+tipo.save
 
 ciudad = City.new(name:"Rawson", province:"Chubut", cp:"9103")
 ciudad.save
