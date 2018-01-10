@@ -38,7 +38,7 @@ rails g scaffold Production troop:references description:string
 
 ##---------------
 rails g scaffold RangeTroopNumber min:integer max:integer
-
+rails g scaffold SeqRangeTroopNumber rtn:integer
 ##---------------
 rails g scaffold SubProductType description:string
 rails g scaffold SubProduct troop:references observartion:string

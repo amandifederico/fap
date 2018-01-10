@@ -296,6 +296,10 @@ en:
         create: Crear Tipo
         submit: Guardar Tipo
         update: Actualizar Tipo
+      range_troop_number:
+        create: Crear Rango numero tropa
+        submit: Guardar Rango numero tropa
+        update: Actualizar Rango numero tropa
   number:
     currency:
       format:

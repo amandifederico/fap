@@ -1,0 +1,2 @@
+module SeqRangeTroopNumbersHelper
+end

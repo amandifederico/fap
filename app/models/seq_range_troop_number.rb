@@ -1,0 +1,2 @@
+class SeqRangeTroopNumber < ApplicationRecord
+end
