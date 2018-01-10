@@ -1,8 +1,8 @@
 <div class="grid">
-	<div class="row">
+	<div class="row justify-content-md-center">
 		<div class="tile col-md-12 col-xs-12"  >
 			<h1>Frigorifico Agrotres Patagonia S. A.</h1>
-  	</div>
+		</div>
 		<% if !user_signed_in? %>
 			<div class="tile tile-clouds col-md-3 col-xs-12"  >
 				<h1>Loguearse</h1>
@@ -24,269 +24,130 @@
 					<%= f.submit 'Entrar', class: "btn btn-primary btn-block btn-login", style: "margin-bottom:20px;" %>
 				<% end %>
 			</div>
-
 		<% else %>
 			<% if current_user.admin? %>
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="outline">
-							<center><h2>Datos</h2></center>
-					  	<div class="row">
-						    <div class="col-sm-4">
-						   		<a href="/agents" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-file-text-o"></i><br/>
-						          Agentes
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/animals" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Animales
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/types" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Tipos
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/cities" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Ciudades
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/troops" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Tropa
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/places" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Lugar
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/positions" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Posicion
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/providers" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Abastecedor
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/productions" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Producción
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/production_details" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Detalle Producción
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/animal_types" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Tipo animal
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/sub_products" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Sub productos
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/sub_product_types" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Tipo sub producto
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/transports" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Transporte
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/drivers" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Chofer
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/turns" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Turnos
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/range_troop_numbers" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Nro de tropa
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    	<a href="/production_line" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Producción E.L
-						        </a>
-							</div>
-						</div>
-					  </div>
+				<div class="">
+					<div class="thumbnail tile tile-wide tile-clouds">
+         		<a href="/agents" class="fa-links">
+            	<h3 class="tile-text">Agente</h3>
+	  	  			<i class="fa fa-3x fa-user"></i>
+						</a>
 					</div>
-					<div class="col-sm-6">
-						<div class="outline">
-							<center><h2>Operaciones</h2></center>
-					  	<div class="row">
-						    <div class="col-sm-4">
-						   		<a href="#" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-file-text-o"></i><br/>
-						          Certificación
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="#" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Análisis de Costos
-						        </a>
-							</div>
-						</div>
-					  </div>
+        </div>
+				<div class="">
+					<div class="thumbnail tile tile-wide tile-orange">
+         		<a href="#" class="fa-links">
+            	<h3 class="tile-text">Turno</h3>
+							<i class="fa fa-3x fa-calendar"></i>
+						</a>
 					</div>
-				</div>
-			<% end %>
-			<%if current_user.A? %>
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="outline">
-							<center><h2>Perfil Rol A</h2></center>
-					  	<div class="row">
-						    <div class="col-sm-4">
-						   		<a href="/agents" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-file-text-o"></i><br/>
-						          Agentes
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/turns" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Turnos
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/cities" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Ciudades
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/providers" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Productores
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/transports" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Transportes
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/troops" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Tropa
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/guides" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Guias
-						        </a>
-							</div>
-						</div>
-					  </div>
+        </div>
+        <div class="">
+					<div class="thumbnail tile tile-wide">
+         		<a href="#" class="fa-links">
+            	<h3 class="tile-text">Abastecedor</h3>
+							<i class="fa fa-3x fa-address-book"></i>
+						</a>
 					</div>
-					<div class="col-sm-6">
-						<div class="outline">
-							<center><h2>Funciones</h2></center>
-					  	<div class="row">
-						    <div class="col-sm-4">
-						   		<a href="#" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-file-text-o"></i><br/>
-						          Opcion 1
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    	<a href="#" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Opcion 2
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    	<a href="#" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Opcion 3
-						        </a>
-							</div>
-						</div>
-					  </div>
+        </div>
+
+        <div class="">
+					<div class="thumbnail tile tile-wide tile-teal">
+         		<a href="#" class="fa-links">
+            	<h3 class="tile-text">Chofer</h3>
+							<i class="fa fa-3x fa-vcard"></i>
+						</a>
 					</div>
-				</div>
-			<% end %>
-			<%if current_user.B? %>
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="outline">
-							<center><h2>Perfil Rol B</h2></center>
-					  	<div class="row">
-						    <div class="col-sm-4">
-						   		<a href="/productions" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-file-text-o"></i><br/>
-						          Producto
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/production_details" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Detalle producto
-						        </a>
-							</div>
-						</div>
-					  </div>
+        </div>
+        <div class="">
+					<div class="thumbnail tile tile-wide tile-asbestos">
+         		<a href="#" class="fa-links">
+            	<h3 class="tile-text">Transporte</h3>
+							<i class="fa fa-3x fa-truck"></i>
+						</a>
 					</div>
-				</div>
-			<% end %>
-			<%if current_user.C? %>
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="outline">
-							<center><h2>Perfil Rol C</h2></center>
-					  	<div class="row">
-						    <div class="col-sm-4">
-						   		<a href="/sub_products" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-file-text-o"></i><br/>
-						          Sub Producto
-						        </a>
-							</div>
-							<div class="col-sm-4">
-						    		<a href="/sub_product_details" class="btn btn-menu btn-primary">
-						        	<i class="fa fa-calculator"></i><br/>
-						          Detalle Sub producto
-						        </a>
-							</div>
+        </div>
+        <div class="">
+        	<a href="/troops" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-midnight-blue">
+         			<h3 class="tile-text">Tropa</h3>
+							<i class="fa fa-3x fa-file-text"></i>
 						</div>
-					  </div>
-					</div>
-				</div>
+					</a>
+        </div>
+        <div class="">
+        	<a href="/productions" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-green">
+         		
+            	<h3 class="tile-text">Producción</h3>
+							<i class="fa fa-3x fa-industry"></i>
+						
+						</div>
+					</a>
+        </div>
+        <div class="">
+        	<a href="/production_line" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-green">
+         		
+            	<h3 class="tile-text">Línea Producción</h3>
+							<i class="fa fa-3x fa-industry"></i>
+						
+						</div>
+					</a>
+        </div>
+        <div class="">
+        	<a href="/productions" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-lime">
+         		
+            	<h3 class="tile-text">Det. Producción</h3>
+							<i class="fa fa-3x fa-industry"></i>
+						
+						</div>
+					</a>
+        </div>
+        <div class="">
+        	<a href="/sub-products" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-purple">
+            	<h3 class="tile-text">Sub Producto</h3>
+							<i class="fa fa-3x fa-eercast"></i>
+						
+						</div>
+					</a>
+        </div>
+        <div class="">
+        	<a href="/cities" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-concrete">
+         		
+            	<h3 class="tile-text">Ciudad</h3>
+							<i class="fa fa-3x fa-home"></i>
+						
+						</div>
+					</a>
+        </div>
+        <div class="">
+        	<a href="/places" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-carrot">
+         		
+            	<h3 class="tile-text">Zona Planta</h3>
+							<i class="fa fa-3x fa-building"></i>
+						
+						</div>
+					</a>
+        </div>
+        <div class="">
+        	<a href="/positions" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-wet-asphalt">
+         		
+            	<h3 class="tile-text">Posición</h3>
+							<i class="fa fa-3x fa-male"></i>
+						
+						</div>
+					</a>
+        </div>
+					
+
+
+
 			<% end %>
 		<% end %>
 	</div>
