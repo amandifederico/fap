@@ -177,7 +177,7 @@ ActiveRecord::Schema.define(version: 20180105131348) do
   end
 
   create_table "troops", force: :cascade do |t|
-    t.integer  "dte"
+    t.string   "dte"
     t.date     "arrival_date"
     t.time     "arrival_time"
     t.integer  "turn_id"
