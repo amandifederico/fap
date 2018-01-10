@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Seq Range Troop Numbers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rtn</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seq_range_troop_numbers.each do |seq_range_troop_number| %>
+      <tr>
+        <td><%= seq_range_troop_number.rtn %></td>
+        <td><%= link_to 'Show', seq_range_troop_number %></td>
+        <td><%= link_to 'Edit', edit_seq_range_troop_number_path(seq_range_troop_number) %></td>
+        <td><%= link_to 'Destroy', seq_range_troop_number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Seq Range Troop Number', new_seq_range_troop_number_path %>

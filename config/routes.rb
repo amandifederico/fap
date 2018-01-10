@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :seq_range_troop_numbers
   resources :types
   resources :drivers
   resources :range_troop_numbers
