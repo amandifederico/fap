@@ -1,6 +1,6 @@
 class TurnDetailsController < ApplicationController
   before_action :set_turn_detail, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /turn_details
   # GET /turn_details.json
   def index

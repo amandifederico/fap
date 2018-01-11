@@ -1,6 +1,6 @@
 class RangeTroopNumbersController < ApplicationController
   before_action :set_range_troop_number, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /range_troop_numbers
   # GET /range_troop_numbers.json
   def index

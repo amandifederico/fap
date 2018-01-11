@@ -1,6 +1,6 @@
 class AnimalTypesController < ApplicationController
   before_action :set_animal_type, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /animal_types
   # GET /animal_types.json
   def index

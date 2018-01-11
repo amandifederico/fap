@@ -1,6 +1,6 @@
 class ProductionDetailsController < ApplicationController
   before_action :set_product_detail, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /production_details
   # GET /production_details.json
   def index

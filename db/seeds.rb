@@ -32,11 +32,11 @@ user.save!
 user.add_role "C"
 
 
-turno = Turn.new(date:'27-01-2018')
-turno.save
-
-tipo = Type.new(name:'A1', description:'a1',animal_type_id:1)
+tipo = Type.new(name:'A1', description:'a1', animal_type_id:1)
 tipo.save
+
+chofer = Driver.new(name:'Juan', last_name:'Perez', dni:12345556, observation:'pruebas')
+chofer.save
 
 ciudad = City.new(name:"Rawson", province:"Chubut", cp:"9103")
 ciudad.save
@@ -53,7 +53,7 @@ abastecedor.save
 transport = Transport.new(coupled:4433, capacity:30, plate:"jkl678", model:2003, weight:100)
 transport.save
 
-range_troop_numer = RangeTroopNumber.new(min:150, max:250)
+range_troop_numer = RangeTroopNumber.new(min:150, max:152)
 range_troop_numer.save
 
 
@@ -136,9 +136,10 @@ agents_list.each do |last_name, name, dni, position_id, up_date|
 end
 
 #---- Creando un Turno
-turno = Turn.new(date:'27-03-2016')
+turno = Turn.new(date:'27-03-2018', description:'algo 1')
 turno.save
-
+turno = Turn.new(date:'27-01-2018', description:'algo 2')
+turno.save
 #---- Creando Detalles de Turno
 turn_details_list = [
 	[1, 1, 1, 'Detalle 1'],

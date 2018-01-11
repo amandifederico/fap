@@ -1,6 +1,6 @@
 class SeqRangeTroopNumbersController < ApplicationController
   before_action :set_seq_range_troop_number, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /seq_range_troop_numbers
   # GET /seq_range_troop_numbers.json
   def index
