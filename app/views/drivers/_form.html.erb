@@ -1,35 +1,42 @@
-<div class="col-sm-6">  
-  <%= form_for(driver) do |f| %>
-    <% if driver.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
+<div class="row justify-content-md-center">
+  <div class="col-sm-6">  
+    <%= form_for(driver) do |f| %>
+      <% if driver.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
 
-        <ul>
-        <% driver.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+          <ul>
+          <% driver.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.text_field :last_name, class: "form-control input-lg", placeholder: "Apellido"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.number_field :dni, class: "form-control input-lg", placeholder: "DNI"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.text_field :observation, class: "form-control input-lg", placeholder: "Observacion"%>
+      </div>
+
+      <div class="actions row">
+          <div class="col-sm-4">
+            <%= link_to 'Volver', drivers_path, class: "btn btn-outline-primary btn-block" %>
+          </div>      
+          <div class="col-sm-8">
+            <%= f.submit class: "btn btn-outline-success btn-block"%>
+          </div>  
       </div>
     <% end %>
-
-    <div class="form-group">
-      <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
-    </div>
-
-    <div class="form-group">
-      <%= f.text_field :last_name, class: "form-control input-lg", placeholder: "Apellido"%>
-    </div>
-
-    <div class="form-group">
-      <%= f.number_field :dni, class: "form-control input-lg", placeholder: "DNI"%>
-    </div>
-
-    <div class="form-group">
-      <%= f.text_field :observation, class: "form-control input-lg", placeholder: "Observacion"%>
-    </div>
-
-    <div class="actions">
-        <%= f.submit class: "btn btn-outline-success btn-block"%>
-    </div>
-  <% end %>
+  </div>
 </div>

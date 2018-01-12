@@ -53,7 +53,6 @@ class TroopsController < ApplicationController
           @production.save!
           sequence = SeqRangeTroopNumber.new
           sequence.rtn = number
-          byebug
           sequence.save!
           format.html { redirect_to @troop, notice: 'troop was successfully created.' }
           format.json { render :show, status: :created, location: @troop }

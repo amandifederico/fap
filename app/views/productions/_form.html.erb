@@ -1,29 +1,38 @@
-<%= form_for(production) do |f| %>
-  <% if production.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(production.errors.count, "error") %> prohibited this production from being saved:</h2>
+<div class="row justify-content-md-center">
+  <div class="col-sm-6">  
+    <%= form_for(production) do |f| %>
+      <% if production.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(production.errors.count, "error") %> prohibited this production from being saved:</h2>
 
-      <ul>
-      <% production.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% production.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="form-group">
-    <%= f.collection_select :troop_id, Troop.where(:close_code=>''), :id, :to_s, {prompt: "Tropa"}, {class: "select2"} %>
-  </div>
+      <div class="form-group">
+        <%= f.collection_select :troop_id, Troop.where(:close_code=>''), :id, :to_s, {prompt: "Tropa"}, {class: "select2"} %>
+      </div>
 
-  <div class="form-group">
-    <%= f.text_field :description, class: "form-control input-lg", placeholder: "Descripcion"%>
-  </div>
+      <div class="form-group">
+        <%= f.text_field :description, class: "form-control input-lg", placeholder: "Descripcion"%>
+      </div>
 
-  <div class="actions" style="margin-top: 15px;">
-      <%= link_to 'Volver', productions_path, class: "btn btn-outline-danger btn-back"%>
-      <%= f.submit class: "btn btn-outline-success btn-create"%>
+      <div class="actions row">
+          <div class="col-sm-4">
+            <%= link_to 'Volver', productions_path, class: "btn btn-outline-primary btn-block" %>
+          </div>      
+          <div class="col-sm-8">
+            <%= f.submit class: "btn btn-outline-success btn-block"%>
+          </div>  
+      </div>
+
+    <% end %>
   </div>
-<% end %>
+</div>
 
 <script type="text/javascript">
   $('#new_productions').bind('cocoon:after-insert',
