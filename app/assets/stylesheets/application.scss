@@ -64,3 +64,8 @@ select2-container--bootstrap.select2-container--focus .select2-selection, .selec
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
     border-color: $primary-color;
 }
+
+#wrapper-container {
+    width: 100%;
+    padding: 20px;
+}

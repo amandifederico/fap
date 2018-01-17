@@ -1,6 +1,6 @@
 class TurnsController < ApplicationController
   before_action :set_turn, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /turns
   # GET /turns.json
   def index

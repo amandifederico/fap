@@ -1,9 +1,5 @@
-<h1>Editando Produccion</h1>
-
 <div class="row justify-content-md-center">
-	<div class="col-sm-8">
-		<%= render 'form', production: @production %>
-	</div>
+	<h1>Editando Produccion</h1>
+
 </div>
-<%= link_to 'Mostrar', @production %> |
-<%= link_to 'Volver', productions_path %>
+<%= render 'form', production: @production %>

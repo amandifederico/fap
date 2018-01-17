@@ -1,6 +1,6 @@
 class SubProductsController < ApplicationController
   before_action :set_sub_product, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /sub_products
   # GET /sub_products.json
   def index

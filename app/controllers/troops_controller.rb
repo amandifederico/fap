@@ -1,6 +1,6 @@
 class TroopsController < ApplicationController
   before_action :set_troop, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /troops
   # GET /troop.json
   def index

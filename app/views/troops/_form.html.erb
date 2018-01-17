@@ -198,7 +198,7 @@
             <th>Observacion</th>
         </tr> 
       </thead>
-      <tbody class="sub_product_details">
+      <tbody class="troop_details">
           <%= f.fields_for :troop_details do |troop_details| %>
             <%= render 'troop_detail_fields', :f => troop_details %>
           <% end %>
@@ -210,11 +210,15 @@
       <%= link_to_add_association 'Agregar Detalle', f, :troop_details, data: { association_insertion_node: '.troop_details', association_insertion_method: :append } %>
     </div>
 
-    <div class="col-sm-10">
-      <%= link_to 'Volver', troops_path, class: "btn btn-outline-danger"%>
-      <%if @number != -1%>
-        <%= f.submit class: "btn btn-outline-success "%>
-      <%end%>
+    <div class="actions row">
+      <div class="col-sm-4">
+        <%= link_to 'Volver', troops_path, class: "btn btn-outline-primary btn-block" %>
+      </div>
+      <div class="col-sm-4">
+        <%if @number != -1%>
+          <%= f.submit class: "btn btn-outline-success "%>
+        <%end%>
+      </div>
     </div>
   </div>
   <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
