@@ -54,7 +54,7 @@ class TroopsController < ApplicationController
           sequence = SeqRangeTroopNumber.new
           sequence.rtn = number
           sequence.save!
-          format.html { redirect_to @troop, notice: 'troop was successfully created.' }
+          format.html { redirect_to @troop, notice: 'Tropa exitosamente creada.' }
           format.json { render :show, status: :created, location: @troop }
        else
           format.html { render :new }
@@ -68,7 +68,7 @@ class TroopsController < ApplicationController
   def update
     respond_to do |format|
       if @troop.update(troop_params)
-        format.html { redirect_to @troop, notice: 'troop was successfully updated.' }
+        format.html { redirect_to @troop, notice: 'Tropa exitosamente actualizada.' }
         format.json { render :show, status: :ok, location: @troop }
       else
         format.html { render :edit }
@@ -82,7 +82,7 @@ class TroopsController < ApplicationController
   def destroy
     @troop.destroy
     respond_to do |format|
-      format.html { redirect_to troops_url, notice: 'troop was successfully destroyed.' }
+      format.html { redirect_to troops_url, notice: 'Tropa exitosamente borrada.' }
       format.json { head :no_content }
     end
   end

@@ -28,7 +28,7 @@ class TurnDetailsController < ApplicationController
 
     respond_to do |format|
       if @turn_detail.save
-        format.html { redirect_to @turn_detail, notice: 'Turn detail was successfully created.' }
+        format.html { redirect_to @turn_detail, notice: 'Detalle Turno exitosamente creado.' }
         format.json { render :show, status: :created, location: @turn_detail }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TurnDetailsController < ApplicationController
   def update
     respond_to do |format|
       if @turn_detail.update(turn_detail_params)
-        format.html { redirect_to @turn_detail, notice: 'Turn detail was successfully updated.' }
+        format.html { redirect_to @turn_detail, notice: 'Detalle Turno exitosamente actualizado.' }
         format.json { render :show, status: :ok, location: @turn_detail }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TurnDetailsController < ApplicationController
   def destroy
     @turn_detail.destroy
     respond_to do |format|
-      format.html { redirect_to turn_details_url, notice: 'Turn detail was successfully destroyed.' }
+      format.html { redirect_to turn_details_url, notice: 'Detalle Turno exitosamente borrado.' }
       format.json { head :no_content }
     end
   end

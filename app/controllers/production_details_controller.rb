@@ -35,7 +35,7 @@ class ProductionDetailsController < ApplicationController
           format.html { redirect_to "/production_details/new?prod=" + @product_detail.production_id.to_s, notice: 'Production detail was successfully created.' }
           format.json { render :show, status: :created, location: @production_detail }
         else
-          format.html { redirect_to @production_detail, notice: 'Production detail was successfully created.' }
+          format.html { redirect_to @production_detail, notice: 'Detalle de producción exitosamente creado.' }
           format.json { render :show, status: :created, location: @production_detail }
         end
       else
@@ -50,7 +50,7 @@ class ProductionDetailsController < ApplicationController
   def update
     respond_to do |format|
       if @production_detail.update(production_detail_params)
-        format.html { redirect_to @production_detail, notice: 'Production detail was successfully updated.' }
+        format.html { redirect_to @production_detail, notice: 'Detalle de producción exitosamente actualizado.' }
         format.json { render :show, status: :ok, location: @production_detail }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ class ProductionDetailsController < ApplicationController
   def destroy
     @production_detail.destroy
     respond_to do |format|
-      format.html { redirect_to production_details_url, notice: 'Production detail was successfully destroyed.' }
+      format.html { redirect_to production_details_url, notice: 'Detalle de producción exitosamente borrado.' }
       format.json { head :no_content }
     end
   end

@@ -36,7 +36,7 @@ class SubProductsController < ApplicationController
 
     respond_to do |format|
       if @sub_product.save
-        format.html { redirect_to @sub_product, notice: 'Sub product was successfully created.' }
+        format.html { redirect_to @sub_product, notice: 'Sub producto exitosamente creado.' }
         format.json { render :show, status: :created, location: @sub_product }
       else
         format.html { render :new }
@@ -50,7 +50,7 @@ class SubProductsController < ApplicationController
   def update
     respond_to do |format|
       if @sub_product.update(sub_product_params)
-        format.html { redirect_to @sub_product, notice: 'Sub product was successfully updated.' }
+        format.html { redirect_to @sub_product, notice: 'Sub producto exitosamente actualizado.' }
         format.json { render :show, status: :ok, location: @sub_product }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ class SubProductsController < ApplicationController
   def destroy
     @sub_product.destroy
     respond_to do |format|
-      format.html { redirect_to sub_products_url, notice: 'Sub product was successfully destroyed.' }
+      format.html { redirect_to sub_products_url, notice: 'Sub producto exitosamente borrado.' }
       format.json { head :no_content }
     end
   end

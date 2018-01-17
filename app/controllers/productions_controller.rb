@@ -35,7 +35,7 @@ class ProductionsController < ApplicationController
 
     respond_to do |format|
       if @production.save
-        format.html { redirect_to @product, notice: 'Production was successfully created.' }
+        format.html { redirect_to @product, notice: 'Producción exitosamente creada.' }
         format.json { render :show, status: :created, location: @production }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class ProductionsController < ApplicationController
   def update
     respond_to do |format|
       if @production.update(product_params)
-        format.html { redirect_to @production, notice: 'Production was successfully updated.' }
+        format.html { redirect_to @production, notice: 'Producción exitosamente actualizada.' }
         format.json { render :show, status: :ok, location: @production }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class ProductionsController < ApplicationController
   def destroy
     @production.destroy
     respond_to do |format|
-      format.html { redirect_to production_url, notice: 'Production was successfully destroyed.' }
+      format.html { redirect_to production_url, notice: 'Producción exitosamente borrada.' }
       format.json { head :no_content }
     end
   end

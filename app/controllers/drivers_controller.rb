@@ -28,7 +28,7 @@ class DriversController < ApplicationController
 
     respond_to do |format|
       if @driver.save
-        format.html { redirect_to @driver, notice: 'Driver was successfully created.' }
+        format.html { redirect_to @driver, notice: 'Chofer fue exitosamente creado.' }
         format.json { render :show, status: :created, location: @driver }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DriversController < ApplicationController
   def update
     respond_to do |format|
       if @driver.update(driver_params)
-        format.html { redirect_to @driver, notice: 'Driver was successfully updated.' }
+        format.html { redirect_to @driver, notice: 'Chofer fue exitosamente actualizado.' }
         format.json { render :show, status: :ok, location: @driver }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class DriversController < ApplicationController
   def destroy
     @driver.destroy
     respond_to do |format|
-      format.html { redirect_to drivers_url, notice: 'Driver was successfully destroyed.' }
+      format.html { redirect_to drivers_url, notice: 'Chofer fue exitosamente borrado.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class DriversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def driver_params
-      params.require(:driver).permit(:name, :last_name, :dni, :observation, :transport_id)
+      params.require(:driver).permit(:name, :last_name, :dni, :observation)
     end
 end

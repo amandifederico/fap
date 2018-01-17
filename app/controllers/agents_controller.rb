@@ -28,7 +28,7 @@ class AgentsController < ApplicationController
 
     respond_to do |format|
       if @agent.save
-        format.html { redirect_to @agent, notice: 'Agent was successfully created.' }
+        format.html { redirect_to @agent, notice: 'El Agente fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @agent }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AgentsController < ApplicationController
   def update
     respond_to do |format|
       if @agent.update(agent_params)
-        format.html { redirect_to @agent, notice: 'Agent was successfully updated.' }
+        format.html { redirect_to @agent, notice: 'El Agente fue actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @agent }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AgentsController < ApplicationController
   def destroy
     @agent.destroy
     respond_to do |format|
-      format.html { redirect_to agents_url, notice: 'Agent was successfully destroyed.' }
+      format.html { redirect_to agents_url, notice: 'El Agente fue exitosamente borrado.' }
       format.json { head :no_content }
     end
   end

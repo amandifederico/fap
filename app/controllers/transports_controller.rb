@@ -28,7 +28,7 @@ class TransportsController < ApplicationController
 
     respond_to do |format|
       if @transport.save
-        format.html { redirect_to @transport, notice: 'Transport was successfully created.' }
+        format.html { redirect_to @transport, notice: 'Transporte exitosamente creado.' }
         format.json { render :show, status: :created, location: @transport }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TransportsController < ApplicationController
   def update
     respond_to do |format|
       if @transport.update(transport_params)
-        format.html { redirect_to @transport, notice: 'Transport was successfully updated.' }
+        format.html { redirect_to @transport, notice: 'Transporte exitosamente actualizado.' }
         format.json { render :show, status: :ok, location: @transport }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TransportsController < ApplicationController
   def destroy
     @transport.destroy
     respond_to do |format|
-      format.html { redirect_to transports_url, notice: 'Transport was successfully destroyed.' }
+      format.html { redirect_to transports_url, notice: 'Transporte exitosamente borrado.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class TransportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transport_params
-      params.require(:transport).permit(:coupled, :capacity, :plate, :model, :driver, :weight)
+      params.require(:transport).permit(:coupled, :capacity, :plate, :model, :driver, :weight, :brand)
     end
 end

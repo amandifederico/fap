@@ -28,7 +28,7 @@ class RangeTroopNumbersController < ApplicationController
 
     respond_to do |format|
       if @range_troop_number.save
-        format.html { redirect_to @range_troop_number, notice: 'Range troop number was successfully created.' }
+        format.html { redirect_to @range_troop_number, notice: 'Rango numero tropa exitosamente creado.' }
         format.json { render :show, status: :created, location: @range_troop_number }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RangeTroopNumbersController < ApplicationController
   def update
     respond_to do |format|
       if @range_troop_number.update(range_troop_number_params)
-        format.html { redirect_to @range_troop_number, notice: 'Range troop number was successfully updated.' }
+        format.html { redirect_to @range_troop_number, notice: 'Rango numero tropa exitosamente actualizado.' }
         format.json { render :show, status: :ok, location: @range_troop_number }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RangeTroopNumbersController < ApplicationController
   def destroy
     @range_troop_number.destroy
     respond_to do |format|
-      format.html { redirect_to range_troop_numbers_url, notice: 'Range troop number was successfully destroyed.' }
+      format.html { redirect_to range_troop_numbers_url, notice: 'Rango numero tropa exitosamente borrado.' }
       format.json { head :no_content }
     end
   end

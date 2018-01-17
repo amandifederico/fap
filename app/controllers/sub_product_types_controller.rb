@@ -28,7 +28,7 @@ class SubProductTypesController < ApplicationController
 
     respond_to do |format|
       if @sub_product_type.save
-        format.html { redirect_to @sub_product_type, notice: 'Sub product type was successfully created.' }
+        format.html { redirect_to @sub_product_type, notice: 'Tipo Sub producto exitosamente creado.' }
         format.json { render :show, status: :created, location: @sub_product_type }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SubProductTypesController < ApplicationController
   def update
     respond_to do |format|
       if @sub_product_type.update(sub_product_type_params)
-        format.html { redirect_to @sub_product_type, notice: 'Sub product type was successfully updated.' }
+        format.html { redirect_to @sub_product_type, notice: 'Tipo Sub producto exitosamente actualizado.' }
         format.json { render :show, status: :ok, location: @sub_product_type }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class SubProductTypesController < ApplicationController
   def destroy
     @sub_product_type.destroy
     respond_to do |format|
-      format.html { redirect_to sub_product_types_url, notice: 'Sub product type was successfully destroyed.' }
+      format.html { redirect_to sub_product_types_url, notice: 'Tipo Sub producto exitosamente borrado.' }
       format.json { head :no_content }
     end
   end

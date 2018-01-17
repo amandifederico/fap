@@ -28,7 +28,7 @@ class TroopDetailsController < ApplicationController
 
     respond_to do |format|
       if @troop_detail.save
-        format.html { redirect_to @troop_detail, notice: 'troop detail was successfully created.' }
+        format.html { redirect_to @troop_detail, notice: 'Detalle tropa exitosamente creado.' }
         format.json { render :show, status: :created, location: @troop_detail }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TroopDetailsController < ApplicationController
   def update
     respond_to do |format|
       if @troop_detail.update(troop_detail_params)
-        format.html { redirect_to @troop_detail, notice: 'troop detail was successfully updated.' }
+        format.html { redirect_to @troop_detail, notice: 'Detalle tropa exitosamente actualizado.' }
         format.json { render :show, status: :ok, location: @troop_detail }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TroopDetailsController < ApplicationController
   def destroy
     @troop_detail.destroy
     respond_to do |format|
-      format.html { redirect_to troop_details_url, notice: 'troop detail was successfully destroyed.' }
+      format.html { redirect_to troop_details_url, notice: 'Detalle tropa exitosamente borrado.' }
       format.json { head :no_content }
     end
   end
