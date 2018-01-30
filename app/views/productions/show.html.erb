@@ -15,8 +15,10 @@
 	      <th>Producción</th>
 	      <th>Tipo</th>
 	      <th>Animal</th>
-	      <th>Peso</th>
-	      <% if current_user.A?  or current_user.admin?%>
+	      <% if current_user.PlantaA?  or current_user.admin?%>
+	      		<th>Peso</th>
+	      <%end%>
+	      <% if current_user.PlantaB?  or current_user.admin?%>
 	      		<th>Peso control</th>
 	      <%end%>
 	      <th>Observacion</th>
@@ -28,8 +30,10 @@
 	  		<td><%= details.production %></td>
 	  		<td><%= details.type %></td>
 	  		<td><%= details.animal %></td>
-	  		<td><%= details.weight %></td>
-	  		<% if current_user.A?  or current_user.admin?%>
+	  		<% if current_user.PlantaA?  or current_user.admin?%>
+	  			<td><%= details.weight %></td>
+	  		<%end%>
+	  		<% if current_user.PlantaB?  or current_user.admin?%>
 	  			<td><%= details.weight_control %></td>
 	  		<%end%>
 	  		<td><%= details.observation %></td>
@@ -41,7 +45,7 @@
             <th colspan="5" style="text-align:right">Total :</th>
             <th><%= @production.production_details.sum('weight') %></th>
         </tr>
-        <% if current_user.A?  or current_user.admin? %>
+        <% if current_user.PlantaB?  or current_user.admin? %>
 	        <tr>
 	            <th colspan="5" style="text-align:right">Total Control:</th>
 	            <th><%= @production.production_details.sum('weight_control') %></th>

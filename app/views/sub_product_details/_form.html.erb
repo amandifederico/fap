@@ -20,10 +20,18 @@
       <%= f.collection_select :sub_product_type_id, SubProductType.all, :id, :to_s, {prompt: "Tipo"}, {class: "select2"} %>
     </div>
 
-    <div class="form-group">
-      <%= f.number_field :weight_control, class: "form-control input-lg", placeholder: "Peso control"%>
-    </div>
+    <% if current_user.SubA?  or current_user.admin?%>
+      <div class="form-group">
+        <%= f.number_field :weight, class: "form-control input-lg", placeholder: "Peso"%>
+      </div>
+    <% end %>
 
+    <% if current_user.SubB?  or current_user.admin?%>
+      <div class="form-group">
+        <%= f.number_field :weight_control, class: "form-control input-lg", placeholder: "Peso control"%>
+      </div>
+    <% end %>
+    
     <div class="form-group">
       <%= f.text_field :observation, class: "form-control input-lg", placeholder: "Observacion"%>
     </div>

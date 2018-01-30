@@ -6,8 +6,12 @@
       <th>Producción</th>
       <th>Tipo</th>
       <th>Animal</th>
-      <th>Peso</th>
-      <th>Peso control</th>
+      <% if current_user.PlantaA?  or current_user.admin?%>
+        <th>Peso</th>
+      <% end %>
+      <% if current_user.PlantaA?  or current_user.admin?%>
+        <th>Peso control</th>
+      <% end %>
       <th>Observación</th>
       <th colspan="3"></th>
     </tr>
@@ -19,13 +23,19 @@
         <td><%= production_detail.production %></td>
         <td><%= production_detail.type %></td>
         <td><%= production_detail.animal %></td>
-        <td><%= production_detail.weight %></td>
-        <td><%= production_detail.weight_control %></td>
+        <% if current_user.PlantaA?  or current_user.admin?%>
+          <td><%= production_detail.weight %></td>
+        <% end %>  
+        <% if current_user.PlantaB?  or current_user.admin?%>
+          <td><%= production_detail.weight_control %></td>
+        <% end %>
         <td><%= production_detail.observation %></td>
         <td>
           <%= link_to (fa_icon "eye"), production_detail, class: 'btn btn-sm btn-success' %>
           <%= link_to (fa_icon "pencil-square-o"), edit_production_detail_path(production_detail), class: 'btn btn-sm btn-warning' %>
-          <%= link_to (fa_icon "trash-o"), production_detail, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>      
+          <% if current_user.admin?%>
+            <%= link_to (fa_icon "trash-o"), production_detail, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>      
+          <% end %>
         </td>
       </tr>
     <% end %>

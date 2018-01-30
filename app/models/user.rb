@@ -19,7 +19,32 @@ class User < ApplicationRecord
 		has_role?(:C)
 	end
 
+	def Garita?
+		has_role?(:Garita)
+	end
 
+	def Corral?
+		has_role?(:Corral)
+	end
 
+	def Oficina?
+		has_role?(:Oficina)
+	end
+
+	def PlantaA?
+		has_role?(:PlantaA)
+	end
+
+	def PlantaB?
+		has_role?(:PlantaB)
+	end
+
+	def SubA?
+		has_role?(:SubA)
+	end
+
+	def SubB?
+		has_role?(:SubB)
+	end
 
 end

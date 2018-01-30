@@ -17,18 +17,6 @@ class Ability
         can :edit, Agent
         can :update, Agent
 
-        #can :create, Animal
-        #can :index, Animal
-        #can :show, Animal
-        #can :edit, Animal
-        #can :update, Animal
-
-        #can :create, Race
-        #can :index, Race
-        #can :show, Race
-        #can :edit, Race
-        #can :update, Race
-
         can :create, Turn
         can :index, Turn
         can :show, Turn
@@ -72,12 +60,20 @@ class Ability
         can :update, Provider
     end
 
-    if user.B?
-        can :create, Production
+    if user.PlantaA?
         can :index, Production
         can :show, Production
-        can :edit, Production
-        can :update, Production
+
+        can :create, ProductionDetail
+        can :index, ProductionDetail
+        can :show, ProductionDetail
+        can :edit, ProductionDetail
+        can :update, ProductionDetail
+    end
+
+    if user.PlantaB?
+        can :index, Production
+        can :show, Production
 
         can :create, ProductionDetail
         can :index, ProductionDetail
@@ -86,7 +82,7 @@ class Ability
         can :update, ProductionDetail
     end
     
-    if user.C?
+    if user.SubA?
         can :create, SubProduct
         can :index, SubProduct
         can :show, SubProduct
@@ -103,26 +99,41 @@ class Ability
         can :show, SubProductType
         can :edit, SubProductType
         can :update, SubProductType
-    end   
+    end
 
+    if user.SubB?
+        can :index, SubProduct
+        can :show, SubProduct
 
-    #
-    # The first argument to `can` is the action you are giving the user
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on.
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, :published => true
-    #
-    # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+        can :index, SubProductDetail
+        can :show, SubProductDetail
+        can :edit, SubProductDetail
+        can :update, SubProductDetail
+    end
+
+    if user.Garita?
+        can :create, Troop
+        can :index, Troop
+        can :show, Troop
+        can :edit, Troop
+        can :update, Troop
+    end
+
+    if user.Corral?
+        can :create, Troop
+        can :index, Troop
+        can :show, Troop
+        can :edit, Troop
+        can :update, Troop
+    end
+
+    if user.Oficina?
+        can :create, Troop
+        can :index, Troop
+        can :show, Troop
+        can :edit, Troop
+        can :update, Troop
+    end
+
   end
 end
