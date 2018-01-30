@@ -91,7 +91,7 @@
 					</a>
 		        </div>
 		        <div class="">
-		        	<a href="/productions" class="fa-links">
+		        	<a href="/production_details" class="fa-links">
 						<div class="thumbnail tile tile-wide tile-lime">
 		                	<h3 class="tile-text">Det. Producción</h3>
 							<i class="fa fa-3x fa-industry"></i>
@@ -127,6 +127,33 @@
 						<div class="thumbnail tile tile-wide tile-wet-asphalt">
 		                   	<h3 class="tile-text">Posición</h3>
 							<i class="fa fa-3x fa-male"></i>
+						</div>
+					</a>
+		        </div>
+
+			<% elsif current_user.Garita? or current_user.Corral?  %>
+			        <div class="">
+			        	<a href="/troops" class="fa-links">
+							<div class="thumbnail tile tile-wide tile-midnight-blue">
+			         			<h3 class="tile-text">Tropa</h3>
+								<i class="fa fa-3x fa-file-text"></i>
+							</div>
+						</a>
+			        </div>
+			<% elsif current_user.PlantaA? or current_user.PlantaB?  %>
+		        <div class="">
+		        	<a href="/productions" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-green">
+		                	<h3 class="tile-text">Producción</h3>
+							<i class="fa fa-3x fa-industry"></i>
+						</div>
+					</a>
+		        </div>
+		        <div class="">
+		        	<a href="/production_line" class="fa-links">
+						<div class="thumbnail tile tile-wide tile-green">
+		                	<h3 class="tile-text">Línea Producción</h3>
+							<i class="fa fa-3x fa-industry"></i>
 						</div>
 					</a>
 		        </div>

@@ -25,8 +25,12 @@
         <thead>
           <tr>
               <th>Tipo</th>
-              <th>Peso</th>
-              <th>Peso control</th>
+              <% if current_user.SubA?  or current_user.admin?%>
+                <th>Peso</th>
+              <% end %>
+              <% if current_user.SubB?  or current_user.admin?%>
+                <th>Peso control</th>
+              <% end %>
               <th>Calibre</th>
               <th>Observacion</th>
           </tr> 

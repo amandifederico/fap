@@ -7,8 +7,12 @@
     <tr>
       <th>Sub producto</th>
       <th>Tipo sub producto</th>
-      <th>Peso</th>
-      <th>Peso de control</th>
+      <% if current_user.SubA?  or current_user.admin?%>
+        <th>Peso</th>
+      <% end %>
+      <% if current_user.SubB?  or current_user.admin?%>
+        <th>Peso de control</th>
+      <% end %>
       <th>Observacion</th>
     </tr>
   </thead>
@@ -18,8 +22,12 @@
       <tr>
         <td><%= sub_product_detail.sub_product %></td>
         <td><%= sub_product_detail.sub_product_type %></td>
-        <td><%= sub_product_detail.weight %></td>
-        <td><%= sub_product_detail.weight_control %></td>
+        <% if current_user.SubA?  or current_user.admin?%>
+          <td><%= sub_product_detail.weight %></td>
+        <% end %>
+        <% if current_user.SubB?  or current_user.admin?%>
+          <td><%= sub_product_detail.weight_control %></td>
+        <% end %>
         <td><%= sub_product_detail.observation %></td>
         <td>
           <%= link_to (fa_icon "eye"), sub_product_detail, class: 'btn btn-sm btn-success' %>

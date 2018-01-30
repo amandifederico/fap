@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'Nuevo Sub Producto', new_sub_product_path %>
+<% if current_user.SubA?  or current_user.admin?%>
+  <%= link_to 'Nuevo Sub Producto', new_sub_product_path %>
+<% end %>

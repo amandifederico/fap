@@ -13,15 +13,19 @@
   <%= @production_detail.animal %>
 </p>
 
-<p>
-  <strong>Peso:</strong>
-  <%= @production_detail.weight %>
-</p>
+<% if current_user.PlantaA?  or current_user.admin?%>
+  <p>
+    <strong>Peso:</strong>
+    <%= @production_detail.weight %>
+  </p>
+<% end %>
 
-<p>
-  <strong>Peso control:</strong>
-  <%= @production_detail.weight_control %>
-</p>
+<% if current_user.PlantaB?  or current_user.admin?%>
+  <p>
+    <strong>Peso control:</strong>
+    <%= @production_detail.weight_control %>
+  </p>
+<% end %>
 
 <p>
   <strong>Observación:</strong>

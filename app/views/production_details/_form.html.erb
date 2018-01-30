@@ -45,21 +45,24 @@
       </div>
 
       
-      <label class="col-sm-2 control-label">
-        Peso:
-      </label>
-      <div class="col-sm-10 controls">
-        <%= f.number_field :weight, class: "form-control input-lg", placeholder: "Peso"%>
-      </div>
+      <% if current_user.PlantaA?  or current_user.admin?%>
+        <label class="col-sm-2 control-label">
+          Peso:
+        </label>
+        <div class="col-sm-10 controls">
+          <%= f.number_field :weight, class: "form-control input-lg", placeholder: "Peso"%>
+        </div>
+      <% end %>      
 
-
-      <label class="col-sm-2 control-label">
-        Peso Control:
-      </label>
-      <div class="col-sm-10 controls">
-        <%= f.number_field :weight_control, class: "form-control input-lg", placeholder: "Peso control"%>
-      </div>
-
+      <% if current_user.PlantaB?  or current_user.admin?%>
+        <label class="col-sm-2 control-label">
+          Peso Control:
+        </label>
+        <div class="col-sm-10 controls">
+          <%= f.number_field :weight_control, class: "form-control input-lg", placeholder: "Peso control"%>
+        </div>
+      <% end %>
+      
       <label class="col-sm-2 control-label">
         Observación:
       </label>

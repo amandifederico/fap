@@ -10,15 +10,21 @@
   <%= @sub_product_detail.sub_product_type %>
 </p>
 
-<p>
-  <strong>Peso:</strong>
-  <%= @sub_product_detail.weight %>
-</p>
 
-<p>
-  <strong>Peso control:</strong>
-  <%= @sub_product_detail.weight_control %>
-</p>
+<% if current_user.SubA?  or current_user.admin?%>
+  <p>
+    <strong>Peso:</strong>
+    <%= @sub_product_detail.weight %>
+  </p>
+<% end %>
+
+<% if current_user.SubB?  or current_user.admin?%>
+  <p>
+    <strong>Peso control:</strong>
+    <%= @sub_product_detail.weight_control %>
+  </p>
+<% end %>
+
 
 <p>
   <strong>Observacion:</strong>
