@@ -32,14 +32,16 @@
         <%= f.text_field :address, class: "form-control input-lg", placeholder: "Domicilio"%>
       </div>
 
-      <div class="form-group row">
-        <div class="input-group date datepicker col-sm-6">
+      <div class="form-group">
+        <div class="input-group date datepicker">
           <%= f.text_field :up_date, placeholder: "Fecha de alta", class: "form-control" %>
             <span class="input-group-addon">
               <%= fa_icon "list"%>
             </span>
         </div>
-        <div class="input-group date datepicker col-sm-6">
+      </div>
+      <div class="form-group">
+        <div class="input-group date datepicker">
         <%= f.text_field :down_date, placeholder: "Baja", class: "form-control" %>
           <span class="input-group-addon">
             <%= fa_icon "list"%>
@@ -55,25 +57,16 @@
         <%= f.text_field :observation, class: "form-control input-lg", placeholder: "Observacion"%>
       </div>
 
-      <div class="form-group row ">
-        <div class="col-sm-6">
-          <%= f.label "Activo?" %>
-        </div>
-        <div class="col-sm-6">
-          <%= f.check_box :active, class: "form-control input-lg", placeholder: "Activo?"%>
-        </div>
+      <div class="form-group">
+        <%= f.label "Activo?" %>
+        <%= f.check_box :active, class: "form-control input-lg", placeholder: "Activo?"%>
       </div>    
       
       <div class="actions row">
-          <div class="col-sm-4">
-            <%= link_to 'Volver', providers_path, class: "btn btn-outline-primary btn-block" %>
-          </div>      
-          <div class="col-sm-8">
-            <%= f.submit class: "btn btn-outline-success btn-block"%>
-          </div>  
+        <%= link_to 'Volver', providers_path, class: "btn btn-danger btn-form" %>
+        <%= f.submit class: "btn btn-success btn-form"%>
       </div>
-
-    <% end %>
+  <% end %>
   </div>
 </div>
 

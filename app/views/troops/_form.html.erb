@@ -13,19 +13,19 @@
   <div class="row">
 
     <!-- DTE -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       D.T.E.:
     </label>
-    <div class="col-sm-10 controls" style="margin-bottom: 10px;">
+    <div class="col-sm-8 controls" style="margin-bottom: 10px;">
       <%= f.text_field :dte, class: "form-control", placeholder: "012345678-1"%>
       <span class="help-block">Obligatorio. </span>
     </div>
 
     <!-- Fecha de llegada -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Fecha de Llegada:
     </label>
-    <div class="col-sm-10 controls">
+    <div class="col-sm-8 controls">
       <div class="input-group date datepicker">
         <%= f.text_field :arrival_date, placeholder: "Fecha Llegada", class: "form-control" %>
           <span class="input-group-addon ">
@@ -36,10 +36,10 @@
     </div>
 
     <!-- Hora de llegada -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Hora de Llegada:
     </label>
-    <div class="col-sm-10 controls">
+    <div class="col-sm-8 controls">
       <div class="input-group time timepicker">
         <%= f.text_field :arrival_time, placeholder: "Hora Llegada", class: "form-control" %>
           <span class="input-group-addon ">
@@ -50,26 +50,26 @@
     </div>
 
     <!-- Nº de Tropa -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Nº de Tropa:
     </label>
     <% if @number == -1 %>
-      <div class="col-sm-10 controls">
-        <%= f.text_field :troop_number, class: "form-control input-lg", placeholder: "Reinicie rango"%>
+      <div class="col-sm-8 controls">
+        <%= f.text_field :troop_number, class: "form-control", placeholder: "Reinicie rango"%>
         <span class="help-block">Obligatorio. </span>
       </div>
     <%else%>
-      <div class="col-sm-10 controls">
-        <%= f.text_field :troop_number, :value => @number, class: "form-control input-lg", placeholder: "123456"%>
+      <div class="col-sm-8 controls">
+        <%= f.text_field :troop_number, :value => @number, class: "form-control", placeholder: "123456"%>
         <span class="help-block">Obligatorio. </span>
       </div>
     <%end%>
 
     <!-- Fecha de Cargo -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Fecha de Cargo:
     </label>
-    <div class="col-sm-10 controls">
+    <div class="col-sm-8 controls">
       <div class="input-group date datepicker">
         <%= f.text_field :cargo_date, placeholder: "Fecha cargo", class: "form-control" %>
           <span class="input-group-addon ">
@@ -80,10 +80,10 @@
     </div>
 
     <!-- Fecha de Expiracion -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Fecha de Vencimiento:
     </label>
-    <div class="col-sm-10 controls">
+    <div class="col-sm-8 controls">
       <div class="input-group date datepicker">
         <%= f.text_field :expiration_date, placeholder: "Fecha Vencimiento", class: "form-control" %>
           <span class="input-group-addon ">
@@ -94,22 +94,22 @@
     </div>
 
     <!-- Turno -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Turno:
     </label>
-    <div class="col-sm-10 controls">
+    <div class="col-sm-8 controls">
       <%= f.collection_select :turn_id, Turn.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
       
-      <%= link_to 'Create category', new_turn_path, data: { modal: true } %>
+      <%= link_to 'Agregar', new_turn_path, data: { modal: true }, class: "btn btn-info btn-form", style:"margin-left:10px;" %>
       <a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a>
       <span class="help-block">Obligatorio. </span>
     </div>
 
     <!-- Abastecedor -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Abastecedor:
     </label>
-    <div class="col-sm-10 controls">
+    <div class="col-sm-8 controls">
       <%= f.collection_select :provider_id, Provider.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
       <a href="#" class="btn btn-info btn-form" id="create_turn" style="margin-left: 10px;">Agregar</a>
       <a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a>
@@ -117,10 +117,10 @@
     </div>
 
     <!-- Ciudad -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Ciudad:
     </label>
-    <div class="col-sm-10 controls">
+    <div class="col-sm-8 controls">
       <%= f.collection_select :city_id, City.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
       <a href="#" class="btn btn-info btn-form" id="create_turn" style="margin-left: 10px;">Agregar</a>
       <a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a>
@@ -128,10 +128,10 @@
     </div>
 
     <!-- Transporte -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Transporte:
     </label>
-    <div class="col-sm-10 controls">
+    <div class="col-sm-8 controls">
       <%= f.collection_select :transport_id, Transport.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
       <a href="#" class="btn btn-info btn-form" id="create_turn" style="margin-left: 10px;">Agregar</a>
       <a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a>
@@ -139,10 +139,10 @@
     </div>
 
     <!-- Chofer -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Chofer:
     </label>
-    <div class="col-sm-10 controls">
+    <div class="col-sm-8 controls">
       <%= f.collection_select :driver_id, Driver.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
       <a href="#" class="btn btn-info btn-form" id="create_turn" style="margin-left: 10px;">Agregar</a>
       <a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a>
@@ -150,41 +150,41 @@
     </div>
 
     <!-- Nº de Precinto -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Número de Precinto:
     </label>
-    <div class="col-sm-10 controls">
-      <%= f.text_field :seal_number, class: "form-control input-lg", placeholder: "000"%>
+    <div class="col-sm-8 controls">
+      <%= f.text_field :seal_number, class: "form-control", placeholder: "000"%>
       <span class="help-block">Obligatorio. </span>
     </div>
 
     <!-- Peso Vivo -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Peso Vivo:
     </label>
-    <div class="col-sm-10 controls">
-      <%= f.text_field :liveweight, class: "form-control input-lg", placeholder: "000"%>
+    <div class="col-sm-8 controls">
+      <%= f.text_field :liveweight, class: "form-control", placeholder: "000"%>
       <span class="help-block">Obligatorio. </span>
     </div>
 
     <!-- Control de Cantidad -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Control de Cantidad:
     </label>
-    <div class="col-sm-10 controls">
-      <%= f.text_field :quantity_control, class: "form-control input-lg", placeholder: "000"%>
+    <div class="col-sm-8 controls">
+      <%= f.text_field :quantity_control, class: "form-control", placeholder: "000"%>
       <span class="help-block">Obligatorio. </span>
     </div>
 
     <!-- Código de Cierre -->
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-4 control-label">
       Código de Cierre:
     </label>
-    <div class="col-sm-10 controls">
-      <%= f.text_field :close_code, class: "form-control input-lg", placeholder: "000"%>
+    <div class="col-sm-8 controls">
+      <%= f.text_field :close_code, class: "form-control ", placeholder: "000"%>
       <span class="help-block">Obligatorio. </span>
     </div>
-    <label class="col-sm-2 control-label">
+    <label class="col-sm-8 control-label">
       
     </label>
     <%= f.hidden_field :number, value: @number %>
@@ -221,8 +221,9 @@
       </div>
     </div>
   </div>
-  <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
   <br>
+
+
   
 <% end %>
   

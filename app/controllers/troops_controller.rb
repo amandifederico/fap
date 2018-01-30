@@ -31,6 +31,14 @@ class TroopsController < ApplicationController
     end
   end
 
+  def new_troop_ajax
+    byebug
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   # GET /troops/1/edit
   def edit
   end
