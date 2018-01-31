@@ -11,7 +11,7 @@
     </div>
   <% end %>
   <div class="row">
-
+  <% if current_user.Garita?  or current_user.Oficina? or current_user.admin?%>
     <!-- DTE -->
     <label class="col-sm-4 control-label">
       D.T.E.:
@@ -157,7 +157,9 @@
       <%= f.text_field :seal_number, class: "form-control", placeholder: "000"%>
       <span class="help-block">Obligatorio. </span>
     </div>
+  <% end %>
 
+  <% if current_user.Corral?  or current_user.Oficina? or current_user.admin?%>
     <!-- Peso Vivo -->
     <label class="col-sm-4 control-label">
       Peso Vivo:
@@ -176,6 +178,7 @@
       <span class="help-block">Obligatorio. </span>
     </div>
 
+  <%end%>
     <!-- Código de Cierre -->
     <label class="col-sm-4 control-label">
       Código de Cierre:

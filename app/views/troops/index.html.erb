@@ -23,7 +23,9 @@
         <td>
           <%= link_to (fa_icon "eye"), troop, class: 'btn btn-sm btn-success' %>
           <%= link_to (fa_icon "pencil-square-o"), edit_troop_path(troop), class: 'btn btn-sm btn-warning' %>
-          <%= link_to (fa_icon "trash-o"), troop, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
+          <% if current_user.Garita?  or current_user.Oficina? or current_user.admin?%>
+            <%= link_to (fa_icon "trash-o"), troop, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
+          <% end %>
         </td>
       </tr>
     <% end %>
@@ -31,5 +33,6 @@
 </table>
 
 <br>
-
-<%= link_to 'Nueva tropa', new_troop_path %>
+<% if current_user.Garita?  or current_user.Oficina? or current_user.admin?%>
+  <%= link_to 'Nueva tropa', new_troop_path %>
+<% end %>
