@@ -1,21 +1,32 @@
-
-<p>
-  <strong>Apellido:</strong>
+<label class="col-sm-3 control-label">
+	Apellido:
+</label>
+<div class="col-sm-9 show-field">
   <%= @agent.last_name%>
-</p>
-
-<p>
-  <strong>Nombre:</strong>
+</div>
+<label class="col-sm-3 control-label">
+	Nombre:
+</label>
+<div class="col-sm-9 show-field">
   <%= @agent.name %>
-</p>
-<p>
-  <strong>DNI:</strong>
+</div>
+<label class="col-sm-3 control-label">
+	DNI:
+</label>
+<div class="col-sm-9 show-field">
   <%= @agent.dni %>
-</p>
-<p>
-  <strong>Posicion:</strong>
+</div>
+<label class="col-sm-3 control-label">
+	Position:
+</label>
+<div class="col-sm-9 show-field">
   <%= @agent.position %>
-</p>
+</div>
 
-<%= link_to 'Editar', edit_agent_path(@agent) %> |
-<%= link_to 'Volver', agents_path %>
+
+<div class="col-sm-2">
+	<%= link_to 'Editar', edit_agent_path(@agent), class: "btn btn-primary btn-block" %>
+</div>      
+<div class="col-sm-2">
+	<%= link_to 'Volver', agents_path, class: "btn btn-success btn-block"%>
+</div> 

@@ -37,7 +37,14 @@
     <div id="wrapper">
       <%= render "layouts/navbar_sidebar"%>
       <div id="wrapper-container">
-        <%= yield %>
+        <div class="grid">
+          <div class="row justify-content-md-center">
+            <div class="tile col-md-12 col-xs-12"  >
+              <h1>Frigorifico Agrotres Patagonia S. A.</h1>
+            </div>
+            <%= yield %>
+          </div>
+        </div>
       </div>
     </div>
     

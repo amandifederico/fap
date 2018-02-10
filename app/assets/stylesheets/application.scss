@@ -17,13 +17,19 @@ $primary-color-claro : #6C8CD5;
 @import "metro-bootstrap";
 
 
+
 .form-control {
+  height: 46px;
   font-size: 18px;
 }
 
+.show-field {
+  font-size: 18px;
+  padding: 10px;
 
+}
 
-.form-group .select2-container--bootstrap{
+.controls .select2-container--bootstrap{
   width: 100%!important;
 }
 
@@ -33,7 +39,8 @@ $primary-color-claro : #6C8CD5;
 }
 
 .select2-container--bootstrap .select2-selection--single {
-  height: 38px;
+  height: 46px;
+  font-size: 18px;
 }
 
 .select2-container--bootstrap .select2-selection{
@@ -53,6 +60,11 @@ $primary-color-claro : #6C8CD5;
 .select2-container--bootstrap.select2-container--focus .select2-selection, .select2-container--bootstrap.select2-container--open .select2-selection{border-color: $primary-color !important;}
 .select2-results { color: $primary-color; }
 .select2-results__option--highlighted{ background-color: $primary-color !important; color:white !important}
+
+
+.btn-submit{
+  margin-top: 15px !important;
+}
 
 .btn-form-submit{
   position: absolute;
@@ -83,13 +95,24 @@ select2-container--bootstrap.select2-container--focus .select2-selection, .selec
 }
 
 
+.controls{
+  margin-bottom: 10px;
+} 
+
+
 .control-label {
-  padding: 6px 0px;
+  padding: 12px 0px;
   text-align: right;
+  font-size: 16px;
 }
 
 
 .btn-form {
   min-width: 180px;
   margin-right: 15px;
+}
+
+td .fa {
+  margin: 5px 10px;
+  font-size: 20px;
 }

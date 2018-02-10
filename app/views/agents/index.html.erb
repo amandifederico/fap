@@ -1,33 +1,36 @@
-<h1>Agentes</h1>
+<div class="col-xs-10">
+  <h1>Agentes</h1>
+</div>
 
-<table class="datatable table-striped table-bordered table-list">
-  <thead>
-    <tr>
-      <th>Apellido</th>
-      <th>Nombre</th>
-      <th>Dni</th>
-      <th>Posición</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @agents.each do |agent| %>
+<div class="col-xs-10  col-xs-12">
+  <table class="datatable table-striped table-bordered table-list">
+    <thead>
       <tr>
-        <td><%= agent.last_name %></td>
-        <td><%= agent.name %></td>
-        <td><%= agent.dni %></td>
-        <td><%= agent.position %></td>
-        <td>
-          <%= link_to (fa_icon "eye"), agent, class: 'btn btn-sm btn-success' %>
-          <%= link_to (fa_icon "pencil-square-o"), edit_agent_path(agent), class: 'btn btn-sm btn-warning' %>
-          <%= link_to (fa_icon "trash-o"), agent, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
-        </td>
+        <th>Apellido</th>
+        <th>Nombre</th>
+        <th>Dni</th>
+        <th>Posición</th>
+        <th>Opciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'Crear Agente', new_agent_path, {:class=>"btn btn-primary"} %>
+    <tbody>
+      <% @agents.each do |agent| %>
+        <tr>
+          <td><%= agent.last_name %></td>
+          <td><%= agent.name %></td>
+          <td><%= agent.dni %></td>
+          <td><%= agent.position %></td>
+          <td>
+            <%= link_to (fa_icon "eye"), agent, class: '' %>
+            <%= link_to (fa_icon "pencil-square-o"), edit_agent_path(agent), class: '' %>
+            <%= link_to (fa_icon "trash-o"), agent, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="col-xs-10 col-xs-12">
+  <%= link_to 'Crear Agente', new_agent_path, {:class=>"btn btn-primary btn-submit"} %>
+</div>

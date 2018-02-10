@@ -1,163 +1,165 @@
-<div class="grid">
-	<div class="row justify-content-md-center">
-		<div class="tile col-md-12 col-xs-12"  >
-			<h1>Frigorifico Agrotres Patagonia S. A.</h1>
-		</div>
-		<% if !user_signed_in? %>
-			<div class="tile tile-clouds col-md-3 col-xs-12"  >
-				<h1>Inicie sesión</h1>
-				<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form" }) do |f| %>
-					<center><img id="profile-img" style="margin-bottom: 20px;" class="login-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" /></center>
-					<div class="form-group">
-	      		<%= f.text_field :email, :placeholder => "Email", class: "form-control" %> 
-	    		</div>
+<% if !user_signed_in? %>
+	<div class="tile tile-clouds col-md-4 col-xs-12"  >
+		<h1>Inicie sesión</h1>
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form" }) do |f| %>
+			<center><img id="profile-img" style="margin-bottom: 20px;" class="login-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" /></center>
+			<div class="form-group">
+    		<%= f.text_field :email, :placeholder => "Email", class: "form-control" %> 
+  		</div>
 
-					<div class="form-group">
-			      <%= f.password_field :password, :placeholder => "Password", class: "form-control"  %>
-			  	</div>
-			    <% if devise_mapping.rememberable? -%>
-				    <div class="field">
-				      <%= f.check_box :remember_me %>
-				      <%= f.label 'recordarme' %>
-				    </div>
-					<% end %>
-					<%= f.submit 'Entrar', class: "btn btn-primary btn-block btn-login", style: "margin-bottom:20px;" %>
-				<% end %>
-			</div>
-		<% else %>
-			<% if current_user.admin? %>
-				<div class="">
-					<a href="/agents" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-clouds">
-		         			<h3 class="tile-text">Agente</h3>
-			  	  			<i class="fa fa-3x fa-user"></i>
-						</div>
-					</a>
-	        	</div>
-				<div class="">
-					<a href="/turns" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-orange">
-	            			<h3 class="tile-text">Turno</h3>
-							<i class="fa fa-3x fa-calendar"></i>
-						</div>
-					</a>
-	        	</div>
-		        <div class="">
-					<a href="/providers" class="fa-links">
-						<div class="thumbnail tile tile-wide">
-		            		<h3 class="tile-text">Abastecedor</h3>
-							<i class="fa fa-3x fa-address-book"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/drivers" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-teal">
-			            	<h3 class="tile-text">Chofer</h3>
-							<i class="fa fa-3x fa-vcard"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-					<a href="/transports" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-asbestos">
-							<h3 class="tile-text">Transporte</h3>
-							<i class="fa fa-3x fa-truck"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/troops" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-midnight-blue">
-		         			<h3 class="tile-text">Tropa</h3>
-								<i class="fa fa-3x fa-file-text"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/productions" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-green">
-		                	<h3 class="tile-text">Producción</h3>
-							<i class="fa fa-3x fa-industry"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/production_line" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-green">
-		                	<h3 class="tile-text">Línea Producción</h3>
-							<i class="fa fa-3x fa-industry"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/production_details" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-lime">
-		                	<h3 class="tile-text">Det. Producción</h3>
-							<i class="fa fa-3x fa-industry"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/sub_products" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-purple">
-		    	        	<h3 class="tile-text">Sub Producto</h3>
-							<i class="fa fa-3x fa-eercast"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/cities" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-concrete">
-		                   	<h3 class="tile-text">Ciudad</h3>
-							<i class="fa fa-3x fa-home"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/places" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-carrot">
-		                   	<h3 class="tile-text">Zona Planta</h3>
-							<i class="fa fa-3x fa-building"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/positions" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-wet-asphalt">
-		                   	<h3 class="tile-text">Posición</h3>
-							<i class="fa fa-3x fa-male"></i>
-						</div>
-					</a>
-		        </div>
-
-			<% elsif current_user.Garita? or current_user.Corral?  %>
-			        <div class="">
-			        	<a href="/troops" class="fa-links">
-							<div class="thumbnail tile tile-wide tile-midnight-blue">
-			         			<h3 class="tile-text">Tropa</h3>
-								<i class="fa fa-3x fa-file-text"></i>
-							</div>
-						</a>
-			        </div>
-			<% elsif current_user.PlantaA? or current_user.PlantaB?  %>
-		        <div class="">
-		        	<a href="/productions" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-green">
-		                	<h3 class="tile-text">Producción</h3>
-							<i class="fa fa-3x fa-industry"></i>
-						</div>
-					</a>
-		        </div>
-		        <div class="">
-		        	<a href="/production_line" class="fa-links">
-						<div class="thumbnail tile tile-wide tile-green">
-		                	<h3 class="tile-text">Línea Producción</h3>
-							<i class="fa fa-3x fa-industry"></i>
-						</div>
-					</a>
-		        </div>
+			<div class="form-group">
+	      <%= f.password_field :password, :placeholder => "Password", class: "form-control"  %>
+	  	</div>
+	    <% if devise_mapping.rememberable? -%>
+		    <div class="field">
+		      <%= f.check_box :remember_me %>
+		      <%= f.label 'recordarme' %>
+		    </div>
 			<% end %>
+			<%= f.submit 'Entrar', class: "btn btn-primary btn-block btn-login", style: "margin-bottom:20px;" %>
 		<% end %>
 	</div>
-</div>
+<% else %>
+	<% if current_user.admin? %>
+		<div class="">
+			<a href="/agents" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-clouds">
+         			<h3 class="tile-text">Agente</h3>
+	  	  			<i class="fa fa-3x fa-user"></i>
+				</div>
+			</a>
+      	</div>
+		<div class="">
+			<a href="/turns" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-orange">
+          			<h3 class="tile-text">Turno</h3>
+					<i class="fa fa-3x fa-calendar"></i>
+				</div>
+			</a>
+      	</div>
+        <div class="">
+			<a href="/providers" class="fa-links">
+				<div class="thumbnail tile tile-wide">
+            		<h3 class="tile-text">Abastecedor</h3>
+					<i class="fa fa-3x fa-address-book"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/drivers" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-teal">
+	            	<h3 class="tile-text">Chofer</h3>
+					<i class="fa fa-3x fa-vcard"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+			<a href="/transports" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-asbestos">
+					<h3 class="tile-text">Transporte</h3>
+					<i class="fa fa-3x fa-truck"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/troops" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-midnight-blue">
+         			<h3 class="tile-text">Tropa</h3>
+						<i class="fa fa-3x fa-file-text"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/productions" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-green">
+                	<h3 class="tile-text">Producción</h3>
+					<i class="fa fa-3x fa-industry"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/production_line" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-green">
+                	<h3 class="tile-text">Línea Producción</h3>
+					<i class="fa fa-3x fa-industry"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/production_details" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-lime">
+                	<h3 class="tile-text">Det. Producción</h3>
+					<i class="fa fa-3x fa-industry"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/sub_products" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-purple">
+    	        	<h3 class="tile-text">Sub Producto</h3>
+					<i class="fa fa-3x fa-eercast"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/cities" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-concrete">
+                   	<h3 class="tile-text">Ciudad</h3>
+					<i class="fa fa-3x fa-home"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/places" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-carrot">
+                   	<h3 class="tile-text">Zona Planta</h3>
+					<i class="fa fa-3x fa-building"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/positions" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-wet-asphalt">
+                   	<h3 class="tile-text">Posición</h3>
+					<i class="fa fa-3x fa-male"></i>
+				</div>
+			</a>
+        </div>
+
+	<% elsif current_user.Garita? or current_user.Corral?  %>
+	        <div class="">
+	        	<a href="/troops" class="fa-links">
+					<div class="thumbnail tile tile-wide tile-midnight-blue">
+	         			<h3 class="tile-text">Tropa</h3>
+						<i class="fa fa-3x fa-file-text"></i>
+					</div>
+				</a>
+	        </div>
+	<% elsif current_user.PlantaA? or current_user.PlantaB?  %>
+        <div class="">
+        	<a href="/productions" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-green">
+                	<h3 class="tile-text">Producción</h3>
+					<i class="fa fa-3x fa-industry"></i>
+				</div>
+			</a>
+        </div>
+        <div class="">
+        	<a href="/production_line" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-green">
+                	<h3 class="tile-text">Línea Producción</h3>
+					<i class="fa fa-3x fa-industry"></i>
+				</div>
+			</a>
+        </div>
+	<% elsif current_user.SubA? or current_user.PlantaB?  %>
+        <div class="">
+        	<a href="/sub_products" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-purple">
+    	        	<h3 class="tile-text">Sub Producto</h3>
+					<i class="fa fa-3x fa-eercast"></i>
+				</div>
+			</a>
+        </div>
+	<% end %>
+<% end %>
