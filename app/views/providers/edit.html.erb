@@ -1,8 +1,7 @@
-<div class="row justify-content-md-center">
-	<h1>Edición Abastecedor</h1>
+<div class="col-md-10 col-xs-12">
+  <h2 style="text-align: center;margin-bottom: 25px;">Editar Abastecedor: <%= @provider %></h2>
 </div>
-<%= render 'form', provider: @provider %>
-<!--
-<%= link_to 'Mostrar', @provider %> |
-<%= link_to 'Volver', providers_path %>
--->
+
+<div class="col-md-8 col-xs-12">
+	<%= render 'form', provider: @provider %>
+</div>

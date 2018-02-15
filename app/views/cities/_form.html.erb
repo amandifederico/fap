@@ -1,35 +1,44 @@
-<div class="row justify-content-md-center">
-  <div class="col-sm-6">  
-    <%= form_for(city) do |f| %>
-      <% if city.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h2>
+<%= form_for city,  id:"new_city" do |f| %>
+  <% if city.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h2>
 
-          <ul>
-          <% city.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
+      <ul>
+      <% city.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-
-
-      <div class="form-group">
-        <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
-      </div>
-
-      <div class="form-group">
-        <%= f.text_field :province, class: "form-control input-lg", placeholder: "Provincia"%>
-      </div>
-
-
-      <div class="form-group">
-        <%= f.number_field :cp, class: "form-control input-lg", placeholder: "Codigo Postal"%>
-      </div>
-
-      <div class="actions">
-          <%= f.submit class: "btn btn-outline-success btn-block"%>
-      </div>
-    <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <label class="col-sm-3 control-label">
+    Nombre:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
+    <span class="help-block">Obligatorio. </span>
   </div>
-</div>
+
+  <label class="col-sm-3 control-label">
+    Provincia:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.text_field :province, class: "form-control input-lg", placeholder: "Provincia"%>
+    <span class="help-block">Obligatorio. </span>
+  </div>
+  
+  <label class="col-sm-3 control-label">
+    Código Postal:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.number_field :cp, class: "form-control input-lg", placeholder: "Codigo Postal"%>
+    <span class="help-block">Obligatorio. </span>
+  </div>
+  
+  <div class="col-sm-2">
+    <%= link_to 'Volver', cities_path, class: "btn btn-primary btn-block" %>
+  </div>      
+  <div class="col-sm-4">
+    <%= f.submit class: "btn btn-success btn-block"%>
+  </div>  
+<% end %>

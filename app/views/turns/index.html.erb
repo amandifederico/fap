@@ -1,32 +1,35 @@
+<div class="col-xs-10">
+  <h1>Turnos</h1>
+</div>
 
 
-<h1>Turnos</h1>
+<div class="col-xs-10  col-xs-12">
 
-<table class="datatable table-striped table-bordered table-list">
-  <thead>
-    <tr>
-      <th>Fecha</th>
-      <th>Descripcion</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @turns.each do |turn| %>
+  <table class="datatable table-striped table-bordered table-list">
+    <thead>
       <tr>
-        <td><%= turn.date %></td>
-        <td><%= turn.description %></td>
-        <td>
-          <%= link_to (fa_icon "eye"), turn, class: 'btn btn-sm btn-success' %>
-          <%= link_to (fa_icon "pencil-square-o"), edit_turn_path(turn), class: 'btn btn-sm btn-warning' %>
-          <%= link_to (fa_icon "trash-o"), turn, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
-              
-        </td>
+        <th>Fecha</th>
+        <th>Descripcion</th>
+        <th>Opciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'Nuevo Turno', new_turn_path %>
+    <tbody>
+      <% @turns.each do |turn| %>
+        <tr>
+          <td><%= turn.date %></td>
+          <td><%= turn.description %></td>
+          <td>
+            <%= link_to (fa_icon "eye"), turn, class: '' %>
+            <%= link_to (fa_icon "pencil-square-o"), edit_turn_path(turn), class: '' %>
+            <%= link_to (fa_icon "trash-o"), turn, method: :delete, data: { confirm: '¿Seguro desea eliminar este turno?' }, class: '' %>
+                
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="col-xs-10 col-xs-12">
+  <%= link_to 'Crear Turno', new_turn_path, {:class=>"btn btn-primary btn-submit"} %>
+</div>
