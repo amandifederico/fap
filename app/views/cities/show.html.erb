@@ -1,19 +1,30 @@
+<div class="col-md-10 col-xs-12">
+  <h2 style="text-align: center;margin-bottom: 25px;"><%= @city.name %></h2>
+</div>
 
-
-<p>
-  <strong>Nombre:</strong>
+<label class="col-sm-3 control-label">
+	Nombre:
+</label>
+<div class="col-sm-9 show-field">
   <%= @city.name %>
-</p>
-
-<p>
-  <strong>Provincia:</strong>
+</div>
+<label class="col-sm-3 control-label">
+	Provincia:
+</label>
+<div class="col-sm-9 show-field">
   <%= @city.province %>
-</p>
-
-<p>
-  <strong>Cp:</strong>
+</div>
+<label class="col-sm-3 control-label">
+	Código Postal:
+</label>
+<div class="col-sm-9 show-field">
   <%= @city.cp %>
-</p>
+</div>
 
-<%= link_to 'Editar', edit_city_path(@city) %> |
-<%= link_to 'Volver', cities_path %>
+
+<div class="col-sm-2">
+	<%= link_to 'Editar', edit_city_path(@city), class: "btn btn-primary btn-block" %>
+</div>      
+<div class="col-sm-2">
+	<%= link_to 'Volver', cities_path, class: "btn btn-success btn-block"%>
+</div> 

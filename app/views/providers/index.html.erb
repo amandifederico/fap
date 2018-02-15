@@ -1,35 +1,36 @@
+<div class="col-xs-10">
+  <h1>Abastecedor</h1>
+</div>
 
-
-<h1>Abastecedor</h1>
-
-<table class="datatable table-striped table-bordered table-list">
-  <thead>
-    <tr>
-      <th>Razon social</th>
-      <th>CUIT/CUIL</th>
-      <th>Fecha Alta</th>
-      <th>Ciudad</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @providers.each do |provider| %>
+<div class="col-xs-10  col-xs-12">
+  <table class="datatable table-striped table-bordered table-list">
+    <thead>
       <tr>
-        <td><%= provider.name %></td>
-        <td><%= provider.cuit %></td>
-        <td><%= provider.up_date %></td>
-        <td><%= provider.city %></td>
-        <td>
-          <%= link_to (fa_icon "eye"), provider, class: 'btn btn-sm btn-success' %>
-          <%= link_to (fa_icon "pencil-square-o"), edit_provider_path(provider), class: 'btn btn-sm btn-warning' %>
-          <%= link_to (fa_icon "trash-o"), provider, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>        
-        </td>
+        <th>Razon social</th>
+        <th>CUIT/CUIL</th>
+        <th>Fecha Alta</th>
+        <th>Ciudad</th>
+        <th>Opciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'Nuevo Abastecedor', new_provider_path %>
+    <tbody>
+      <% @providers.each do |provider| %>
+        <tr>
+          <td><%= provider.name %></td>
+          <td><%= provider.cuit %></td>
+          <td><%= provider.up_date %></td>
+          <td><%= provider.city %></td>
+          <td>
+            <%= link_to (fa_icon "eye"), provider, class: '' %>
+            <%= link_to (fa_icon "pencil-square-o"), edit_provider_path(provider), class: '' %>
+            <%= link_to (fa_icon "trash-o"), provider, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>        
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="col-xs-10 col-xs-12">
+  <%= link_to 'Nuevo Abastecedor', new_provider_path, {:class=>"btn btn-primary btn-submit"} %>
+</div>

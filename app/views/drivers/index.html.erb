@@ -1,36 +1,37 @@
+<div class="col-xs-10">
+  <h1>Chofer</h1>
+</div>
 
-
-<h1>Chofer</h1>
-
-<table class="datatable table-striped table-bordered table-list">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>DNI</th>
-      <th>Observacion</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @drivers.each do |driver| %>
+<div class="col-xs-10  col-xs-12">
+  <table class="datatable table-striped table-bordered table-list">
+    <thead>
       <tr>
-        <td><%= driver.name %></td>
-        <td><%= driver.last_name %></td>
-        <td><%= driver.dni %></td>
-        <td><%= driver.observation %></td>
-        <td>
-          <%= link_to (fa_icon "eye"), driver, class: 'btn btn-sm btn-success' %>
-          <%= link_to (fa_icon "pencil-square-o"), edit_driver_path(driver), class: 'btn btn-sm btn-warning' %>
-          <%= link_to (fa_icon "trash-o"), driver, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
-              
-        </td>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <th>Observacion</th>
+        <th>Opciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'Nuevo Chofer', new_driver_path %>
+    <tbody>
+      <% @drivers.each do |driver| %>
+        <tr>
+          <td><%= driver.name %></td>
+          <td><%= driver.last_name %></td>
+          <td><%= driver.dni %></td>
+          <td><%= driver.observation %></td>
+          <td>
+            <%= link_to (fa_icon "eye"), driver, class: '' %>
+            <%= link_to (fa_icon "pencil-square-o"), edit_driver_path(driver), class: '' %>
+            <%= link_to (fa_icon "trash-o"), driver, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>
+                
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="col-xs-10 col-xs-12">
+  <%= link_to 'Nuevo Chofer', new_driver_path, {:class=>"btn btn-primary btn-submit"} %>
+</div>

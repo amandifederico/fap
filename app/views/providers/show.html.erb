@@ -1,63 +1,91 @@
+<div class="col-xs-10">
+  <h2 style="text-align: center;">Proveedor: <%= @provider %></h2>
+</div>
 
-
-<p>
-  <strong>Razon social:</strong>
+<label class="col-sm-4 control-label">
+  Nombre:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.name %>
-</p>
+</div>
 
-<p>
-  <strong>CUIT/CUIL:</strong>
+<label class="col-sm-4 control-label">
+  Cuit/Cuil:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.cuit %>
-</p>
+</div>
 
-<p>
-  <strong>Renspa:</strong>
+<label class="col-sm-4 control-label">
+  Renspa:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.renspa %>
-</p>
+</div>
 
-<p>
-  <strong>Telefono:</strong>
+<label class="col-sm-4 control-label">
+  Teléfono:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.telephone %>
-</p>
+</div>
 
-<p>
-  <strong>E-mail:</strong>
+<label class="col-sm-4 control-label">
+  Email:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.email %>
-</p>
+</div>
 
-<p>
-  <strong>Domicilio:</strong>
+<label class="col-sm-4 control-label">
+  Dirección:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.address %>
-</p>
+</div>
 
-<p>
-  <strong>Fecha de alta:</strong>
+<label class="col-sm-4 control-label">
+  Fecha de Alta:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.up_date %>
-</p>
+</div>
 
-<p>
-  <strong>Fecha de baja:</strong>
+<label class="col-sm-4 control-label">
+  Fecha de Baja:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.down_date %>
-</p>
+</div>
 
-<p>
-  <strong>Ciudad:</strong>
+<label class="col-sm-4 control-label">
+  Ciudad:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.city %>
-</p>
+</div>
 
-<p>
-  <strong>Observacion:</strong>
+<label class="col-sm-4 control-label">
+  Observación:
+</label>
+<div class="col-sm-8 show-field">
   <%= @provider.observation %>
-</p>
+</div>
 
-<p>
-  <strong>Activo:</strong>
+<label class="col-sm-4 control-label">
+  ¿Activo?:
+</label>
+<div class="col-sm-8 show-field">
   <% if @provider.active? %>
       ACTIVO
   <% else %>
       INACTIVO
   <% end %>
-</p>
+</div>
 
-<%= link_to 'Editar', edit_provider_path(@provider) %> |
-<%= link_to 'Volver', providers_path %>
+<div class="col-sm-2">
+  <%= link_to 'Editar', edit_provider_path(@provider), class: "btn btn-primary btn-block" %>
+</div>      
+<div class="col-sm-2">
+  <%= link_to 'Volver', providers_path, class: "btn btn-success btn-block"%>
+</div> 

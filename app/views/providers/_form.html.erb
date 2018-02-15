@@ -1,72 +1,123 @@
-<div class="row justify-content-md-center">
-  <div class="col-sm-6">  
-    <%= form_for(provider) do |f| %>
-      <% if provider.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
+<%= form_for(provider) do |f| %>
+  <% if provider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
 
-          <ul>
-          <% provider.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
+      <ul>
+      <% provider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
-
-      <div class="form-group">
-        <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
-      </div>
-      <div class="form-group">
-        <%= f.number_field :cuit, class: "form-control input-lg", placeholder: "CUIT/CUIL"%>
-      </div>
-      <div class="form-group">
-        <%= f.number_field :renspa, class: "form-control input-lg", placeholder: "Renspa"%>
-      </div>
-      <div class="form-group">
-        <%= f.number_field :telephone, class: "form-control input-lg", placeholder: "Telefono"%>
-      </div>
-      <div class="form-group">
-        <%= f.text_field :email, class: "form-control input-lg", placeholder: "E-Mail"%>
-      </div>
-      <div class="form-group">
-        <%= f.text_field :address, class: "form-control input-lg", placeholder: "Domicilio"%>
-      </div>
-
-      <div class="form-group">
-        <div class="input-group date datepicker">
-          <%= f.text_field :up_date, placeholder: "Fecha de alta", class: "form-control" %>
-            <span class="input-group-addon">
-              <%= fa_icon "list"%>
-            </span>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group date datepicker">
-        <%= f.text_field :down_date, placeholder: "Baja", class: "form-control" %>
-          <span class="input-group-addon">
-            <%= fa_icon "list"%>
-          </span>
-        </div>  
-      </div>
-
-      <div class="form-group">
-          <%= f.collection_select :city_id, City.all, :id, :to_s, {prompt: "Ciudad"}, {class: "select2"} %>
-      </div>
-
-      <div class="form-group">
-        <%= f.text_field :observation, class: "form-control input-lg", placeholder: "Observacion"%>
-      </div>
-
-      <div class="form-group">
-        <%= f.label "Activo?" %>
-        <%= f.check_box :active, class: "form-control input-lg", placeholder: "Activo?"%>
-      </div>    
-      
-      <div class="actions row">
-        <%= link_to 'Volver', providers_path, class: "btn btn-danger btn-form" %>
-        <%= f.submit class: "btn btn-success btn-form"%>
-      </div>
+      </ul>
+    </div>
   <% end %>
+
+  <label class="col-sm-3 control-label">
+    Nombre:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
+    <span class="help-block">Obligatorio. </span>
   </div>
-</div>
+
+  <label class="col-sm-3 control-label">
+    Cuil:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.number_field :cuit, class: "form-control input-lg", placeholder: "CUIT/CUIL"%>
+    <span class="help-block">Obligatorio. </span>
+  </div>
+
+  <label class="col-sm-3 control-label">
+    Nº Renspa:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.number_field :renspa, class: "form-control input-lg", placeholder: "Renspa"%>
+    <span class="help-block">Obligatorio. </span>
+  </div>
+
+  <label class="col-sm-3 control-label">
+    Teléfono:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.number_field :telephone, class: "form-control input-lg", placeholder: "Telefono"%>
+    <span class="help-block"></span>
+  </div>
+
+  <label class="col-sm-3 control-label">
+    E-mail:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.text_field :email, class: "form-control input-lg", placeholder: "E-Mail"%>
+    <span class="help-block"></span>
+  </div>
+
+  <label class="col-sm-3 control-label">
+    Domicilio:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.text_field :address, class: "form-control input-lg", placeholder: "Domicilio"%>
+    <span class="help-block"></span>
+  </div>
+
+  <label class="col-sm-3 control-label">
+    Fecha Alta:
+  </label>  
+  <div class="col-sm-9 controls date datepicker">
+    <div class="form-group">
+      <div class='input-group date'>
+        <%= f.text_field :up_date, placeholder: "Fecha de Baja", class: "form-control" %>
+        <span class="input-group-addon ">
+          <%= fa_icon "list"%>
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+  <label class="col-sm-3 control-label">
+    Fecha Baja:
+  </label>  
+  <div class="col-sm-9 controls date datepicker">
+    <div class="form-group">
+      <div class='input-group date'>
+        <%= f.text_field :down_date, placeholder: "Fecha de Baja", class: "form-control" %>
+        <span class="input-group-addon ">
+          <%= fa_icon "list"%>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <label class="col-sm-3 control-label">
+    Ciudad:
+  </label>
+  <div class="col-sm-9 controls">
+      <%= f.collection_select :city_id, City.all, :id, :to_s, {prompt: "Ciudad"}, {class: "select2"} %>
+      <span class="help-block"></span>
+  </div>
+
+  <label class="col-sm-3 control-label">
+    Observación:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.text_field :observation, class: "form-control input-lg", placeholder: "Observacion"%>
+    <span class="help-block"></span>
+  </div>
+
+  <label class="col-sm-3 control-label">
+    ¿Activo?:
+  </label>
+  <div class="col-sm-9 controls">
+    <%= f.check_box :active, class: "form-control input-lg", placeholder: "Activo?", style:"width:auto;margin:0px;"%>
+    <span class="help-block"></span>
+  </div>    
+  
+  <div class="col-sm-2">
+    <%= link_to 'Volver', providers_path, class: "btn btn-primary btn-block" %>
+  </div>      
+  <div class="col-sm-4">
+    <%= f.submit class: "btn btn-success btn-form"%>
+  </div>  
+<% end %>
+  
 
