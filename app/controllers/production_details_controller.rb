@@ -14,7 +14,13 @@ class ProductionDetailsController < ApplicationController
 
   # GET /production_details/new
   def new
-    production_id = params[:prod]
+    
+    if params[:production]
+       
+      production_id = params[:production]
+    else
+      production_id = params[:prod]
+    end
     @production = Production.where(id: production_id).first
     @production_detail = ProductionDetail.new
   end
@@ -22,17 +28,20 @@ class ProductionDetailsController < ApplicationController
   # GET /production_details/1/edit
   def edit
   end
-
+  
   # POST /production_details
   # POST /production_details.json
   def create
+    byebug
     @flag = params[:production_detail][:flag]
     @production_detail = ProductionDetail.new(production_detail_params)
-
     respond_to do |format|
       if @production_detail.save
-        if @flag
-          format.html { redirect_to "/production_details/new?prod=" + @product_detail.production_id.to_s, notice: 'Production detail was successfully created.' }
+
+        if @flag = "true"
+          variable = "Asdasd"
+          
+          format.html { redirect_to "/production_details/new?prod=" + @product_detail.production_id.to_s, notice: 'Production detail was successfully created.', :production => @production }
           format.json { render :show, status: :created, location: @production_detail }
         else
           format.html { redirect_to @production_detail, notice: 'Detalle de producción exitosamente creado.' }

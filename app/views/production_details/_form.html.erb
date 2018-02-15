@@ -11,9 +11,11 @@
       </div>
     <% end %>
     <div class="row">
-    <% @troop = @production.troop %>
-    <% @pd = ProductionDetail.where(production_id: @production.id)%>
-
+    
+      <% @troop = @production.troop %>
+      
+      <% @pd = ProductionDetail.where(production_id: @production.id)%>
+    
     <!-- Control de que no se cargue mas reses de las que hay -->
     <% if (@troop.quantity_control*2) > @pd.size%>
       <% if @production %>
@@ -35,7 +37,7 @@
         Especie:
       </label>
       <div class="col-sm-10 controls">
-        <% if @product %>
+        <% if @production %>
           <% animal = Animal.where(id: TroopDetail.where(troop: Production.where(id: @production.id).first.troop).pluck(:animal_id))%>
         <% else %>
           <% animal = Animal.all%>
@@ -72,6 +74,7 @@
       
       <% if @production %>
         <%= f.hidden_field :flag, value: true %>
+        <%= f.hidden_field :production, :value => params[:prod] %>
       <% end %>
     <% end %>
     <div class="actions row">
