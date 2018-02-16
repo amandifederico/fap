@@ -1,5 +1,5 @@
 class ProductionDetailsController < ApplicationController
-  before_action :set_product_detail, only: [:show, :edit, :update, :destroy]
+  before_action :set_production_detail, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   # GET /production_details
   # GET /production_details.json
@@ -14,8 +14,8 @@ class ProductionDetailsController < ApplicationController
 
   # GET /production_details/new
   def new
+    @editor=false
     if params[:production]
-       
       production_id = params[:production]
     else
       production_id = params[:prod]
@@ -26,6 +26,9 @@ class ProductionDetailsController < ApplicationController
 
   # GET /production_details/1/edit
   def edit
+    production_id = @production_detail.production_id
+    @production = Production.where(id: production_id).first
+    @editor=true
   end
   
   # POST /production_details

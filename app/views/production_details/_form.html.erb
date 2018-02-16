@@ -12,12 +12,11 @@
     <% end %>
     <div class="row">
     
-      <% @troop = @production.troop %>
-      
-      <% @pd = ProductionDetail.where(production_id: @production.id)%>
-    
+    <% @troop = @production.troop %>
+    <% @pd = ProductionDetail.where(production_id: @production.id)%>
+    <% byebug %>
     <!-- Control de que no se cargue mas reses de las que hay -->
-    <% if (@troop.quantity_control*2) > @pd.size%>
+    <% if ((@troop.quantity_control*2) > @pd.size) or @editor %>
       <% if @production %>
         <%= f.hidden_field :production_id, :value => @production.id%>
       <% else %>
