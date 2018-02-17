@@ -1,37 +1,37 @@
-<div class="col-xs-10">
+<div class="col-xs-12">
   <h2 style="text-align: center;">Agente: <%= @agent %></h2>
 </div>
 
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
 	Apellido:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @agent.last_name%>
 </div>
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
 	Nombre:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @agent.name %>
 </div>
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
 	DNI:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @agent.dni %>
 </div>
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
 	Position:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @agent.position %>
 </div>
 
 
-<div class="col-sm-2">
+<div class="col-xs-4">
 	<%= link_to 'Editar', edit_agent_path(@agent), class: "btn btn-primary btn-block" %>
 </div>      
-<div class="col-sm-2">
+<div class="col-xs-8">
 	<%= link_to 'Volver', agents_path, class: "btn btn-success btn-block"%>
 </div> 
