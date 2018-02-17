@@ -39,7 +39,7 @@
   </div>
   
   <div class="col-sm-12" style="margin-bottom: 25px;">
-    <table class="table table-striped table-bordered table-list" style="margin-bottom: 0px;">
+    <table class="table table-responsive table-striped table-bordered table-list" style="margin-bottom: 0px;">
       <thead>
           <tr>
             <th>Agente</th>
@@ -54,7 +54,7 @@
             <% end %>
       </tbody>
     </table>
-    <%= link_to_add_association 'Agregar Turno', f, :turn_details, data: { association_insertion_node: '.turn_details', association_insertion_method: :append }, class: "btn btn-primary btn-block" %>
+    <%= link_to_add_association (fa_icon "plus"), f, :turn_details, data: { association_insertion_node: '.turn_details', association_insertion_method: :append }, class: "btn btn-primary btn-block" %>
   </div>
   
   
