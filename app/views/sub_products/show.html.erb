@@ -10,37 +10,43 @@
   <%= @sub_product.observartion %>
 </p>
 
-<table id="tabla" class="datatable table-striped table-bordered table-list">
-	<thead>
-	    <tr>
-	      <th>Tipo</th>
-	      <th>Peso</th>
-	      <th>Peso Procesado</th>
-	      <th>Calibre</th>
-	      <th>Observacion</th>
-	    </tr> 
-	</thead>
-	<tbody>
-	  <% for details in @sub_product.sub_product_details %>
-	  	<tr>
-	  		<td><%= details.sub_product_type %></td>
-	  		<td><%= details.weight %></td>
-	  		<td><%= details.weight_control %></td>
-	  		<td><%= details.caliber %></td>
-	  		<td><%= details.observartion %></td>
-	  	</tr>
-	  <% end %>
-	</tbody>
-	<tfoot>
-        <tr>
-        	<th>Subtotales</th>
-            <th><%= @sub_product.sub_product_details.sum('weight') %></th>
-            <th><%= @sub_product.sub_product_details.sum('weight_control') %></th>
-            <th></th>
-            <th></th>
-        </tr>
-    </tfoot>
-</table>
+<div class="col-xs-10  col-xs-12">
+    <table id="tabla" class="datatable table-striped table-bordered table-list">
+        <thead>
+            <tr>
+            <th>Tipo</th>
+            <th>Peso</th>
+            <th>Peso Procesado</th>
+            <th>Calibre</th>
+            <th>Observacion</th>
+            </tr> 
+        </thead>
+        <tbody>
+        <% for details in @sub_product.sub_product_details %>
+            <tr>
+                <td><%= details.sub_product_type %></td>
+                <td><%= details.weight %></td>
+                <td><%= details.weight_control %></td>
+                <td><%= details.caliber %></td>
+                <td><%= details.observartion %></td>
+            </tr>
+        <% end %>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Subtotales</th>
+                <th><%= @sub_product.sub_product_details.sum('weight') %></th>
+                <th><%= @sub_product.sub_product_details.sum('weight_control') %></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
 
-<%= link_to 'Editar', edit_sub_product_path(@sub_product) %> |
-<%= link_to 'Volver', sub_products_path %>
+<div class="col-sm-2">
+    <%= link_to 'Editar', edit_sub_product_path(@sub_product), class: "btn btn-primary btn-block" %>
+</div>
+<div class="col-sm-2">
+    <%= link_to 'Volver', sub_products_path , class: "btn btn-success btn-block"%>
+</div>

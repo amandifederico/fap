@@ -1,58 +1,64 @@
-<div class="row justify-content-md-center">
-  <div class="col-sm-6">
-    <%= form_for(sub_product) do |f| %>
-      <% if sub_product.errors.any? %>
+<%= form_for(sub_product) do |f| %>
+    <% if sub_product.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(sub_product.errors.count, "error") %> prohibited this sub_product from being saved:</h2>
+            <h2><%= pluralize(sub_product.errors.count, "error") %> prohibited this sub_product from being saved:</h2>
 
-          <ul>
-          <% sub_product.errors.full_messages.each do |message| %>
+            <ul>
+            <% sub_product.errors.full_messages.each do |message| %>
             <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <div class="form-group">
-        <%= f.collection_select :troop_id, Troop.all, :id, :to_s, {prompt: "Tropa"}, {class: "select2"} %>
-      </div>
-
-      <div class="form-group">
-        <%= f.text_field :observartion, class: "form-control input-lg", placeholder: "Observacion"%>
-      </div>
-
-      <table class="table table-striped table-bordered table-list">
-        <thead>
-          <tr>
-              <th>Tipo</th>
-              <% if current_user.SubA?  or current_user.admin?%>
-                <th>Peso</th>
-              <% end %>
-              <% if current_user.SubB?  or current_user.admin?%>
-                <th>Peso control</th>
-              <% end %>
-              <th>Calibre</th>
-              <th>Observacion</th>
-          </tr> 
-        </thead>
-        <tbody class="sub_product_details">
-            <%= f.fields_for :sub_product_details do |sub_product_details| %>
-              <%= render 'sub_product_detail_fields', :f => sub_product_details %>
             <% end %>
-          </div>
-        </tbody>
-      </table>
-
-      <div class='links'>
-        <%= link_to_add_association 'Agregar Subproducto', f, :sub_product_details, data: { association_insertion_node: '.sub_product_details', association_insertion_method: :append } %>
-      </div>
-      
-      <div class="actions">
-        <%= f.submit class: "btn btn-success"%>
-      </div>
+            </ul>
+        </div>
     <% end %>
-  </div>
-</div>
+  
+    <label class="col-sm-3 control-label">
+        Tropa:
+    </label>
+    <div class="col-sm-9 controls">
+        <%= f.collection_select :troop_id, Troop.all, :id, :to_s, {prompt: "Tropa"}, {class: "select2"} %>
+    </div>
+
+    <label class="col-sm-3 control-label">
+        Observación:
+    </label>
+    <div class="col-sm-9 controls">
+        <%= f.text_field :observartion, class: "form-control input-lg", placeholder: "Observación"%>
+    </div>
+    
+    <div class="col-xs-10  col-xs-12">
+        <table class="table table-striped table-bordered table-list">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <% if current_user.SubA?  or current_user.admin?%>
+                        <th>Peso</th>
+                    <% end %>
+                    <% if current_user.SubB?  or current_user.admin?%>
+                        <th>Peso control</th>
+                    <% end %>
+                    <th>Calibre</th>
+                    <th>Observacion</th>
+                </tr> 
+            </thead>
+            <tbody class="sub_product_details">
+                <%= f.fields_for :sub_product_details do |sub_product_details| %>
+                    <%= render 'sub_product_detail_fields', :f => sub_product_details %>
+                <% end %>
+                </div>
+            </tbody>
+        </table>
+        <div class='links'>
+            <%= link_to_add_association 'Agregar Subproducto', f, :sub_product_details, data: { association_insertion_node: '.sub_product_details', association_insertion_method: :append } %>
+        </div>
+    </div>
+    
+    <div class="col-sm-2">
+        <%= link_to 'Volver', sub_products_path, class: "btn btn-primary btn-block" %>
+    </div>
+    <div class="col-sm-4">
+        <%= f.submit class: "btn btn-success btn-block"%>
+    </div>
+<% end %>
 <script type="text/javascript">
   $('#new_sub_product').bind('cocoon:after-insert',
     function(e) {
