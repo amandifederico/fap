@@ -89,9 +89,23 @@ select2-container--bootstrap.select2-container--focus .select2-selection, .selec
     border-color: $primary-color;
 }
 
+
+
+#wrapper {
+  padding-left: 250px;
+}
+
 #wrapper-container {
-    width: 100%;
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+#wrapper-container .container {
+  margin-left: inherit;
+}
+
+#wrapper.wrapper-full {
+  padding-left: 110px;
 }
 
 
@@ -115,4 +129,35 @@ select2-container--bootstrap.select2-container--focus .select2-selection, .selec
 td .fa {
   margin: 5px 10px;
   font-size: 20px;
+}
+
+
+@media (max-width: 992px){
+  td .fa {
+    margin: 5px 4px;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 52px;
+  }
+
+  .tile h1{
+    font-size: 28px;
+  } 
+
+
+  #wrapper {
+    padding-left: 0px;
+  }
+
+  td .fa {
+    margin: 5px 3px;
+    font-size: 18px;
+  }
 }
