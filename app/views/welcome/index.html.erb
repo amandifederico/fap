@@ -125,6 +125,14 @@
 				</div>
 			</a>
         </div>
+        <div class="">
+        	<a href="/range_troop_numbers" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-green">
+                   	<h3 class="tile-text">Numero Tropa</h3>
+					<i class="fa fa-3x fa-hashtag"></i>
+				</div>
+			</a>
+        </div>
 
 	<% elsif current_user.Garita? or current_user.Corral?  %>
 	        <div class="">
@@ -152,7 +160,7 @@
 				</div>
 			</a>
         </div>
-	<% elsif current_user.SubA? or current_user.PlantaB?  %>
+	<% elsif current_user.SubA? or current_user.SubB?  %>
         <div class="">
         	<a href="/sub_products" class="fa-links">
 				<div class="thumbnail tile tile-wide tile-purple">
