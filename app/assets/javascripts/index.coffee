@@ -1,7 +1,11 @@
 $.ajaxSetup dataType: 'json'
 
 $(document).on 'turbolinks:load', ->
-  $(".select2").select2({theme: "bootstrap"})
+  $(".select2").select2({
+    theme: "bootstrap"
+    width: "100%"
+  })
+
   $(".datepicker").datepicker({
     startView: 1,
     language: "es",
