@@ -193,7 +193,7 @@
     <%= f.hidden_field :number, value: @number %>
     
     <div class="col-sm-12" style="margin-bottom: 25px;">
-      <table class="table table-responsive table-striped table-bordered table-list" style="margin-bottom: 0px;">
+      <table class="datatable" style="margin-bottom: 0px;">
         <thead>
           <tr>
               <th>Especie</th>
@@ -227,7 +227,7 @@
 <script type="text/javascript">
   $('#new_troop').bind('cocoon:after-insert',
     function(e) {
-      console.log('Insertando Select 2');
+      $(".select2").select2({theme: "bootstrap"});
       
     });
 </script>
