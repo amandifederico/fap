@@ -1,100 +1,101 @@
-<div class="col-xs-10">
+<div class="col-xs-12">
   <h2 style="text-align: center;">Tropa</h2>
 </div>
 
-<label class="col-sm-3 control-label">
+
+<label class="col-xs-3 control-label">
   D.T.E:
 </label>  
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.dte %>
 </div>
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Fecha de LLegada:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.arrival_date %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Hora de LLegada:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.arrival_time.to_s(:time) %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Turno:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.turn %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Abastecedor:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.provider %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Nro tropa:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.troop_number %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Fecha cargo:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.cargo_date %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Fecha vencimiento:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.expiration_date %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Transporte:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.transport %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Chofer:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.driver %>
 </div>
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Nro precinto:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.seal_number %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Peso vivo:
 </label>
-<div class="col-sm-9 show-field">  
+<div class="col-xs-9 show-field">  
   <%= @troop.liveweight %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Control cantidad:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.quantity_control %>
 </div>
 
-<label class="col-sm-3 control-label">
+<label class="col-xs-3 control-label">
   Codigo cierre:
 </label>
-<div class="col-sm-9 show-field">
+<div class="col-xs-9 show-field">
   <%= @troop.close_code %>
 </div>
 
@@ -126,9 +127,9 @@
 </div>
 
 
-<div class="col-sm-3">
+<div class="col-xs-4">
     <%= link_to 'Editar', edit_troop_path(@troop), class: "btn btn-primary btn-block" %>
 </div>
-<div class="col-sm-3">
+<div class="col-xs-8">
     <%= link_to 'Volver', troops_path , class: "btn btn-success btn-block"%>
 </div>

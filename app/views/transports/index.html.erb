@@ -1,8 +1,8 @@
-<div class="col-xs-10">
+<div class="col-md-10  col-xs-12">
   <h2>Transportes</h2>
 </div>
 
-<div class="col-xs-10  col-xs-12">
+<div class="col-md-10  col-xs-12">
   <table class="datatable table-striped table-bordered table-list">
     <thead>
       <tr>
@@ -29,7 +29,6 @@
             <%= link_to (fa_icon "eye"), transport, class: '' %>
             <%= link_to (fa_icon "pencil-square-o"), edit_transport_path(transport), class: '' %>
             <%= link_to (fa_icon "trash-o"), transport, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>
-                
           </td>
         </tr>
       <% end %>
@@ -37,8 +36,6 @@
   </table>
 </div>
 
-<br>
-
-<div class="col-xs-10 col-xs-12">
+<div class="col-md-10  col-xs-12">
   <%= link_to 'Nuevo Transporte', new_transport_path, {:class=>"btn btn-primary btn-submit"} %>
 </div>
