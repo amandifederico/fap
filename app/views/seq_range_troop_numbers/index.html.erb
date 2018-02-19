@@ -1,27 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-10  col-xs-12">
+  <h2>Rango Numero tropa</h2>
+</div>
 
-<h1>Seq Range Troop Numbers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Rtn</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @seq_range_troop_numbers.each do |seq_range_troop_number| %>
+<div class="col-md-10  col-xs-12">
+  <table class="datatable table-striped table-bordered table-list">
+    <thead>
       <tr>
-        <td><%= seq_range_troop_number.rtn %></td>
-        <td><%= link_to 'Show', seq_range_troop_number %></td>
-        <td><%= link_to 'Edit', edit_seq_range_troop_number_path(seq_range_troop_number) %></td>
-        <td><%= link_to 'Destroy', seq_range_troop_number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>R.N.T</th>
+        <th>Opciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @seq_range_troop_numbers.each do |seq_range_troop_number| %>
+        <tr>
+          <td><%= seq_range_troop_number.rtn %></td>
+          <td>
+            <%= link_to (fa_icon "eye"), seq_range_troop_number, class: '' %>
+            <%= link_to (fa_icon "pencil-square-o"), edit_seq_range_troop_number_path(seq_range_troop_number), class: '' %>
+            <%= link_to (fa_icon "trash-o"), seq_range_troop_number, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to 'New Seq Range Troop Number', new_seq_range_troop_number_path %>
+<div class="col-md-10  col-xs-12">
+  <%= link_to 'Crear Rango Numero Tropa', new_seq_range_troop_number_path, {:class=>"btn btn-primary btn-submit"} %>
+</div>

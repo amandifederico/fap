@@ -1,9 +1,17 @@
+<div class="col-xs-12">
+  <h2 style="text-align: center;">Zona de planta: <%= @place %></h2>
+</div>
 
+<label class="col-xs-3 control-label">
+	Descripción:
+</label>
+<div class="col-xs-9 show-field">
+  	<%= @place.description %>
+</div>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @place.description %>
-</p>
-
-<%= link_to 'Editar', edit_place_path(@place) %> |
-<%= link_to 'Volver', places_path %>
+<div class="col-xs-4">
+	<%= link_to 'Editar', edit_place_path(@place), class: "btn btn-primary btn-block" %>
+</div>      
+<div class="col-xs-8">
+	<%= link_to 'Volver', places_path, class: "btn btn-success btn-block"%>
+</div> 

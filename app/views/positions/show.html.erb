@@ -1,12 +1,24 @@
-<p>
-  <strong>Nombre:</strong>
-  <%= @position.name %>
-</p>
+<div class="col-xs-12">
+  	<h2 style="text-align: center;">Posición: <%= @position.name %></h2>
+</div>
 
-<p>
-  <strong>Descripción:</strong>
-  <%= @position.description %>
-</p>
+<label class="col-xs-3 control-label">
+	Nombre:
+</label>
+<div class="col-xs-9 show-field">
+	<%= @position.name %>
+</div>
 
-<%= link_to 'Editar', edit_position_path(@position) %> |
-<%= link_to 'Volver', positions_path %>
+<label class="col-xs-3 control-label">
+	Descripción:
+</label>
+<div class="col-xs-9 show-field">
+	<%= @position.description %>
+</div>
+
+<div class="col-xs-4">
+	<%= link_to 'Editar', edit_position_path(@position), class: "btn btn-primary btn-block" %>
+</div>      
+<div class="col-xs-8">
+	<%= link_to 'Volver', positions_path, class: "btn btn-success btn-block"%>
+</div> 

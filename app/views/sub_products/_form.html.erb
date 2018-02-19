@@ -11,26 +11,27 @@
         </div>
     <% end %>
   
-    <label class="col-sm-3 control-label">
+    <label class="col-md-3 control-label hidden-sm hidden-xs">
         Tropa:
     </label>
-    <div class="col-sm-9 controls">
+    <div class="col-sm-12 col-md-9 controls">
         <%= f.collection_select :troop_id, Troop.all, :id, :to_s, {prompt: "Tropa"}, {class: "select2"} %>
     </div>
 
-    <label class="col-sm-3 control-label">
+    <label class="col-md-3 control-label hidden-sm hidden-xs">
         Observación:
     </label>
-    <div class="col-sm-9 controls">
+    <div class="col-sm-12 col-md-9 controls">
         <%= f.text_field :observartion, class: "form-control input-lg", placeholder: "Observación"%>
     </div>
     
 
-    <div class="col-sm-9">
+    <div class="col-sm-12">
         <h3 style="text-align: center;">Detalle de Sub producto</h3>
     </div>
+
     <div class="col-sm-12" style="margin-bottom: 25px;">
-        <table class="table table-responsive table-striped table-bordered table-list" style="margin-bottom: 0px;">
+    <table class="table table-responsive table-striped table-bordered table-list" style="margin-bottom: 0px;">
             <thead>
                 <tr>
                     <th>Tipo</th>
@@ -52,14 +53,14 @@
             </tbody>
         </table>
         <div class='links'>
-            <%= link_to_add_association 'Agregar Subproducto', f, :sub_product_details, data: { association_insertion_node: '.sub_product_details', association_insertion_method: :append } %>
+            <%= link_to_add_association (fa_icon "plus"), f, :sub_product_details, data: { association_insertion_node: '.sub_product_details', association_insertion_method: :append }, class: "btn btn-primary btn-block" %>
         </div>
     </div>
     
-    <div class="col-sm-3">
+    <div class="col-xs-4">
         <%= link_to 'Volver', sub_products_path, class: "btn btn-primary btn-block" %>
     </div>
-    <div class="col-sm-3">
+    <div class="col-xs-8">
         <%= f.submit class: "btn btn-success btn-block"%>
     </div>
 <% end %>

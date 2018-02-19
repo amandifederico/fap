@@ -11,25 +11,25 @@
     </div>
   <% end %>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Tropa:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.collection_select :troop_id, Troop.where(:close_code=>''), :id, :to_s, {prompt: "Tropa"}, {class: "select2"} %>
     <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Descripción:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.text_field :description, class: "form-control input-lg", placeholder: "Descripción"%>
   </div>
 
-  <div class="col-sm-2">
+  <div class="col-xs-4">
     <%= link_to 'Volver', productions_path, class: "btn btn-primary btn-block" %>
   </div>      
-  <div class="col-sm-4">
+  <div class="col-xs-8">
     <%= f.submit class: "btn btn-success btn-block"%>
   </div>  
 <% end %>

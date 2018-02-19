@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="col-xs-12">
+  <h2 style="text-align: center;">Rango</h2>
+</div>
 
-<p>
-  <strong>Minimo:</strong>
+<label class="col-xs-3 control-label">
+	Minimo:
+</label>
+<div class="col-xs-9 show-field">
   <%= @range_troop_number.min %>
-</p>
+</div>
 
-<p>
-  <strong>Maximo:</strong>
+<label class="col-xs-3 control-label">
+	Maximo:
+</label>
+<div class="col-xs-9 show-field">
   <%= @range_troop_number.max %>
-</p>
+</div>
 
-<%= link_to 'Editar', edit_range_troop_number_path(@range_troop_number) %> |
-<%= link_to 'Volver', range_troop_numbers_path %>
+<div class="col-xs-4">
+	<%= link_to 'Editar', edit_range_troop_number_path(@range_troop_number), class: "btn btn-primary btn-block" %>
+</div>      
+<div class="col-xs-8">
+	<%= link_to 'Volver', range_troop_numbers_path, class: "btn btn-success btn-block"%>
+</div> 

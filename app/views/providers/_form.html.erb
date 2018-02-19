@@ -11,61 +11,61 @@
     </div>
   <% end %>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Nombre:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
     <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Cuil:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.number_field :cuit, class: "form-control input-lg", placeholder: "CUIT/CUIL"%>
     <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Nº Renspa:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.number_field :renspa, class: "form-control input-lg", placeholder: "Renspa"%>
     <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Teléfono:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.number_field :telephone, class: "form-control input-lg", placeholder: "Telefono"%>
     <span class="help-block"></span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     E-mail:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.text_field :email, class: "form-control input-lg", placeholder: "E-Mail"%>
     <span class="help-block"></span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Domicilio:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.text_field :address, class: "form-control input-lg", placeholder: "Domicilio"%>
     <span class="help-block"></span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Fecha Alta:
   </label>  
   <div class="col-sm-9 controls date datepicker">
     <div class="form-group">
       <div class='input-group date'>
-        <%= f.text_field :up_date, placeholder: "Fecha de Baja", class: "form-control" %>
+        <%= f.text_field :up_date, placeholder: "Fecha de Alta", class: "form-control" %>
         <span class="input-group-addon ">
           <%= fa_icon "list"%>
         </span>
@@ -74,7 +74,7 @@
   </div>
 
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Fecha Baja:
   </label>  
   <div class="col-sm-9 controls date datepicker">
@@ -88,34 +88,34 @@
     </div>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Ciudad:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
       <%= f.collection_select :city_id, City.all, :id, :to_s, {prompt: "Ciudad"}, {class: "select2"} %>
       <span class="help-block"></span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Observación:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.text_field :observation, class: "form-control input-lg", placeholder: "Observacion"%>
     <span class="help-block"></span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     ¿Activo?:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.check_box :active, class: "form-control input-lg", placeholder: "Activo?", style:"width:auto;margin:0px;"%>
     <span class="help-block"></span>
   </div>    
   
-  <div class="col-sm-2">
+  <div class="col-xs-4">
     <%= link_to 'Volver', providers_path, class: "btn btn-primary btn-block" %>
   </div>      
-  <div class="col-sm-4">
+  <div class="col-xs-8">
     <%= f.submit class: "btn btn-success btn-form"%>
   </div>  
 <% end %>

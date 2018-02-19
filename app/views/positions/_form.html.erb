@@ -11,26 +11,26 @@
     </div>
   <% end %>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Nombre:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
+    <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Descripción:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
     <%= f.text_field :description, class: "form-control input-lg", placeholder: "Descripcion"%>
   </div>
 
-  <label class="col-sm-3 control-label">
-  </label>  
-  <div class="col-sm-3">
+  
+  <div class="col-xs-4">
     <%= link_to 'Volver', positions_path, class: "btn btn-primary btn-block" %>
   </div>      
-  <div class="col-sm-6  ">
+  <div class="col-xs-8">
     <%= f.submit class: "btn btn-success btn-block"%>
   </div>
 <% end %>

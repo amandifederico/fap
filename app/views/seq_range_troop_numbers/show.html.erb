@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="col-xs-12">
+  <h2 style="text-align: center;">Rango Numero Tropa</h2>
+</div>
 
-<p>
-  <strong>Rtn:</strong>
+<label class="col-xs-3 control-label">
+	R.N.T
+</label>
+<div class="col-xs-9 show-field">
   <%= @seq_range_troop_number.rtn %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_seq_range_troop_number_path(@seq_range_troop_number) %> |
-<%= link_to 'Back', seq_range_troop_numbers_path %>
+<div class="col-xs-4">
+	<%= link_to 'Editar', edit_seq_range_troop_number_path(@seq_range_troop_number), class: "btn btn-primary btn-block" %>
+</div>      
+<div class="col-xs-8">
+	<%= link_to 'Volver', seq_range_troop_numbers_path, class: "btn btn-success btn-block"%>
+</div> 

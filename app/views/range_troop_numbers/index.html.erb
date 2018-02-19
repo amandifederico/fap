@@ -1,30 +1,32 @@
+<div class="col-md-10  col-xs-12">
+  <h2>Numero de tropa</h2>
+</div>
 
-<h1>Numero de tropa</h1>
-
-<table class="datatable table-striped table-bordered table-list">
-  <thead>
-    <tr>
-      <th>Min</th>
-      <th>Max</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @range_troop_numbers.each do |range_troop_number| %>
+<div class="col-md-10  col-xs-12">
+  <table class="datatable table-striped table-bordered table-list">
+    <thead>
       <tr>
-        <td><%= range_troop_number.min %></td>
-        <td><%= range_troop_number.max %></td>
-        <td>
-          <%= link_to (fa_icon "eye"), range_troop_number, class: 'btn btn-sm btn-success' %>
-          <%= link_to (fa_icon "pencil-square-o"), edit_range_troop_number_path(range_troop_number), class: 'btn btn-sm btn-warning' %>
-          <%= link_to (fa_icon "trash-o"), range_troop_number, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
-        </td>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Opciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'Nuevo Rango Numero tropa', new_range_troop_number_path, {:class=>"btn btn-primary"}  %>
+    <tbody>
+      <% @range_troop_numbers.each do |range_troop_number| %>
+        <tr>
+          <td><%= range_troop_number.min %></td>
+          <td><%= range_troop_number.max %></td>
+          <td>
+            <%= link_to (fa_icon "eye"), range_troop_number, class: '' %>
+            <%= link_to (fa_icon "pencil-square-o"), edit_range_troop_number_path(range_troop_number), class: '' %>
+            <%= link_to (fa_icon "trash-o"), range_troop_number, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="col-md-10  col-xs-12">
+  <%= link_to 'Nuevo Rango Numero tropa', new_range_troop_number_path, {:class=>"btn btn-primary"}  %>
+</div>
