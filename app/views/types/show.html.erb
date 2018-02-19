@@ -1,19 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="col-xs-12">
+  <h2 style="text-align: center;">Tipo</h2>
+</div>
 
-<p>
-  <strong>Nombre:</strong>
+<label class="col-xs-3 control-label">
+  	Nombre:
+</label>
+<div class="col-xs-9 show-field">
   <%= @type.name %>
-</p>
+</div>
 
-<p>
-  <strong>Descripción:</strong>
+<label class="col-xs-3 control-label">
+	Descripción:
+</label>
+<div class="col-xs-9 show-field">
   <%= @type.description %>
-</p>
+</div>
 
-<p>
-  <strong>Tipo Animal:</strong>
+<label class="col-xs-3 control-label">
+	Tipo Animal:
+</label>
+<div class="col-xs-9 show-field">
   <%= @type.animal_type %>
-</p>
+</div>
 
-<%= link_to 'Editar', edit_type_path(@type) %> |
-<%= link_to 'Volver', types_path %>
+<div class="col-xs-4">
+	<%= link_to 'Editar', edit_type_path(@agent), class: "btn btn-primary btn-block" %>
+</div>      
+<div class="col-xs-8">
+	<%= link_to 'Volver', types_path, class: "btn btn-success btn-block"%>
+</div> 
