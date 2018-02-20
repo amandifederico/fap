@@ -1,14 +1,10 @@
 <%= form_for(sub_product) do |f| %>
     <% if sub_product.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(sub_product.errors.count, "error") %> prohibited this sub_product from being saved:</h2>
-
-            <ul>
-            <% sub_product.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-            </ul>
-        </div>
+        <script type="text/javascript">
+          <% sub_product.errors.full_messages.each do |message| %>
+            toastr['error']('<%= message %>');
+          <% end %>
+        </script>
     <% end %>
   
     <label class="col-md-3 control-label hidden-sm hidden-xs">

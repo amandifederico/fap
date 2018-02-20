@@ -1,14 +1,10 @@
 <%= form_for agent,  id:"new_agent" do |f| %>
   <% if agent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(agent.errors.count, "error") %> prohibited this agent from being saved:</h2>
-
-      <ul>
+    <script type="text/javascript">
       <% agent.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        toastr['error']('<%= message %>');
       <% end %>
-      </ul>
-    </div>
+    </script>
   <% end %>
   <label class="col-md-3 control-label hidden-sm hidden-xs">
     Apellido:

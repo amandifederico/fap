@@ -1,14 +1,10 @@
 <%= form_for city,  id:"new_city" do |f| %>
   <% if city.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h2>
-
-      <ul>
+    <script type="text/javascript">
       <% city.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        toastr['error']('<%= message %>');
       <% end %>
-      </ul>
-    </div>
+    </script>
   <% end %>
  
   <label class="col-md-3 control-label hidden-sm hidden-xs">    

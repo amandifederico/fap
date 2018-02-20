@@ -1,14 +1,10 @@
 <%= form_for(driver) do |f| %>
   <% if driver.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
-
-      <ul>
+    <script type="text/javascript">
       <% driver.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        toastr['error']('<%= message %>');
       <% end %>
-      </ul>
-    </div>
+    </script>
   <% end %>
 
   <label class="col-md-3 control-label hidden-sm hidden-xs">

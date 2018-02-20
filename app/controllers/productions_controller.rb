@@ -31,7 +31,7 @@ class ProductionsController < ApplicationController
   # POST /production.json
   def create
 
-    @production = Production.new(product_params)
+    @production = Production.new(production_params)
 
     respond_to do |format|
       if @production.save
@@ -48,7 +48,7 @@ class ProductionsController < ApplicationController
   # PATCH/PUT /production/1.json
   def update
     respond_to do |format|
-      if @production.update(product_params)
+      if @production.update(production_params)
         format.html { redirect_to @production, notice: 'Producción exitosamente actualizada.' }
         format.json { render :show, status: :ok, location: @production }
       else
