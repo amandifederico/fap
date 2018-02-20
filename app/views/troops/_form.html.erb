@@ -1,14 +1,10 @@
 <%= form_for(troop) do |f| %>
   <% if troop.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(troop.errors.count, "error") %> prohibited this troop from being saved:</h2>
-
-      <ul>
+    <script type="text/javascript">
       <% troop.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        toastr['error']('<%= message %>');
       <% end %>
-      </ul>
-    </div>
+    </script>
   <% end %>
 
   <% if current_user.Garita?  or current_user.Oficina? or current_user.admin?%>
