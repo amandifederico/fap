@@ -17,18 +17,21 @@ class TroopsController < ApplicationController
     @troop = Troop.new
     3.times { @troop.troop_details.build }
     range = RangeTroopNumber.last
+    
     seq = SeqRangeTroopNumber.last
     if seq == nil
-      @number = range.min
+      number = range.min
     elsif seq.rtn < range.max
       if seq.rtn >= range.min
-        @number = seq.rtn + 1
+        number = seq.rtn + 1
       else
-        @number = range.min
+        number = range.min
       end
     else
-      @number = -1
+      number = -1
     end
+    @troop.attributes = {troop_number: number}
+    
   end
 
   def new_troop_ajax

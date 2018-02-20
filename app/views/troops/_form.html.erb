@@ -51,16 +51,16 @@
 
     <!-- Nº de Tropa -->
     <label class="col-sm-3 control-label">
-      Nº de Tropa:
+      Nº de Tropa X:
     </label>
-    <% if @number == -1 %>
+    <% if @troop.troop_number == -1 %>
       <div class="col-sm-9 controls">
-        <%= f.text_field :troop_number, class: "form-control", placeholder: "Reinicie rango"%>
+        <%= f.text_field :troop_number, class: "form-control", placeholder: "Reinicie rango", readonly: true %>
         <span class="help-block">Obligatorio. </span>
       </div>
     <%else%>
       <div class="col-sm-9 controls">
-        <%= f.text_field :troop_number, :value => @number, class: "form-control", placeholder: "123456"%>
+        <%= f.text_field :troop_number, class: "form-control", placeholder: "123456", readonly: true%>
         <span class="help-block">Obligatorio. </span>
       </div>
     <%end%>
