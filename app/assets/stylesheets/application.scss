@@ -23,6 +23,10 @@ $primary-color-claro : #6C8CD5;
   font-size: 18px;
 }
 
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: #fff;
+}
+
 .show-field {
   font-size: 18px;
   padding: 10px;

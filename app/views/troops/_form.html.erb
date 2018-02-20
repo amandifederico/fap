@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <% if current_user.Garita?  or current_user.Oficina? or current_user.admin?%>
+<% if current_user.Garita?  or current_user.Oficina? or current_user.admin?%>
     <!-- DTE -->
     <label class="col-md-3 control-label hidden-sm hidden-xs">
       D.T.E.:
@@ -50,17 +50,17 @@
     </div>
 
     <!-- Nº de Tropa -->
-    <label class="col-md-3 control-label hidden-sm hidden-xs">
-      Nº de Tropa:
+    <label class="col-sm-3 control-label">
+      Nº de Tropa X:
     </label>
-    <% if @number == -1 %>
-      <div class="col-sm-12 col-md-9 controls">
-        <%= f.text_field :troop_number, class: "form-control", placeholder: "Reinicie rango"%>
+    <% if @troop.troop_number == -1 %>
+      <div class="col-sm-9 controls">
+        <%= f.text_field :troop_number, class: "form-control", placeholder: "Reinicie rango", readonly: true %>
         <span class="help-block">Obligatorio. </span>
       </div>
     <%else%>
-      <div class="col-sm-12 col-md-9 controls">
-        <%= f.text_field :troop_number, :value => @number, class: "form-control"%>
+      <div class="col-sm-9 controls">
+        <%= f.text_field :troop_number, class: "form-control", placeholder: "123456", readonly: true%>
         <span class="help-block">Obligatorio. </span>
       </div>
     <%end%>
