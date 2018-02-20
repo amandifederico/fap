@@ -1,5 +1,6 @@
 class Position < ApplicationRecord
-  def to_s
-    name
-  end
+	validates :name, :presence => true
+	def to_s
+		name
+	end
 end

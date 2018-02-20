@@ -10,13 +10,18 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :rtn %>
-    <%= f.number_field :rtn %>
+  
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
+    R.N.T:
+  </label>
+  <div class="col-sm-12 col-md-9 controls">
+      <%= f.number_field :rtn, class: "form-control input-lg", placeholder: "Rango Numero Tropa"%>
+      <span class="help-block">Obligatorio. </span>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="col-xs-4">
+    <%= link_to 'Volver', seq_range_troop_numbers_path, class: "btn btn-primary btn-block" %>
+  </div>      
+  <div class="col-xs-8">
+    <%= f.submit class: "btn btn-success btn-block"%>
+  </div>  
 <% end %>

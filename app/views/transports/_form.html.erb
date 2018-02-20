@@ -12,54 +12,56 @@
     </div>
   <% end %>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Acoplado:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
         <%= f.number_field :coupled, class: "form-control input-lg", placeholder: "Acoplado"%>
         <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Capacidad:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
         <%= f.number_field :capacity, class: "form-control input-lg", placeholder: "Capacidad"%>
+        <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Patente:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
         <%= f.text_field :plate, class: "form-control input-lg", placeholder: "Patente"%>
+        <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Modelo:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
         <%= f.number_field :model, class: "form-control input-lg", placeholder: "Modelo"%>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Peso:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
         <%= f.text_field :weight, class: "form-control input-lg", placeholder: "Peso"%>
+        <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
     Marca:
   </label>
-  <div class="col-sm-9 controls">
+  <div class="col-sm-12 col-md-9 controls">
         <%= f.text_field :brand, class: "form-control input-lg", placeholder: "Marca"%>
   </div>
 
-  <div class="col-sm-2">
+  <div class="col-xs-4">
     <%= link_to 'Volver', transports_path, class: "btn btn-primary btn-block" %>
   </div>      
-  <div class="col-sm-4">
+  <div class="col-xs-8">
     <%= f.submit class: "btn btn-success btn-block"%>
   </div>  
-
 <% end %>

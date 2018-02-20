@@ -11,34 +11,34 @@
     </div>
   <% end %>
  
-  <label class="col-sm-3 control-label">
-    Nombre:
+  <label class="col-md-3 control-label hidden-sm hidden-xs">    
+      Nombre:
   </label>
-  <div class="col-sm-9 controls">
-    <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
-    <span class="help-block">Obligatorio. </span>
+  <div class="col-sm-12 col-md-9 controls">
+      <%= f.text_field :name, class: "form-control input-lg", placeholder: "Nombre"%>
+      <span class="help-block">Obligatorio. </span>
   </div>
 
-  <label class="col-sm-3 control-label">
-    Provincia:
+  <label class="col-md-3 control-label hidden-sm hidden-xs">    
+      Provincia:
   </label>
-  <div class="col-sm-9 controls">
-    <%= f.text_field :province, class: "form-control input-lg", placeholder: "Provincia"%>
-    <span class="help-block">Obligatorio. </span>
+  <div class="col-sm-12 col-md-9 controls">
+      <%= f.text_field :province, class: "form-control input-lg", placeholder: "Provincia"%>
+      <span class="help-block">Obligatorio. </span>
   </div>
   
-  <label class="col-sm-3 control-label">
-    Código Postal:
+  <label class="col-md-3 control-label hidden-sm hidden-xs">    
+      Código Postal:
   </label>
-  <div class="col-sm-9 controls">
-    <%= f.number_field :cp, class: "form-control input-lg", placeholder: "Codigo Postal"%>
-    <span class="help-block">Obligatorio. </span>
+  <div class="col-sm-12 col-md-9 controls">
+      <%= f.number_field :cp, class: "form-control input-lg", placeholder: "Codigo Postal"%>
+      <span class="help-block">Obligatorio. </span>
   </div>
   
-  <div class="col-sm-2">
+  <div class="col-xs-4">
     <%= link_to 'Volver', cities_path, class: "btn btn-primary btn-block" %>
   </div>      
-  <div class="col-sm-4">
-    <%= f.submit class: "btn btn-success btn-block"%>
+  <div class="col-xs-8">
+      <%= f.submit class: "btn btn-success btn-block"%>
   </div>  
 <% end %>

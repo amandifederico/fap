@@ -1,28 +1,37 @@
 
-<div class="col-sm-6">  
-  <%= form_for(range_troop_number) do |f| %>
-    <% if range_troop_number.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(range_troop_number.errors.count, "error") %> prohibited this range_troop_number from being saved:</h2>
+<%= form_for(range_troop_number) do |f| %>
+  <% if range_troop_number.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(range_troop_number.errors.count, "error") %> prohibited this range_troop_number from being saved:</h2>
 
-        <ul>
-        <% range_troop_number.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="form-group">
-      <%= f.number_field :min, class: "form-control input-lg", placeholder: "Minimo"%>
-    </div>
-
-    <div class="form-group">
-      <%= f.text_field :max, class: "form-control input-lg", placeholder: "Maximo"%>
-    </div>
-
-    <div class="actions">
-        <%= f.submit class: "btn btn-outline-success btn-block"%>
+      <ul>
+      <% range_troop_number.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
-</div>
+
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
+    Minimo:
+  </label>
+  <div class="col-sm-12 col-md-9 controls">
+    <%= f.number_field :min, class: "form-control input-lg", placeholder: "Minimo"%>
+  </div>
+
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
+    Maximo:
+  </label>
+  <div class="col-sm-12 col-md-9 controls">
+    <%= f.text_field :max, class: "form-control input-lg", placeholder: "Maximo"%>
+  </div>
+
+  <div class="col-xs-4">
+    <%= link_to 'Volver', range_troop_numbers_path, class: "btn btn-primary btn-block" %>
+  </div>      
+  <div class="col-xs-8">
+    <%= f.submit class: "btn btn-success btn-block"%>
+  </div>  
+
+
+<% end %>

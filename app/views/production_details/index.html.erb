@@ -1,9 +1,8 @@
-<div class="col-xs-10">
+<div class="col-md-10  col-xs-12">
   <h2>Detalle de Producción</h2>
 </div>
 
-<div class="col-xs-10  col-xs-12">
-
+<div class="col-md-10  col-xs-12">
   <table class="datatable table-striped table-bordered table-list">
     <thead>
       <tr>
@@ -16,7 +15,7 @@
         <% if current_user.PlantaA?  or current_user.admin?%>
           <th>Peso control</th>
         <% end %>
-        <th>Observación</th>
+        
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -33,7 +32,7 @@
           <% if current_user.PlantaB?  or current_user.admin?%>
             <td><%= production_detail.weight_control %></td>
           <% end %>
-          <td><%= production_detail.observation %></td>
+          
           <td>
             <%= link_to (fa_icon "eye"), production_detail, class: '' %>
             <%= link_to (fa_icon "pencil-square-o"), edit_production_detail_path(production_detail), class: '' %>
@@ -46,6 +45,6 @@
     </tbody>
   </table>
 </div>
-
-<br>
-
+<div class="col-md-10  col-xs-12">
+  
+</div>

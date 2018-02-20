@@ -1,5 +1,6 @@
 class Place < ApplicationRecord
-  def to_s
-    description
-  end
+	validates :description, :presence => true
+	def to_s
+		description
+	end
 end

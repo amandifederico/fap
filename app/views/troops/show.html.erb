@@ -1,103 +1,135 @@
+<div class="col-xs-12">
+  <h2 style="text-align: center;">Tropa</h2>
+</div>
 
 
-<p>
-  <strong>D.T.E:</strong>
+<label class="col-xs-3 control-label">
+  D.T.E:
+</label>  
+<div class="col-xs-9 show-field">
   <%= @troop.dte %>
-</p>
-
-<p>
-  <strong>Fecha de LLegada:</strong>
+</div>
+<label class="col-xs-3 control-label">
+  Fecha de LLegada:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.arrival_date %>
-</p>
+</div>
 
-<p>
-  <strong>Hora de LLegada:</strong>
-  <%= @troop.arrival_time %>
-</p>
+<label class="col-xs-3 control-label">
+  Hora de LLegada:
+</label>
+<div class="col-xs-9 show-field">
+  <%= @troop.arrival_time.to_s(:time) %>
+</div>
 
-<p>
-  <strong>Turno:</strong>
+<label class="col-xs-3 control-label">
+  Turno:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.turn %>
-</p>
+</div>
 
-<p>
-  <strong>Abastecedor:</strong>
+<label class="col-xs-3 control-label">
+  Abastecedor:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.provider %>
-</p>
+</div>
 
-<p>
-  <strong>Nro tropa:</strong>
+<label class="col-xs-3 control-label">
+  Nro tropa:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.troop_number %>
-</p>
+</div>
 
-<p>
-  <strong>Fecha cargo:</strong>
+<label class="col-xs-3 control-label">
+  Fecha cargo:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.cargo_date %>
-</p>
+</div>
 
-<p>
-  <strong>Fecha vencimiento:</strong>
+<label class="col-xs-3 control-label">
+  Fecha vencimiento:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.expiration_date %>
-</p>
+</div>
 
-<p>
-  <strong>Transporte:</strong>
+<label class="col-xs-3 control-label">
+  Transporte:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.transport %>
-</p>
+</div>
 
-<p>
-  <strong>Chofer:</strong>
+<label class="col-xs-3 control-label">
+  Chofer:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.driver %>
-</p>
-<p>
-  <strong>Nro precinto:</strong>
+</div>
+<label class="col-xs-3 control-label">
+  Nro precinto:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.seal_number %>
-</p>
+</div>
 
-<p>
-  <strong>Peso vivo:</strong>
+<label class="col-xs-3 control-label">
+  Peso vivo:
+</label>
+<div class="col-xs-9 show-field">  
   <%= @troop.liveweight %>
-</p>
+</div>
 
-<p>
-  <strong>Control cantidad:</strong>
+<label class="col-xs-3 control-label">
+  Control cantidad:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.quantity_control %>
-</p>
+</div>
 
-<p>
-  <strong>Codigo cierre:</strong>
+<label class="col-xs-3 control-label">
+  Codigo cierre:
+</label>
+<div class="col-xs-9 show-field">
   <%= @troop.close_code %>
-</p>
+</div>
 
-<table class="datatable table-striped table-bordered table-list">
-  <thead>
-      <tr>
-        <th class="hidden-xs">Animal</th>
-        <th>Cantidad</th>
-        <th>Observacion</th>
-      </tr> 
-  </thead>
-  <tbody>
-    <% for details in @troop.troop_details %>
-      <tr>
-        <td><%= details.animal %></td>
-        <td><%= details.quantity%></td>
-        <td><%= details.observartion %></td>
-      </tr>
-    <% end %>
-  </tbody>
-  <tfoot>
+<div class="col-xs-10  col-xs-12">
+    <table class="datatable table-striped table-bordered table-list">
+    <thead>
         <tr>
-            <th colspan="4" style="text-align:right">Total:</th>
-            <th><%= @troop.troop_details.sum('quantity') %></th>
+            <th class="hidden-xs">Animal</th>
+            <th>Cantidad</th>
+            <th>Observacion</th>
+        </tr> 
+    </thead>
+    <tbody>
+        <% for details in @troop.troop_details %>
+        <tr>
+            <td><%= details.animal %></td>
+            <td><%= details.quantity%></td>
+            <td><%= details.observartion %></td>
         </tr>
-    </tfoot>
-</table>
+        <% end %>
+    </tbody>
+    <tfoot>
+            <tr>
+                <th colspan="4" style="text-align:right">Total:</th>
+                <th><%= @troop.troop_details.sum('quantity') %></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
 
 
-
-
-
-
-<%= link_to 'Editar', edit_troop_path(@troop) %> |
-<%= link_to 'Volver', troops_path %>
+<div class="col-xs-4">
+    <%= link_to 'Editar', edit_troop_path(@troop), class: "btn btn-primary btn-block" %>
+</div>
+<div class="col-xs-8">
+    <%= link_to 'Volver', troops_path , class: "btn btn-success btn-block"%>
+</div>

@@ -1,7 +1,11 @@
 $.ajaxSetup dataType: 'json'
 
 $(document).on 'turbolinks:load', ->
-  $(".select2").select2({theme: "bootstrap"})
+  $(".select2").select2({
+    theme: "bootstrap"
+    width: "100%"
+  })
+
   $(".datepicker").datepicker({
     startView: 1,
     language: "es",
@@ -14,6 +18,7 @@ $(document).on 'turbolinks:load', ->
     'language':'url':'//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json'
     'bPaginate': false
     'info': false
+    'responsive': true
     
 
 $(document).ready ->

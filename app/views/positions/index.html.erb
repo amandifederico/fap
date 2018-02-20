@@ -1,29 +1,33 @@
-<h1>Posiciones</h1>
+<div class="col-md-10  col-xs-12">
+  <h2>Posiciones</h2>
+</div>
 
-<table class="datatable table-striped table-bordered table-list">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripción</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @positions.each do |position| %>
+<div class="col-md-10  col-xs-12">
+  <table class="datatable table-striped table-bordered table-list">
+    <thead>
       <tr>
-        <td><%= position.name %></td>
-        <td><%= position.description %></td>
-        <td>
-          <%= link_to (fa_icon "eye"), position, class: 'btn btn-sm btn-success' %>
-          <%= link_to (fa_icon "pencil-square-o"), edit_position_path(position), class: 'btn btn-sm btn-warning' %>
-          <%= link_to (fa_icon "trash-o"), position, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>      
-        </td>     
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @positions.each do |position| %>
+        <tr>
+          <td><%= position.name %></td>
+          <td><%= position.description %></td>
+          <td>
+            <%= link_to (fa_icon "eye"), position, class: '' %>
+            <%= link_to (fa_icon "pencil-square-o"), edit_position_path(position), class: '' %>
+            <%= link_to (fa_icon "trash-o"), position, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>      
+          </td>     
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to 'Nueva Posición', new_position_path %>
+<div class="col-md-10  col-xs-12">
+  <%= link_to 'Nueva Posición', new_position_path, class: 'btn btn-primary btn-submit' %>
+</div>

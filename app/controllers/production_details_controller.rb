@@ -1,5 +1,5 @@
 class ProductionDetailsController < ApplicationController
-  before_action :set_product_detail, only: [:show, :edit, :update, :destroy]
+  before_action :set_production_detail, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   # GET /production_details
   # GET /production_details.json
@@ -14,9 +14,8 @@ class ProductionDetailsController < ApplicationController
 
   # GET /production_details/new
   def new
-    
+    @editor=false
     if params[:production]
-       
       production_id = params[:production]
     else
       production_id = params[:prod]
@@ -27,21 +26,21 @@ class ProductionDetailsController < ApplicationController
 
   # GET /production_details/1/edit
   def edit
+    production_id = @production_detail.production_id
+    @production = Production.where(id: production_id).first
+    @editor=true
   end
   
   # POST /production_details
   # POST /production_details.json
   def create
-    byebug
     @flag = params[:production_detail][:flag]
+    params[:production_detail].delete :flag
     @production_detail = ProductionDetail.new(production_detail_params)
     respond_to do |format|
       if @production_detail.save
-
-        if @flag = "true"
-          variable = "Asdasd"
-          
-          format.html { redirect_to "/production_details/new?prod=" + @product_detail.production_id.to_s, notice: 'Production detail was successfully created.', :production => @production }
+        if @flag
+          format.html { redirect_to "/production_details/new?prod=" + @production_detail.production_id.to_s, notice: 'Production detail was successfully created.'}
           format.json { render :show, status: :created, location: @production_detail }
         else
           format.html { redirect_to @production_detail, notice: 'Detalle de producción exitosamente creado.' }
@@ -86,6 +85,6 @@ class ProductionDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def production_detail_params
-      params.require(:production_detail).permit(:produciont_id, :type_id, :animal_id, :weight, :weight_control, :observation)
+      params.require(:production_detail).permit(:production_id, :type_id, :animal_id, :weight, :weight_control, :observation, :flag)
     end
 end

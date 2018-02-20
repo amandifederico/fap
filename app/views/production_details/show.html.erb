@@ -1,36 +1,50 @@
-<p>
-  <strong>Producción:</strong>
+<div class="col-xs-12">
+  <h2 style="text-align: center;">Detalle de Producción</h2>
+</div>
+<label class="col-xs-3 control-label">
+  Producción:
+</label>
+<div class="col-xs-9 show-field">
   <%= @production_detail.production %>
-</p>
-
-<p>
-  <strong>Tipo:</strong>
+</div>
+<label class="col-xs-3 control-label">
+  Tipo:
+</label>
+<div class="col-xs-9 show-field">
   <%= @production_detail.type %>
-</p>
-
-<p>
-  <strong>Animal:</strong>
+</div>
+<label class="col-xs-3 control-label">
+  Animal:
+</label>
+<div class="col-xs-9 show-field">
   <%= @production_detail.animal %>
-</p>
-
+</div>
 <% if current_user.PlantaA?  or current_user.admin?%>
-  <p>
-    <strong>Peso:</strong>
+  <label class="col-xs-3 control-label">
+    Peso:
+  </label>
+  <div class="col-xs-9 show-field">
     <%= @production_detail.weight %>
-  </p>
+  </div>
 <% end %>
-
 <% if current_user.PlantaB?  or current_user.admin?%>
-  <p>
-    <strong>Peso control:</strong>
+  <label class="col-xs-3 control-label">
+    Peso control:
+  </label>
+  <div class="col-xs-9 show-field">
     <%= @production_detail.weight_control %>
-  </p>
+  </div>
 <% end %>
-
-<p>
-  <strong>Observación:</strong>
+<label class="col-xs-3 control-label">
+  Observación:
+</label>
+<div class="col-xs-9 show-field">
   <%= @production_detail.observation %>
-</p>
+</div>
 
-<%= link_to 'Editar', edit_production_detail_path(@production_detail) %> |
-<%= link_to 'Volver', production_details_path %>
+<div class="col-xs-4">
+  <%= link_to 'Editar', edit_production_detail_path(@production_detail), class: "btn btn-primary btn-block" %>
+</div>      
+<div class="col-xs-8">
+  <%= link_to 'Volver', production_details_path, class: "btn btn-success btn-block"%>
+</div> 
