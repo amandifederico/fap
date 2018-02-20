@@ -22,29 +22,128 @@
 en:
   activerecord:
     models:
-      nationlity:
-        one: Nacionalidad
-        other: Nacionalidades
-      position: "Posicion"
-      law: Ley
+      agent: "Agente"
+      troop:
+        one: "Tropa"
+        other: "Tropas"
+      troop_detail: "Detalle Tropa"
+      position: "Posición"
+      city: "Ciudad"
+      driver: "Chofer"
+      place: "Lugar"
+      production_detail: "Detalle Producción"
+      production: "Producción"
+      provider: "Abastecedor"
+      range_troop_number: "Rango Numero de Tropa"
+      sub_product: "Sub Producto"
+      sub_product_detail: "Detalle Sub Producto"
+      sub_product_type: "Tipo de Sub Producto"
+      transport: "Transporte"
+      turn: "Turno"
+      turn_detail: "Detalle Turno"
+      type: "Tipo"
+      user: "Usuario"
     attributes:
       agent:
+        last_name: "Apellido"
+        name: "Nombre"
         dni: "Número de Documento"
-        fullname: "Nombre Completo"
-        sex: "Sexo"
-        birthdate: "Fecha de Nacimiento"
-        marital_status: "Estado Civil"
-        email: "E-mail"
-        position_id: "Categoría de Revista"
-        study_id: "Estudios"
-        nationality_id: "Nacionalidad"
-      dependence_of_agent:
-        agent_id: "Agente"
-        dependence: "Dependencia"
-        date_up: "Fecha de Alta"
-      law_of_agent:
-        law: "Ley"
-        agent_id: "Agente"
+        position: "Posición"
+        up_date: "Fecha de alta"
+        down_date: "Fecha de baja"
+      animal_type:
+        description: "Descripción"
+      animal:
+        description: "Descripción"
+        animal_type: "Tipo de Animal"
+        average_value: "Peso promedio"
+        initials: "Siglas"
+      city:
+        name: "Nombre"
+        province: "Provincia"
+        cp: "Codigo Postal (CP)"
+      driver:
+        name: "Nombre"
+        last_name: "Apellido"
+        dni: "DNI"
+        observation: "Observación"
+      place:
+        description: "Descripción"
+      position:
+        name: "Nombre"
+        description: "Descripción"
+      production_detail:
+        production: "Producción"
+        type: "Tipo"
+        animal: "Animal"
+        weight: "Peso"
+        weight_control: "Peso Control"
+        observation: "Observación"
+      production:
+        troop: "Tropa"
+        description: "Descripción"
+      provider:
+        name: "Nombre"
+        cuit: "CUIT"
+        renspa: "RENSPA"
+        telephone: "Telefono"
+        email: "Email"
+        address: "Dirección"
+        up_date: "Fecha de alta"
+        down_date: "Fecha de baja"
+        citi: "Ciudad"
+        active: "Activo"
+        observation: "Observación"
+      sub_product_detail:
+        sub_product: "Sub Producto"
+        sub_product_type: "Tipo Sub Producto"
+        weight: "Peso"
+        weight_control: "Peso Control"
+        caliber: "Calibre"
+        observartion: "Observación"
+      sub_product_type:
+        description: "Descripción"
+      sub_product:
+        troop: "Tropa"
+        observartion: "Observación"
+      transport:
+        coupled: "Acoplado"
+        capacity: "Capacidad"
+        plate: "Patente"
+        model: "Modelo"
+        brand: "Marca"
+        weight: "Peso"
+      troop_detail:
+        troop: "Tropa"
+        animal: "Animal"
+        quantity: "Cantidad"
+        fallen: "Caidos"
+        observartion: "Observación"
+      troop:
+        dte: "DTE"
+        arrival_date: "Fecha llegada"
+        arrival_time: "Hora llegada"
+        turn: "Turno"
+        provider: "Abastecedor"
+        city: "Ciudad"
+        troop_number: "Numero de Tropa"
+        cargo_date: "Fecha Cargo"
+        expiration_date: "Fecha Vencimiento"
+        transport: "Transporte"
+        driver: "Chofer"
+        seal_number: "Numero Precinto"
+        liveweight: "Peso Vivo"
+        quantity_contro: "Control Cantidad"
+        close_code: "Codigo de Cierre"
+      turn_detail:
+        date: "Fecha"
+        description: "Descripción"
+      type:
+        name: "Nombre"
+        description: "Descripción"
+        animal_type: "Tipo Animal"
+        
+
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
@@ -52,33 +151,126 @@ en:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
       models:
-        certificate:
+        agent:
           attributes:
-            certificate_date:
-              blank: La Fecha del certificado no puede ser vacia
-            loading_date:
-              blank: La Fecha de carga no puede ser vacía
-            agent:
-              blank: El Agente no puede estar vacío
-            family:
-              blank: El Familiar no puede estar vacío
-            certificate_type:
-              blank: El Tipo de Certificado no puede ser vacío
-        dependence_of_agent:
-          attributes:
-            law_of_agent: 
-              blank: Los Datos del Agente no pueden estar vacíos
-        family:
-          attributes:
-            agent:
-              blank: El Agente no puede ser vacio
-            relationship:
-              blank: El Parentesco no puede ser vacio
+            position:
+              blank: "Posición no puede estar vacio"
+            name:
+              blank: "Nombre no puede estar vacio"
+            last_name:
+              blank: "Apellido no puede estar vacio"
             dni:
-              blank: El Número de Dni no puede ser vacio
-              taken: El Familiar ya fue cargado
-            fullname:
-              blank: El Nombre Completo no puede ser vacio
+              blank: "DNI no puede estar vacio"
+        animal:
+          attributes:
+            animal_type: 
+              blank: "Tipo animal no puede estar vacio"
+            description:
+              blank: "Descripción no puede estar vacio"
+            initials:
+              blank: "Siglas no puede estar vacio"
+        driver:
+          attributes:
+            name:
+              blank: "Nombre no puede estar vacio"
+            last_name:
+              blank: "Apellido no puede estar vacio"
+            dni:
+              blank: "DNI no puede estar vacio"
+        place:
+          attributes:
+            description:
+              blank: "Descripción no puede estar vacio"
+        position:
+          attributes:
+            name:
+              blank: "Nombre no puede estar vacio"
+        production_detail:
+          attributes:
+            production:
+              blank: "Producción no puede estar vacio"
+            type:
+              blank: "Tipo no puede estar vacio"
+            animal:
+              blank: "Animal no puede estar vacio"
+        provider:
+          attributes:
+            city:
+              blank: "Ciudad no puede estar vacio"
+            name:
+              blank: "Nombre no puede estar vacio"
+            cuit:
+              blank: "CUIT no puede estar vacio"
+            renspa:
+              blank: "RENSPA no puede estar vacio"
+        sub_product:
+          attributes:
+            troop:
+              blank: "Tropa no puede estar vacio"
+        sub_product_detail:
+          attributes:
+            sub_product:
+              blank: "Sub Producto no puede estar vacio"
+            sub_product_type:
+              blank: "Tipo Sub Producto no puede estar vacio"
+        transport:
+          attributes:
+            coupled:
+              blank: "Acoplado no puede estar vacio"
+            capacity:
+              blank: "Capacidad no puede estar vacio"
+            plate:
+              blank: "Patente no puede estar vacio"
+            weight:
+              blank: "Peso no puede estar vacio"
+        troop:
+          attributes:
+            turn:
+              blank: "Turno no puede estar vacio"
+            provider:
+              blank: "Abastecedor no puede estar vacio"
+            city:
+              blank: "Ciudad no puede estar vacio"
+            transport:
+              blank: "Transporte no puede estar vacio"
+            driver:
+              blank: "Chofer no puede estar vacio"
+            dte:
+              blank: "DTE no puede estar vacio"
+            arrival_date:
+              blank: "Fecha llegada no puede estar vacio"
+            arrival_time:
+              blank: "Hora llegada no puede estar vacio"
+            troop_number:
+              blank: "Numero tropa no puede estar vacio"
+            cargo_date:
+              blank: "Fecha cargo no puede estar vacio"
+            expiration_date:
+              blank: "Fecha vencimiento no puede estar vacio"
+            seal_number:
+              blank: "Numero Precinto no puede estar vacio"
+        troop_detail:
+          attributes:
+            troop:
+              blank: "Tropa no puede estar vacio"
+            animal:
+              blank: "Animal no puede estar vacio"
+        turn:
+          attributes:
+            date:
+              blank: "Fecha no puede estar vacio"
+        turn_detail:
+          attributes:
+            turn:
+              blank: "Turno no puede estar vacio"
+            agent:
+              blank: "Agente no puede estar vacio"
+            place:
+              blank: "Lugar no puede estar vacio"
+            position:
+              blank: "Posición no puede estar vacio"
+              
+        
   date:
     abbr_day_names:
     - dom
@@ -179,7 +371,7 @@ en:
       second: Segundos
       year: Año
   errors:
-    format: "%{attribute} %{message}"
+    format: "%{message}"
     messages:
       accepted: "%{attribute} debe ser aceptado"
       blank: "%{attribute} no puede estar en blanco"

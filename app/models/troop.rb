@@ -7,9 +7,17 @@ class Troop < ApplicationRecord
   belongs_to :transport
   belongs_to :driver
   
-  validates :provider, presence: true
-  
 
+  validates :dte, presence: true
+  validates :arrival_date, presence: true
+  validates :arrival_time, presence: true
+  validates :troop_number, presence: true
+  validates :cargo_date, presence: true
+  validates :expiration_date, presence: true
+  validates :seal_number, presence: true
+  
+  
+    
   def to_s
   	dte.to_s + " ( " + provider.to_s + " )"
   end

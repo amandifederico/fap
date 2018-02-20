@@ -1,7 +1,7 @@
 <%= form_for(provider) do |f| %>
   <% if provider.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
+      <h2> Fallo el guardado debido a:</h2>
 
       <ul>
       <% provider.errors.full_messages.each do |message| %>
@@ -94,6 +94,7 @@
   <div class="col-sm-12 col-md-9 controls">
       <%= f.collection_select :city_id, City.all, :id, :to_s, {prompt: "Ciudad"}, {class: "select2"} %>
       <span class="help-block"></span>
+      <span class="help-block">Obligatorio. </span>
   </div>
 
   <label class="col-md-3 control-label hidden-sm hidden-xs">

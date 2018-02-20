@@ -2,7 +2,7 @@
   <%= form_for(sub_product_type) do |f| %>
     <% if sub_product_type.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(sub_product_type.errors.count, "error") %> prohibited this sub_product_type from being saved:</h2>
+        <h2> Fallo el guardado debido a:</h2>
 
         <ul>
         <% sub_product_type.errors.full_messages.each do |message| %>
