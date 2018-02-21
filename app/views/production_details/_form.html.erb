@@ -25,7 +25,14 @@
       </label>
 
       <div class="col-sm-12 col-md-9 controls">
-        <%= f.collection_select :type_id, Type.all, :id, :to_s, {prompt: "Tipo"}, {class: "select2", style: "min-width:225px;float:left;"} %>
+        <% if @production %>
+          <% animal = Animal.where(id: TroopDetail.where(troop: Production.where(id: @production.id).first.troop).pluck(:animal_id))%>
+          <% type = Type.where(animal_type_id: animal.first.animal_type_id)%>
+        <% else %>
+          <% type = Type.all%>
+        <% end %>
+      
+        <%= f.collection_select :type_id, type, :id, :to_s, {prompt: "Tipo"}, {class: "select2", style: "min-width:225px;float:left;"} %>
         <span class="help-block">Obligatorio. </span>
       </div>
     
