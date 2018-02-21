@@ -7,56 +7,53 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-#user = User.new
-#user.email = "usuario@index.com"
-#user.password = "quitar1234"
-#user.save!
-#user.add_role "admin"
-#
-#user = User.new
-#user.email = "usuarioa@index.com"
-#user.password = "usuarioa"
-#user.save!
-#user.add_role "Garita"
-#
-#user = User.new
-#user.email = "usuariob@index.com"
-#user.password = "usuariob"
-#user.save!
-#user.add_role "Corral"
-#
-#user = User.new
-#user.email = "usuarioc@index.com"
-#user.password = "usuarioc"
-#user.save!
-#user.add_role "Oficina"
-#
-#user = User.new
-#user.email = "usuariod@index.com"
-#user.password = "usuariod"
-#user.save!
-#user.add_role "PlantaA"
-#
-#user = User.new
-#user.email = "usuarioe@index.com"
-#user.password = "usuarioe"
-#user.save!
-#user.add_role "PlantaB"
-#
-#user = User.new
-#user.email = "usuariof@index.com"
-#user.password = "usuariof"
-#user.save!
-#user.add_role "SubA"
-#
-#user = User.new
-#user.email = "usuariog@index.com"
-#user.password = "usuariog"
-#user.save!
-#user.add_role "SubB"
+user = User.new
+user.email = "usuario@index.com"
+user.password = "quitar1234"
+user.save!
+user.add_role "admin"
 
-tipo = Type.new(name:'A1', description:'a1', animal_type_id:1)
-tipo.save
+user = User.new
+user.email = "usuarioa@index.com"
+user.password = "usuarioa"
+user.save!
+user.add_role "Garita"
+
+user = User.new
+user.email = "usuariob@index.com"
+user.password = "usuariob"
+user.save!
+user.add_role "Corral"
+
+user = User.new
+user.email = "usuarioc@index.com"
+user.password = "usuarioc"
+user.save!
+user.add_role "Oficina"
+
+user = User.new
+user.email = "usuariod@index.com"
+user.password = "usuariod"
+user.save!
+user.add_role "PlantaA"
+
+user = User.new
+user.email = "usuarioe@index.com"
+user.password = "usuarioe"
+user.save!
+user.add_role "PlantaB"
+
+user = User.new
+user.email = "usuariof@index.com"
+user.password = "usuariof"
+user.save!
+user.add_role "SubA"
+
+user = User.new
+user.email = "usuariog@index.com"
+user.password = "usuariog"
+user.save!
+user.add_role "SubB"
 
 chofer = Driver.new(name:'Juan', last_name:'Perez', dni:12345556, observation:'pruebas')
 chofer.save
@@ -79,6 +76,128 @@ transport.save
 range_troop_numer = RangeTroopNumber.new(min:150, max:152)
 range_troop_numer.save
 
+#tipo = Type.new(name:'A1', description:'a1', animal_type_id:1)
+#tipo.save
+type_list = [
+				['1a 1','Cachorros Parrilleros', 3],
+				['2a 1','Cachorros Parrilleros', 3],
+				['A','Cachorros capones y hembras sin servicio', 3],
+				['A 0','Chanchas',3],
+				['A 1','Chanchas',3],
+				['A 2','Chanchas',3],
+				['A 3','Chanchas',3],
+				['A 4','Chanchas',3],
+				['B 0','Chanchas',3],
+				['B 1','Chanchas',3],
+				['B 2','Chanchas',3],
+				['B 3','Chanchas',3],
+				['B 4','Chanchas',3],
+				['C','Chanchas',3],
+				['A-B-C','Lechones',3],
+				['JJ 1','Cachorros capones y hembras sin servicio',3],
+				['J 0','Cachorros capones y hembras sin servicio',3],
+				['J 1','Cachorros capones y hembras sin servicio',3],
+				['J 2','Cachorros capones y hembras sin servicio',3],
+				['J 3','Cachorros capones y hembras sin servicio',3],
+				['J 4','Cachorros capones y hembras sin servicio',3],
+				['U 0','Cachorros capones y hembras sin servicio',3],
+				['U 1','Cachorros capones y hembras sin servicio',3],
+				['U 2','Cachorros capones y hembras sin servicio',3],
+				['U 3','Cachorros capones y hembras sin servicio',3],
+				['U 4','Cachorros capones y hembras sin servicio',3],
+				['N 0','Cachorros capones y hembras sin servicio',3],
+				['N 1','Cachorros capones y hembras sin servicio',3],
+				['N 2','Cachorros capones y hembras sin servicio',3],
+				['N 3','Cachorros capones y hembras sin servicio',3],
+				['N 4','Cachorros capones y hembras sin servicio',3],
+				['T 0','Cachorros capones y hembras sin servicio',3],
+				['T 1','Cachorros capones y hembras sin servicio',3],
+				['T 2','Cachorros capones y hembras sin servicio',3],
+				['T 3','Cachorros capones y hembras sin servicio',3],
+				['T 4','Cachorros capones y hembras sin servicio',3],
+				['Especiales 0','Chanchas',3],
+				['Especiales 1','Chanchas',3],
+				['Especiales 2','Chanchas',3],
+				['Especiales 3','Chanchas',3],
+				['Especiales 4','Chanchas',3],
+				['AA-1','S.C.E:Vacas, Novillitos, Vaquillonas y Terneros',1],
+				['AA-2','S.C.E:Vacas, Novillitos, Vaquillonas y Terneros',1],
+				['AA-3','S.C.E:Vacas',1],
+				['A-0','S.C.E:Mamones',1],
+				['A-1','S.C.E:Vacas, Novillitos, Mamones, Vaquillonas y Terneros',1],
+				['A-2','S.C.E:Vacas, Novillitos, Vaquillonas y Terneros',1],
+				['A-3','S.C.E:Vacas',1],
+				['B-0','S.C.E:Mamones',1],
+				['B-1','S.C.E:Vacas, Novillitos, Mamones, Vaquillonas y Terneros',1],
+				['B-2','S.C.E:Vacas, Novillitos, Vaquillonas y Terneros',1],
+				['B-3','S.C.E:Vacas',1],
+				['C-0','S.C.E:Mamones',1],
+				['C-1','S.C.E:Vacas, Novillitos, Mamones, Vaquillonas y Terneros',1],
+				['C-2','S.C.E:Vacas, Novillitos, Vaquillonas y Terneros',1],
+				['C-3','S.C.E:Vacas',1],
+				['JJ-1','S.C.E:Novillo',1],
+				['JJ-2','S.C.E:Novillo',1],
+				['JJ-3','S.C.E:Novillo',1],
+				['J-1','S.C.E:Novillo',1],
+				['J-2','S.C.E:Novillo',1],
+				['J-3','S.C.E:Novillo',1],
+				['U-1','S.C.E:Novillo',1],
+				['U-2','S.C.E:Novillo',1],
+				['U-3','S.C.E:Novillo',1],
+				['U2-1','S.C.E:Novillo',1],
+				['U2-2','S.C.E:Novillo',1],
+				['U2-3','S.C.E:Novillo',1],
+				['AA-0','S.C: Vacas, Novillitos, Vaquillonas, Terneros, Toros',1],
+				['AA-1','S.C: Toros',1],
+				['AA-2','S.C: Toros',1],
+				['AA-3','S.C: Novillitos, Vaquillonas',1],
+				['AA-4','S.C: Vacas',1],
+				['A','S.C: Novillos',1],
+				['A-0','S.C: Vacas, Novillitos, Vaquillonas, Terneros, Toros',1],
+				['A-1','S.C: Toros',1],
+				['A-2','S.C: Toros',1],
+				['A-3','S.C: Novillitos, Vaquillonas',1],
+				['A-4','S.C: Vacas',1],
+				['B-0','S.C: Vacas, Novillitos, Vaquillonas, Terneros, Toros',1],
+				['B-1','S.C: Toros',1],
+				['B-2','S.C: Toros',1],
+				['B-3','S.C: Novillitos, Vaquillonas',1],
+				['B-4','S.C: Vacas',1],
+				['C','S.C: Toros',1],
+				['C-0','S.C: Vacas, Novillitos, Vaquillonas, Terneros',1],
+				['C-3','S.C: Novillitos, Vaquillonas',1],
+				['C-4','S.C: Vacas',1],
+				['D-0','S.C: Vacas, Novillitos, Vaquillonas, Terneros',1],
+				['D-1','S.C: Vacas, Novillitos, Vaquillonas, Terneros',1],
+				['D-2','S.C: Vacas, Novillitos, Vaquillonas, Terneros',1],
+				['D-3','S.C: Vacas, Novillitos, Vaquillonas',1],
+				['D-4','S.C: Vacas',1],
+				['E-0','S.C: Vacas, Novillitos, Vaquillonas, Terneros',1],
+				['E-1','S.C: Vacas, Novillitos, Vaquillonas, Terneros',1],
+				['E-2','S.C: Vacas',1],
+				['E-3','S.C: Vacas',1],
+				['F','S.C: Vacas, Novillitos, Vaquillonas, Terneros',1],
+				['JJ-0','S.C: Novillos',1],
+				['JJ-4','S.C: Novillos',1],
+				['J-0','S.C: Novillos',1],
+				['J-4','S.C: Novillos',1],
+				['N-0','S.C: Novillos',1],
+				['N-1','S.C: Novillos',1],
+				['N-2','S.C: Novillos',1],
+				['N-3','S.C: Novillos',1],
+				['N-4','S.C: Novillos',1],
+				['T-0','S.C: Novillos',1],
+				['T-4','S.C: Novillos',1],
+				['U-0','S.C: Novillos',1],
+				['U2-0','S.C: Novillos',1],
+				['U2-4','S.C: Novillos',1],
+				['U4','S.C: Novillos',1],
+				['Ovino','SIN ESPECIFICAR', 2]
+]
+
+type_list.each do |name, description,animal_type_id|
+	Type.find_or_create_by(name:name, description:description, animal_type_id:animal_type_id)
+end
 
 animal_types_list = [
 				'Bovino',
@@ -172,3 +291,4 @@ turn_details_list = [
 turn_details_list.each do |turn_id, agent_id, place_id, observation|
 	TurnDetail.find_or_create_by(turn_id:turn_id, agent_id:agent_id, place_id:place_id, observation:observation)
 end
+
