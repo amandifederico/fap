@@ -2,4 +2,7 @@
 #
 #
 echo "Iniciando FAP"
-nohup rails s
+
+nohup rails s &
+#bundle exec puma -C config/puma.rb
+
