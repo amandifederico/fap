@@ -7,53 +7,53 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user = User.new
-user.email = "usuario@index.com"
-user.password = "quitar1234"
-user.save!
-user.add_role "admin"
-
-user = User.new
-user.email = "usuarioa@index.com"
-user.password = "usuarioa"
-user.save!
-user.add_role "Garita"
-
-user = User.new
-user.email = "usuariob@index.com"
-user.password = "usuariob"
-user.save!
-user.add_role "Corral"
-
-user = User.new
-user.email = "usuarioc@index.com"
-user.password = "usuarioc"
-user.save!
-user.add_role "Oficina"
-
-user = User.new
-user.email = "usuariod@index.com"
-user.password = "usuariod"
-user.save!
-user.add_role "PlantaA"
-
-user = User.new
-user.email = "usuarioe@index.com"
-user.password = "usuarioe"
-user.save!
-user.add_role "PlantaB"
-
-user = User.new
-user.email = "usuariof@index.com"
-user.password = "usuariof"
-user.save!
-user.add_role "SubA"
-
-user = User.new
-user.email = "usuariog@index.com"
-user.password = "usuariog"
-user.save!
-user.add_role "SubB"
+#user = User.new
+#user.email = "usuario@index.com"
+#user.password = "quitar1234"
+#user.save!
+#user.add_role "admin"
+#
+#user = User.new
+#user.email = "usuarioa@index.com"
+#user.password = "usuarioa"
+#user.save!
+#user.add_role "Garita"
+#
+#user = User.new
+#user.email = "usuariob@index.com"
+#user.password = "usuariob"
+#user.save!
+#user.add_role "Corral"
+#
+#user = User.new
+#user.email = "usuarioc@index.com"
+#user.password = "usuarioc"
+#user.save!
+#user.add_role "Oficina"
+#
+#user = User.new
+#user.email = "usuariod@index.com"
+#user.password = "usuariod"
+#user.save!
+#user.add_role "PlantaA"
+#
+#user = User.new
+#user.email = "usuarioe@index.com"
+#user.password = "usuarioe"
+#user.save!
+#user.add_role "PlantaB"
+#
+#user = User.new
+#user.email = "usuariof@index.com"
+#user.password = "usuariof"
+#user.save!
+#user.add_role "SubA"
+#
+#user = User.new
+#user.email = "usuariog@index.com"
+#user.password = "usuariog"
+#user.save!
+#user.add_role "SubB"
 
 chofer = Driver.new(name:'Juan', last_name:'Perez', dni:12345556, observation:'pruebas')
 chofer.save
