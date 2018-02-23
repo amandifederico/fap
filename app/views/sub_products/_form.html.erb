@@ -11,7 +11,7 @@
         Tropa:
     </label>
     <div class="col-sm-12 col-md-9 controls">
-        <%= f.collection_select :troop_id, Troop.where(close_code: ""), :id, :to_s, {prompt: "Tropa"}, {class: "select2"} %>
+        <%= f.collection_select :troop_id, Troop.where(close_code: ""), :id, :to_s, {prompt: "Tropa"}, {class: "select2", style:""} %>
     </div>
 
     <label class="col-md-3 control-label hidden-sm hidden-xs">
@@ -63,7 +63,8 @@
 <script type="text/javascript">
   $('#new_sub_product').bind('cocoon:after-insert',
     function(e) {
-      $(".select2").select2({theme: "bootstrap"});
+      $(".select2").select2({theme: "bootstrap", width: "100%"});
+      $(".select3").select2({theme: "bootstrap", width: "100%", height: "33px"});
       
     });
 </script>
