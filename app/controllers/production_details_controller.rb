@@ -56,6 +56,7 @@ class ProductionDetailsController < ApplicationController
   # PATCH/PUT /production_details/1
   # PATCH/PUT /production_details/1.json
   def update
+    params[:production_detail].delete :flag
     respond_to do |format|
       if @production_detail.update(production_detail_params)
         format.html { redirect_to @production_detail, notice: 'Detalle de producción exitosamente actualizado.' }
