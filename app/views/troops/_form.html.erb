@@ -94,7 +94,7 @@
       Turno:
     </label>
     <div class="col-sm-12 col-md-9 controls">
-      <%= f.collection_select :turn_id, Turn.all, :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
+      <%= f.collection_select :turn_id, Turn.where.not(id: Troop.pluck(:turn_id)), :id, :to_s, {prompt: "Seleccionar"}, {class: "select2", style: "min-width:225px;float:left;"} %>
       
       <% link_to 'Agregar', new_turn_path, data: { modal: true }, class: "btn btn-info btn-form", style:"margin-left:10px;" %>
       <!--a href="#" class="btn btn-info btn-form" id="update_turn" style="margin-left: 10px;">Actualizar</a-->

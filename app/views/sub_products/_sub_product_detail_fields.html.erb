@@ -1,11 +1,11 @@
 <tr class="detail-field">
-	<td><%= f.collection_select :sub_product_type_id, SubProductType.all, :id, :to_s, {prompt: "Tipo"}, {class: ""} %></td>
+	<td><%= f.collection_select :sub_product_type_id, SubProductType.all, :id, :to_s, {prompt: "Tipo"}, {class: "select2"} %></td>
 	<% if current_user.SubA?  or current_user.admin?%>
-		<td><%= f.number_field :weight, class: "", placeholder: "Peso"%></td>
+		<td><%= f.number_field :weight, class: "number_field_detail", placeholder: "Peso", style: "width:100px;"%></td>
 	<% end %>
 	<% if current_user.SubB?  or current_user.admin?%>
-		<td><%= f.number_field :weight_control, class: "", placeholder: "Peso Procesado"%></td>
+		<td><%= f.number_field :weight_control, class: "", placeholder: "Peso Procesado", style: "width:100px;"%></td>
 	<% end %>
-	<td><%= f.number_field :caliber, class: "", placeholder: "Calibre"%></td>
+	<td><%= f.number_field :caliber, class: "", placeholder: "Calibre", style: "width:100	px;"%></td>
 	<td><%= f.text_field :observartion, class: "", placeholder: "Observacion"%></td>
 </tr>

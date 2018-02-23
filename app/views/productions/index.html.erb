@@ -15,7 +15,7 @@
     <tbody>
       <% @productions.each do |production| %>
         <tr>
-          <td><%= production.troop.dte %></td>
+          <td><%= production.troop.dte %> - <%= production.troop.provider %> (<%= production.troop.turn %>)</td>
           <td><%= production.description %></td>
           <td>
             <%= link_to (fa_icon "eye"), production, class: '' %>

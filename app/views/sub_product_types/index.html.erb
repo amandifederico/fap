@@ -1,29 +1,33 @@
+<div class="col-md-10  col-xs-12">
+  <h2>Tipo Sub Productos</h2>
+</div>
 
-
-<h1>Tipo Sub Producto</h1>
-
-<table class="datatable table-striped table-bordered table-list">  <thead>
-    <tr>
-      <th>Descripcion</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sub_product_types.each do |sub_product_type| %>
+<div class="col-md-10  col-xs-12">
+  <table class="datatable table-striped table-bordered table-list">  
+    <thead>
       <tr>
-        <td><%= sub_product_type.description %></td>
-        <td>
-          <%= link_to (fa_icon "eye"), sub_product_type, class: 'btn btn-sm btn-success' %>
-          <%= link_to (fa_icon "pencil-square-o"), edit_sub_product_type_path(sub_product_type), class: 'btn btn-sm btn-warning' %>
-          <%= link_to (fa_icon "trash-o"), sub_product_type, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: 'btn btn-sm btn-danger' %>
-              
-        </td>
+        <th>Descripcion</th>
+        <th>Opciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @sub_product_types.each do |sub_product_type| %>
+        <tr>
+          <td><%= sub_product_type.description %></td>
+          <td>
+            <%= link_to (fa_icon "eye"), sub_product_type, class: '' %>
+            <%= link_to (fa_icon "pencil-square-o"), edit_sub_product_type_path(sub_product_type), class: '' %>
+            <%= link_to (fa_icon "trash-o"), sub_product_type, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>
+                
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to 'Nuevo Tipo Sub Producto', new_sub_product_type_path %>
+<div class="col-xs-10 col-xs-12">
+ <%= link_to 'Nuevo Tipo Sub Producto', new_sub_product_type_path, {:class=>"btn btn-primary btn-submit"} %>
+</div>
+
