@@ -143,19 +143,20 @@
 					</div>
 				</a>
 	        </div>
-	<% elsif current_user.PlantaA? or current_user.PlantaB?  %>
-        <div class="">
-        	<a href="/productions" class="fa-links">
-				<div class="thumbnail tile tile-wide tile-green">
-                	<h3 class="tile-text">Producción</h3>
-					<i class="fa fa-3x fa-industry"></i>
-				</div>
-			</a>
-        </div>
+	<% elsif current_user.PlantaA?%>
         <div class="">
         	<a href="/production_line" class="fa-links">
 				<div class="thumbnail tile tile-wide tile-green">
                 	<h3 class="tile-text">Línea Producción</h3>
+					<i class="fa fa-3x fa-industry"></i>
+				</div>
+			</a>
+        </div>
+	<% elsif current_user.PlantaB?%>
+        <div class="">
+        	<a href="/production_details" class="fa-links">
+				<div class="thumbnail tile tile-wide tile-lime">
+                	<h3 class="tile-text">Det. Producción</h3>
 					<i class="fa fa-3x fa-industry"></i>
 				</div>
 			</a>

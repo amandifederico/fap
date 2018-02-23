@@ -12,7 +12,7 @@
         <% if current_user.PlantaA?  or current_user.admin?%>
           <th>Peso</th>
         <% end %>
-        <% if current_user.PlantaA?  or current_user.admin?%>
+        <% if current_user.PlantaB?  or current_user.admin?%>
           <th>Peso control</th>
         <% end %>
         
@@ -22,25 +22,47 @@
 
     <tbody>
       <% @production_details.each do |production_detail| %>
-        <tr>
-          <td><%= production_detail.production %></td>
-          <td><%= production_detail.type %></td>
-          <td><%= production_detail.animal %></td>
-          <% if current_user.PlantaA?  or current_user.admin?%>
-            <td><%= production_detail.weight %></td>
-          <% end %>  
-          <% if current_user.PlantaB?  or current_user.admin?%>
-            <td><%= production_detail.weight_control %></td>
-          <% end %>
-          
-          <td>
-            <%= link_to (fa_icon "eye"), production_detail, class: '' %>
-            <%= link_to (fa_icon "pencil-square-o"), edit_production_detail_path(production_detail), class: '' %>
-            <% if current_user.admin?%>
-              <%= link_to (fa_icon "trash-o"), production_detail, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>      
+        
+        <% if current_user.PlantaB? %>
+          <% if production_detail.production.troop.close_code.to_s == "" %>
+            <tr>
+              <td><%= production_detail.production %></td>
+              <td><%= production_detail.type %></td>
+              <td><%= production_detail.animal %></td>
+              <% if current_user.PlantaA?  or current_user.admin?%>
+                <td><%= production_detail.weight %></td>
+              <% end %>  
+              <% if current_user.PlantaB?  or current_user.admin?%>
+                <td><%= production_detail.weight_control %></td>
+              <% end %>
+              <td>
+                <%= link_to (fa_icon "eye"), production_detail, class: '' %>
+                <%= link_to (fa_icon "pencil-square-o"), edit_production_detail_path(production_detail), class: '' %>
+              </td>
+            </tr>
+          <%end%>
+        <%end%>
+        <% if current_user.admin? %>
+          <tr>
+            <td><%= production_detail.production %></td>
+            <td><%= production_detail.type %></td>
+            <td><%= production_detail.animal %></td>
+            <% if current_user.PlantaA?  or current_user.admin?%>
+              <td><%= production_detail.weight %></td>
+            <% end %>  
+            <% if current_user.PlantaB?  or current_user.admin?%>
+              <td><%= production_detail.weight_control %></td>
             <% end %>
-          </td>
-        </tr>
+            
+            <td>
+              <%= link_to (fa_icon "eye"), production_detail, class: '' %>
+              <%= link_to (fa_icon "pencil-square-o"), edit_production_detail_path(production_detail), class: '' %>
+              <% if current_user.admin?%>
+                <%= link_to (fa_icon "trash-o"), production_detail, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>      
+              <% end %>
+            </td>
+          </tr>
+        <%end%>
       <% end %>
     </tbody>
   </table>

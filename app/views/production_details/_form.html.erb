@@ -91,7 +91,7 @@
     </div>
 
     <div class="col-xm-8">
-      <% if (@troop.quantity_control*2) > @pd.size%>     
+      <% if (@troop.quantity_control*2) > @pd.size or (current_user.PlantaB?  or current_user.admin?)%>     
         <%= f.submit class: "btn btn-success btn-block"%>
       <% end %>
     </div> 
