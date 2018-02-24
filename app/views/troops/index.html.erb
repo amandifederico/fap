@@ -9,28 +9,50 @@
         <th>D.T.E</th>
         <th>Turno</th>
         <th>Abastecedor</th>
-        <th>Codigo cierre</th>
+        <% if current_user.Oficina? or current_user.admin? %>    
+          <th>Codigo cierre</th>
+        <% end %>
         <th>Opciones</th>
       </tr>
     </thead>
-
-    <tbody>
-      <% @troops.each do |troop| %>
-        <tr>
-          <td><%= troop.dte %></td>
-          <td><%= troop.turn %></td>
-          <td><%= troop.provider %></td>
-          <td><%= troop.close_code %></td>        
-          <td>
-            <%= link_to (fa_icon "eye"), troop, class: '' %>
-            <%= link_to (fa_icon "pencil-square-o"), edit_troop_path(troop), class: '' %>
-            <% if current_user.Garita?  or current_user.Oficina? or current_user.admin?%>
-              <%= link_to (fa_icon "trash-o"), troop, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
+    <% if current_user.PlantaA? or current_user.PlantaB? or current_user.Corral? or current_user.Garita? %>    
+      <tbody>
+        <% @troops.each do |troop| %>
+          <% if troop.close_code.to_s == "" %>
+            <tr>
+              <td><%= troop.dte %></td>
+              <td><%= troop.turn %></td>
+              <td><%= troop.provider %></td>     
+              <td>
+                <%= link_to (fa_icon "eye"), troop, class: '' %>
+                <%= link_to (fa_icon "pencil-square-o"), edit_troop_path(troop), class: '' %>
+                <% if current_user.Garita?  or current_user.Oficina? or current_user.admin?%>
+                  <%= link_to (fa_icon "trash-o"), troop, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    <% else %>
+      <tbody>
+        <% @troops.each do |troop| %>
+          <tr>
+            <td><%= troop.dte %></td>
+            <td><%= troop.turn %></td>
+            <td><%= troop.provider %></td>
+            <td><%= troop.close_code %></td>        
+            <td>
+              <%= link_to (fa_icon "eye"), troop, class: '' %>
+              <%= link_to (fa_icon "pencil-square-o"), edit_troop_path(troop), class: '' %>
+              <% if current_user.Garita?  or current_user.Oficina? or current_user.admin?%>
+                <%= link_to (fa_icon "trash-o"), troop, method: :delete, data: { confirm: '¿Seguro desea eliminar este registro?' }, class: '' %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    <% end %>
   </table>
 </div>
 
