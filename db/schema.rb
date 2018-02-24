@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110125222) do
+ActiveRecord::Schema.define(version: 20180221200551) do
 
   create_table "agents", force: :cascade do |t|
     t.string   "last_name"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20180110125222) do
 
   create_table "providers", force: :cascade do |t|
     t.string   "name"
-    t.integer  "cuit"
+    t.integer  "cuit",        limit: 8
     t.string   "renspa"
     t.integer  "telephone"
     t.string   "email"
@@ -104,8 +104,8 @@ ActiveRecord::Schema.define(version: 20180110125222) do
     t.integer  "city_id"
     t.boolean  "active"
     t.string   "observation"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.index ["city_id"], name: "index_providers_on_city_id"
   end
 
