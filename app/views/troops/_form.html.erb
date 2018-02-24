@@ -175,6 +175,7 @@
     </div>
 
   <%end%>
+  <% if current_user.Oficina? or current_user.admin?%>
     <!-- Código de Cierre -->
     <label class="col-md-3 control-label hidden-sm hidden-xs">
       Código de Cierre:
@@ -184,29 +185,29 @@
       <span class="help-block">Obligatorio. </span>
     </div>
     <label class="col-sm-9 control-label">
-      
     </label>
+  <%end%>
     <%= f.hidden_field :number, value: @number %>
-    
-    <div class="col-sm-12" style="margin-bottom: 25px;">
-      <table class="datatable" style="margin-bottom: 0px;">
-        <thead>
-          <tr>
-              <th>Especie</th>
-              <th>Cantidad</th>
-              <th>Caidos</th>
-              <th>Observacion</th>
-          </tr> 
-        </thead>
-        <tbody class="troop_details">
-            <%= f.fields_for :troop_details do |troop_details| %>
-              <%= render 'troop_detail_fields', :f => troop_details %>
-            <% end %>
-        </tbody>
-      </table>
-      <%= link_to_add_association (fa_icon "plus"), f, :troop_details, data: { association_insertion_node: '.troop_details', association_insertion_method: :append }, class: "btn btn-primary btn-block" %>
-    </div>
-
+    <% if current_user.Corral?  or current_user.Oficina? or current_user.admin?%>
+      <div class="col-sm-12" style="margin-bottom: 25px;">
+        <table class="datatable" style="margin-bottom: 0px;">
+          <thead>
+            <tr>
+                <th>Especie</th>
+                <th>Cantidad</th>
+                <th>Caidos</th>
+                <th>Observacion</th>
+            </tr> 
+          </thead>
+          <tbody class="troop_details">
+              <%= f.fields_for :troop_details do |troop_details| %>
+                <%= render 'troop_detail_fields', :f => troop_details %>
+              <% end %>
+          </tbody>
+        </table>
+        <%= link_to_add_association (fa_icon "plus"), f, :troop_details, data: { association_insertion_node: '.troop_details', association_insertion_method: :append }, class: "btn btn-primary btn-block" %>
+      </div>
+    <%end%>
     
 
   <div class="col-xs-4">
@@ -221,9 +222,10 @@
   
 
 <script type="text/javascript">
-  $('#new_troop').bind('cocoon:after-insert',
+  $('form').bind('cocoon:after-insert',
     function(e) {
-      $(".select2").select2({theme: "bootstrap"});
+      console.log("entro");
+      $(".select2").select2({theme: "bootstrap", width: "100%"});
       
     });
 </script>

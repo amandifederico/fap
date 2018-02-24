@@ -27,7 +27,7 @@
     </div>
 
     <div class="col-sm-12" style="margin-bottom: 25px;">
-    <table class="datatable" style="margin-bottom: 0px;">
+        <table class="datatable" style="margin-bottom: 0px;">
             <thead>
                 <tr>
                     <th>Tipo</th>
@@ -61,10 +61,8 @@
     </div>
 <% end %>
 <script type="text/javascript">
-  $('#new_sub_product').bind('cocoon:after-insert',
+  $('form').bind('cocoon:after-insert',
     function(e) {
       $(".select2").select2({theme: "bootstrap", width: "100%"});
-      $(".select3").select2({theme: "bootstrap", width: "100%", height: "33px"});
-      
     });
 </script>

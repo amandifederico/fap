@@ -31,8 +31,9 @@
 <% end %>
 
 <script type="text/javascript">
-  $('#new_troop').bind('cocoon:after-insert',
+  $('form').bind('cocoon:after-insert',
     function(e) {
-      $(".select2").select2({theme: "bootstrap"});
+      $(".select2").select2({theme: "bootstrap", width: "100%"});
+      
     });
 </script>
