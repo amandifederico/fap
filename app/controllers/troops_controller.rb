@@ -35,7 +35,6 @@ class TroopsController < ApplicationController
   end
 
   def new_troop_ajax
-    byebug
     respond_to do |format|
       format.html
       format.js
@@ -77,6 +76,7 @@ class TroopsController < ApplicationController
   # PATCH/PUT /troops/1
   # PATCH/PUT /troops/1.json
   def update
+    byebug
     respond_to do |format|
       if @troop.update(troop_params)
         format.html { redirect_to @troop, notice: 'Tropa exitosamente actualizada.' }
@@ -106,6 +106,6 @@ class TroopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def troop_params
-      params.require(:troop).permit(:dte, :turn_id, :provider_id, :city_id, :troop_number, :cargo_date, :expiration_date , :transport_id, :driver_id, :seal_number, :liveweight, :quantity_control, :close_code, :arrival_date, :arrival_time, troop_details_attributes: [:id, :animal_id, :quantity, :observation])
+      params.require(:troop).permit(:dte, :turn_id, :provider_id, :city_id, :troop_number, :cargo_date, :expiration_date , :transport_id, :driver_id, :seal_number, :liveweight, :quantity_control, :close_code, :arrival_date, :arrival_time, troop_details_attributes: [:id, :animal_id, :quantity, :fallen, :observartion])
     end
 end
