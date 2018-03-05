@@ -1,3 +1,36 @@
+Puma starting in single mode...
+* Version 3.11.0 (ruby 2.3.4-p301), codename: Love Song
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://0.0.0.0:3000
+Use Ctrl-C to stop
+Puma starting in single mode...
+* Version 3.11.0 (ruby 2.3.4-p301), codename: Love Song
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://0.0.0.0:3000
+/home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/binder.rb:270:in `initialize': Address already in use - bind(2) for "0.0.0.0" port 3000 (Errno::EADDRINUSE)
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/binder.rb:270:in `new'
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/binder.rb:270:in `add_tcp_listener'
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/binder.rb:105:in `block in parse'
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/binder.rb:88:in `each'
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/binder.rb:88:in `parse'
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/runner.rb:144:in `load_and_bind'
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/single.rb:87:in `run'
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/launcher.rb:183:in `run'
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/lib/puma/cli.rb:77:in `run'
+	from /home/fap/.rvm/gems/ruby-2.3.4/gems/puma-3.11.0/bin/puma:10:in `<top (required)>'
+	from /home/fap/.rvm/gems/ruby-2.3.4/bin/puma:23:in `load'
+	from /home/fap/.rvm/gems/ruby-2.3.4/bin/puma:23:in `<main>'
+	from /home/fap/.rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `eval'
+	from /home/fap/.rvm/gems/ruby-2.3.4/bin/ruby_executable_hooks:15:in `<main>'
+/home/fap/repo/fap/app/views/layouts/_navbar_sidebar.html.erb:19: warning: key :class is duplicated and overwritten on line 19
+/home/fap/repo/fap/app/views/layouts/_navbar_sidebar.html.erb:19: warning: key :class is duplicated and overwritten on line 19
+/home/fap/repo/fap/app/views/layouts/_navbar_sidebar.html.erb:19: warning: key :class is duplicated and overwritten on line 19
+/home/fap/repo/fap/app/views/layouts/_navbar_sidebar.html.erb:19: warning: key :class is duplicated and overwritten on line 19
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2018-02-20 18:04:48 -0300 ===
+- Goodbye!
 => Booting Puma
 => Rails 5.0.6 application starting in development on http://localhost:3000
 => Run `rails server -h` for more startup options
@@ -7,23 +40,9 @@ Puma starting in single mode...
 * Environment: development
 * Listening on tcp://0.0.0.0:3000
 Use Ctrl-C to stop
-Started GET "/" for 127.0.0.1 at 2018-02-10 13:44:27 -0300
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by WelcomeController#index as HTML
-  Rendering welcome/index.html.erb within layouts/application
-  Rendered welcome/index.html.erb within layouts/application (99.7ms)
-/home/fap/repo/fap/app/views/layouts/_navbar_sidebar.html.erb:19: warning: key :class is duplicated and overwritten on line 19
-  Rendered layouts/_navbar_sidebar.html.erb (1.6ms)
-Completed 200 OK in 1968ms (Views: 1929.9ms | ActiveRecord: 1.6ms)
-
-
 - Gracefully stopping, waiting for requests to finish
-=== puma shutdown: 2018-02-10 13:44:34 -0300 ===
+=== puma shutdown: 2018-02-20 18:51:58 -0300 ===
 - Goodbye!
-Exiting
-=> Booting Puma
-=> Rails 5.0.6 application starting in development on http://localhost:3000
-=> Run `rails server -h` for more startup options
 Exiting
 => Booting Puma
 => Rails 5.0.6 application starting in development on http://localhost:3000
@@ -34,19 +53,65 @@ Puma starting in single mode...
 * Environment: development
 * Listening on tcp://0.0.0.0:3000
 Use Ctrl-C to stop
-Started GET "/" for 127.0.0.1 at 2018-02-17 12:45:52 -0300
+Started GET "/" for 127.0.0.1 at 2018-02-20 18:52:09 -0300
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by WelcomeController#index as HTML
   Rendering welcome/index.html.erb within layouts/application
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[36mRole Load (13.6ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
-  Rendered welcome/index.html.erb within layouts/application (93.3ms)
+  Rendered welcome/index.html.erb within layouts/application (101.5ms)
 /home/fap/repo/fap/app/views/layouts/_navbar_sidebar.html.erb:19: warning: key :class is duplicated and overwritten on line 19
-  Rendered layouts/_navbar_sidebar.html.erb (2.2ms)
-Completed 200 OK in 1910ms (Views: 1843.8ms | ActiveRecord: 15.6ms)
+  Rendered layouts/_navbar_sidebar.html.erb (0.6ms)
+Completed 200 OK in 1104ms (Views: 1088.8ms | ActiveRecord: 1.3ms)
 
 
-- Gracefully stopping, waiting for requests to finish
-=== puma shutdown: 2018-02-17 12:46:34 -0300 ===
-- Goodbye!
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-02-20 18:52:19 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fF6AnTzxUaoctVoNVt3HQcYTpHynG5UcbKyuhna9KKQs/OaqzrdUp1TV40DKHNu7Wfa7uKNt6js7Al3GtTOUYg==", "user"=>{"email"=>"usuario@index.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "usuario@index.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-02-20 21:52:20.357893"], ["last_sign_in_at", "2018-02-20 21:15:38.538744"], ["sign_in_count", 6], ["updated_at", "2018-02-20 21:52:20.359186"], ["id", 1]]
+  [1m[35m (80.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 466ms (ActiveRecord: 80.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-20 18:52:20 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRole Load (19.7ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (133.3ms)
+/home/fap/repo/fap/app/views/layouts/_navbar_sidebar.html.erb:19: warning: key :class is duplicated and overwritten on line 19
+  Rendered layouts/_navbar_sidebar.html.erb (0.6ms)
+Completed 200 OK in 312ms (Views: 288.5ms | ActiveRecord: 20.9ms)
+
+
+A server is already running. Check /home/fap/repo/fap/tmp/pids/server.pid.
+=> Booting Puma
+=> Rails 5.0.6 application starting in development on http://0.0.0.0:8080
+=> Run `rails server -h` for more startup options
+Exiting
+=> Booting Puma
+=> Rails 5.0.6 application starting in development on http://0.0.0.0:8080
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.11.0 (ruby 2.3.4-p301), codename: Love Song
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://0.0.0.0:8080
+Use Ctrl-C to stop
+Started GET "/" for 192.168.0.100 at 2018-02-20 19:40:09 -0300
+Cannot render console from 192.168.0.100! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (145.4ms)
+/home/fap/repo/fap/app/views/layouts/_navbar_sidebar.html.erb:19: warning: key :class is duplicated and overwritten on line 19
+  Rendered layouts/_navbar_sidebar.html.erb (0.7ms)
+Completed 200 OK in 2089ms (Views: 2064.8ms | ActiveRecord: 1.5ms)
+
+
+A server is already running. Check /home/fap/repo/fap/tmp/pids/server.pid.
+=> Booting Puma
+=> Rails 5.0.6 application starting in development on http://0.0.0.0:8080
+=> Run `rails server -h` for more startup options
 Exiting
