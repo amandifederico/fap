@@ -76,7 +76,6 @@ class TroopsController < ApplicationController
   # PATCH/PUT /troops/1
   # PATCH/PUT /troops/1.json
   def update
-    byebug
     respond_to do |format|
       if @troop.update(troop_params)
         format.html { redirect_to @troop, notice: 'Tropa exitosamente actualizada.' }

@@ -1,4 +1,4 @@
-<tr class="detail-field">
+<tr class="nested-field">
 	<td><%= f.collection_select :sub_product_type_id, SubProductType.all, :id, :to_s, {prompt: "Tipo"}, {class: "select2", id: "select_sub_product"} %></td>
 	<% if current_user.SubA?  or current_user.admin?%>
 		<td><%= f.number_field :weight, class: "number_field_detail form-control input-lg", placeholder: ""%></td>

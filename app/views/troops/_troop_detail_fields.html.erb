@@ -1,4 +1,4 @@
-<tr class="detail-field">
+<tr class="nested-field">
 	<td><%= f.collection_select :animal_id, Animal.all, :id, :to_s, {prompt: "Especie Animal"}, {class: "select2 form-control input-lg"} %></td>
 	<td><%= f.number_field :quantity, class: "form-control input-lg", placeholder: "Cantidad"%></td>
 	<td><%= f.number_field :fallen, class: "form-control input-lg", placeholder: "Caidos"%></td>

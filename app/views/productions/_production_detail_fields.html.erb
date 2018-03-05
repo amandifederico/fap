@@ -1,4 +1,4 @@
-<tr class="detail-field">
+<tr class="nested-field">
 	<td><%= f.collection_select :type_id, Type.all(), :id, :to_s, {prompt: "Tipo"}, {class: "select2"} %></td>
 	<td><%= f.collection_select :type_id, Animal.all(), :id, :to_s, {prompt: "Animal"}, {class: "select2"} %></td>
 

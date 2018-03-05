@@ -4,5 +4,5 @@ class TurnDetail < ApplicationRecord
   belongs_to :place
   belongs_to :position
 
-  validates :agent_id, uniqueness: true
+  #validates :agent_id, uniqueness: true
 end
