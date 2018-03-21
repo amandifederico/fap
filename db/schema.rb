@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315200918) do
+ActiveRecord::Schema.define(version: 20180321214104) do
 
   create_table "agents", force: :cascade do |t|
     t.string   "last_name"
@@ -112,8 +112,10 @@ ActiveRecord::Schema.define(version: 20180315200918) do
   create_table "range_troop_numbers", force: :cascade do |t|
     t.integer  "min"
     t.integer  "max"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "provider_id"
+    t.index ["provider_id"], name: "index_range_troop_numbers_on_provider_id"
   end
 
   create_table "roles", force: :cascade do |t|

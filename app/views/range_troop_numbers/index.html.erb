@@ -6,6 +6,7 @@
   <table class="datatable table-striped table-bordered table-list">
     <thead>
       <tr>
+        <th>Abastecedor</th>
         <th>Min</th>
         <th>Max</th>
         <th>Opciones</th>
@@ -15,6 +16,8 @@
     <tbody>
       <% @range_troop_numbers.each do |range_troop_number| %>
         <tr>
+          <td><%= Provider.where(id: range_troop_number.provider_id).pluck(:name)
+ %></td>
           <td><%= range_troop_number.min %></td>
           <td><%= range_troop_number.max %></td>
           <td>

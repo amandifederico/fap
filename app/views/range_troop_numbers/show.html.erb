@@ -3,6 +3,13 @@
 </div>
 
 <label class="col-xs-3 control-label">
+	Abastecedor:
+</label>
+<div class="col-xs-9 show-field">
+  <%= Provider.where(id: range_troop_number.provider_id).pluck(:name) %>
+</div>
+
+<label class="col-xs-3 control-label">
 	Minimo:
 </label>
 <div class="col-xs-9 show-field">

@@ -47,20 +47,13 @@
 
     <!-- Nº de Tropa -->
     <label class="col-sm-3 control-label">
-      Nº de Tropa X:
+      Nº de Tropa :
     </label>
-    <% if @troop.troop_number == -1 %>
       <div class="col-sm-9 controls">
-        <%= f.text_field :troop_number, class: "form-control", placeholder: "Reinicie rango", readonly: true %>
+        <%= f.text_field :troop_number, class: "form-control", placeholder: "123456"%>
         <span class="help-block">Obligatorio. </span>
       </div>
-    <%else%>
-      <div class="col-sm-9 controls">
-        <%= f.text_field :troop_number, class: "form-control", placeholder: "123456", readonly: true%>
-        <span class="help-block">Obligatorio. </span>
-      </div>
-    <%end%>
-
+    </label>
     <!-- Fecha de Cargo -->
     <label class="col-md-3 control-label hidden-sm hidden-xs">
       Fecha de Cargo:
@@ -187,7 +180,7 @@
     <label class="col-sm-9 control-label">
     </label>
   <%end%>
-    <%= f.hidden_field :number, value: @number %>
+
     <% if current_user.Corral?  or current_user.Oficina? or current_user.admin?%>
       <div class="col-sm-12" style="margin-bottom: 25px;">
         <table class="table" style="margin-bottom: 0px;">
@@ -214,9 +207,7 @@
     <%= link_to 'Volver', troops_path, class: "btn btn-primary btn-block" %>
   </div>      
   <div class="col-xs-8">
-    <%if @number != -1%>
       <%= f.submit class: "btn btn-success btn-block "%>
-    <%end%>
   </div>  
 <% end %>
   

@@ -7,7 +7,14 @@
       <% end %>
     </script>
   <% end %>
-
+  
+  <label class="col-md-3 control-label hidden-sm hidden-xs">
+    Abastecedor:
+  </label>
+  <div class="col-sm-12 col-md-9 controls">
+    <%= f.collection_select :provider_id, Provider.all, :id, :to_s, {prompt: "Abastecedor"}, {class: "select2"} %>
+    <span class="help-block">Obligatorio. </span>
+  </div>
   <label class="col-md-3 control-label hidden-sm hidden-xs">
     Minimo:
   </label>

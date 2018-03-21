@@ -69,6 +69,6 @@ class RangeTroopNumbersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def range_troop_number_params
-      params.require(:range_troop_number).permit(:min, :max)
+      params.require(:range_troop_number).permit(:provider_id, :min, :max)
     end
 end

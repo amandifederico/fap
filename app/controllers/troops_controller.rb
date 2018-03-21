@@ -16,21 +16,21 @@ class TroopsController < ApplicationController
   def new
     @troop = Troop.new
     3.times { @troop.troop_details.build }
-    range = RangeTroopNumber.last
+    #range = RangeTroopNumber.last
     
-    seq = SeqRangeTroopNumber.last
-    if seq == nil
-      number = range.min
-    elsif seq.rtn < range.max
-      if seq.rtn >= range.min
-        number = seq.rtn + 1
-      else
-        number = range.min
-      end
-    else
-      number = -1
-    end
-    @troop.attributes = {troop_number: number}
+    #seq = SeqRangeTroopNumber.last
+    #if seq == nil
+    #  number = range.min
+    #elsif seq.rtn < range.max
+    #  if seq.rtn >= range.min
+    #    number = seq.rtn + 1
+    #  else
+    #    number = range.min
+    #  end
+    #else
+    #  number = -1
+    #end
+    #@troop.attributes = {troop_number: number}
     
   end
 
@@ -55,15 +55,15 @@ class TroopsController < ApplicationController
   # POST /troops.json
   def create
      @troop = Troop.new(troop_params)
-     number = params[:troop][:number].to_i
+     #number = params[:troop][:number].to_i
      respond_to do |format|
        if @troop.save
           @production = Production.new
           @production.troop = @troop
           @production.save!
-          sequence = SeqRangeTroopNumber.new
-          sequence.rtn = number
-          sequence.save!
+          #sequence = SeqRangeTroopNumber.new
+          #sequence.rtn = number
+          #sequence.save!
           format.html { redirect_to @troop, notice: 'Tropa exitosamente creada.' }
           format.json { render :show, status: :created, location: @troop }
        else
