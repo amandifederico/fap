@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321214104) do
+ActiveRecord::Schema.define(version: 20180403122616) do
 
   create_table "agents", force: :cascade do |t|
     t.string   "last_name"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20180321214104) do
     t.string   "name"
     t.integer  "cuit",        limit: 8
     t.string   "renspa"
-    t.integer  "telephone"
+    t.integer  "telephone",   limit: 8
     t.string   "email"
     t.string   "address"
     t.date     "up_date"
